@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e Cibersegurança." />
+  <title>Sobre — João Lacerda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="about">
+  <canvas id="particles"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="noise"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo-link">
+      <span class="logo-bracket">&lt;</span><span class="logo-text">JL</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"        class="nav-link" data-i18n="nav.home">Início</a></li>
+      <li><a href="sobre.html"        class="nav-link" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="experiencia.html"  class="nav-link" data-i18n="nav.exp">Experiência</a></li>
+      <li><a href="projetos.html"     class="nav-link" data-i18n="nav.proj">Projetos</a></li>
+      <li><a href="certificacoes.html" class="nav-link" data-i18n="nav.certs">Certificações</a></li>
+      <li><a href="contato.html"      class="nav-link" data-i18n="nav.contact">Contato</a></li>
+      <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" data-i18n="nav.resume">Currículo</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" title="Switch language">
+          <span class="lang-opt" data-lang="pt">PT</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <aside class="sidebar sidebar-left">
+    <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" rel="noopener" aria-label="LinkedIn" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+<div class="sidebar-line"></div>
+  </aside>
+  <aside class="sidebar sidebar-right">
+    <a href="mailto:joao@joaolacerda.dev" class="sidebar-email">joao@joaolacerda.dev</a>
+    <div class="sidebar-line"></div>
+  </aside>
+  <main class="main-content">
+    <div class="page-header fade-in">
+      <span class="page-num mono text-cyan">01.</span>
+      <h1 class="page-title" data-i18n="about.title">Sobre Mim</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-text">
+        <p class="fade-in" data-i18n="about.p1">
+          Olá, sou o João — engenheiro de software apaixonado por construir sistemas que escalam, dados que geram valor e arquiteturas que protegem. Minha trajetória começou há mais de oito anos e desde então trabalhei em todo o espectro técnico: de interfaces modernas a backends de alta performance, de pipelines de dados a análise de segurança.
+        </p>
+        <p class="fade-in" data-i18n="about.p2">
+          Tive o privilégio de contribuir com startups em hipercrescimento e empresas consolidadas, construindo produtos que processam milhões de transações, alimentam dashboards em tempo real e servem audiências globais. Acredito que engenharia de excelência vai além de escrever código — é sobre comunicação clara, design cuidadoso de sistemas e capacitar as equipes ao redor.
+        </p>
+        <p class="fade-in" data-i18n="about.p3">
+          Atualmente exploro a interseção entre <span class="text-cyan">desenvolvimento full stack</span>, <span class="text-cyan">engenharia de dados</span> e <span class="text-cyan">cibersegurança</span>. Profissionais com visão ampla entregam soluções mais robustas e seguras. Quando não estou no terminal, provavelmente estou lendo sobre sistemas distribuídos, contribuindo com open source ou mentorando outros engenheiros.
+        </p>
+
+        <div class="about-skills-wrap fade-in">
+          <h2 class="sub-heading mono text-cyan" data-i18n="about.skills.title">// tecnologias</h2>
+          <div class="skill-categories">
+            <div class="skill-cat">
+              <h3 class="skill-cat-title" data-i18n="sk.fullstack">Full Stack</h3>
+              <ul class="skills-list">
+                <li>TypeScript / JavaScript</li><li>React / Next.js</li><li>Node.js / NestJS</li>
+                <li>Python / FastAPI</li><li>Go (Golang)</li><li>PostgreSQL / MongoDB</li>
+                <li>Redis / Elasticsearch</li><li>REST / GraphQL / gRPC</li>
+              </ul>
+            </div>
+            <div class="skill-cat">
+              <h3 class="skill-cat-title" data-i18n="sk.data">Dados</h3>
+              <ul class="skills-list">
+                <li>Apache Spark / PySpark</li><li>Apache Airflow / Prefect</li>
+                <li>dbt / SQL avançado</li><li>Pandas / NumPy</li>
+                <li>BigQuery / Redshift</li><li>Kafka / Kinesis</li>
+                <li>Power BI / Metabase</li><li>Scikit-learn / MLflow</li>
+              </ul>
+            </div>
+            <div class="skill-cat">
+              <h3 class="skill-cat-title" data-i18n="sk.security">Segurança</h3>
+              <ul class="skills-list">
+                <li>OWASP Top 10</li><li>Pentest / Burp Suite</li>
+                <li>SIEM / Splunk</li><li>OAuth 2.0 / JWT / PKCE</li>
+                <li>Análise de vulnerabilidades</li><li>Hardening de servidores</li>
+                <li>Zero Trust Architecture</li><li>Resposta a Incidentes</li>
+              </ul>
+            </div>
+            <div class="skill-cat">
+              <h3 class="skill-cat-title" data-i18n="sk.cloud">Cloud &amp; DevOps</h3>
+              <ul class="skills-list">
+                <li>AWS / GCP / Azure</li><li>Kubernetes / Docker</li>
+                <li>Terraform / Pulumi</li><li>GitHub Actions / Jenkins</li>
+                <li>Prometheus / Grafana</li><li>OpenTelemetry</li>
+                <li>Linux / Bash scripting</li><li>Nginx / Traefik</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-edu fade-in">
+          <h2 class="sub-heading mono text-cyan" data-i18n="about.edu.title">// formação</h2>
+          <div class="edu-item">
+            <span class="edu-icon">🎓</span>
+            <div>
+              <h4 class="edu-degree" data-i18n="edu.degree">Bacharelado em Ciência da Computação</h4>
+              <p class="edu-school" data-i18n="edu.school">Universidade — Goiânia, Brasil</p>
+              <p class="mono text-muted" style="font-size:0.78rem">2013 — 2017</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-edu fade-in">
+          <h2 class="sub-heading mono text-cyan" data-i18n="about.lang.title">// idiomas</h2>
+          <div class="edu-item">
+            <span class="edu-icon">🇧🇷</span>
+            <div>
+              <h4 class="edu-degree" data-i18n="about.lang.pt">Português</h4>
+              <p class="mono text-muted" style="font-size:0.82rem" data-i18n="about.lang.pt.level">Nativo</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <span class="edu-icon">🇺🇸</span>
+            <div>
+              <h4 class="edu-degree" data-i18n="about.lang.en">Inglês</h4>
+              <p class="mono text-muted" style="font-size:0.82rem" data-i18n="about.lang.en.level">Avançado (C1)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-photo-col fade-in">
+        <div class="photo-container">
+          <div class="photo-frame">
+            <img src="photo.jpg" alt="João Lacerda" class="profile-photo" />
+            <div class="photo-fallback mono">JL</div>
+            <div class="photo-overlay"></div>
+          </div>
+          <div class="photo-border"></div>
+        </div>
+        <div class="about-links">
+          <a href="https://github.com/Vortex11PTBR" target="_blank" class="about-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" class="about-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+          <a href="resume.pdf" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" data-i18n="about.resume">⬇ Baixar Currículo</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Lacerda</span></p>
+    <p class="footer-sub">joaolacerda.dev &middot; 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

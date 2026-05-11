@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prep Entrevistas Junior — Dados & Fullstack</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #08090e;
+  --bg2: #0f1018;
+  --bg3: #161720;
+  --bg4: #1d1e2a;
+  --bg5: #242535;
+  --border: #272838;
+  --border2: #353648;
+  --text: #e2e3f0;
+  --text2: #8e8fa8;
+  --text3: #52536a;
+  --gold: #e8b84b;
+  --gold2: #f5d080;
+  --gold-bg: rgba(232,184,75,0.08);
+  --blue: #5b9cf6;
+  --blue-bg: rgba(91,156,246,0.08);
+  --green: #4ade80;
+  --green-bg: rgba(74,222,128,0.08);
+  --purple: #a78bfa;
+  --purple-bg: rgba(167,139,250,0.08);
+  --teal: #2dd4bf;
+  --teal-bg: rgba(45,212,191,0.08);
+  --red: #f87171;
+  --red-bg: rgba(248,113,113,0.08);
+  --orange: #fb923c;
+  --orange-bg: rgba(251,146,60,0.08);
+  --pink: #f472b6;
+  --r: 6px;
+  --rl: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ── LAYOUT ── */
+.app { display: flex; min-height: 100vh; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.sidebar-header {
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--text3);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.sidebar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+.sidebar-title span { color: var(--gold); }
+
+/* overall progress */
+.sidebar-progress {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.sp-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.sp-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text3); }
+.sp-pct { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--gold); font-weight: 600; }
+.bar-wrap { height: 3px; background: var(--bg4); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--gold), var(--gold2)); transition: width 0.4s; }
+
+/* nav */
+.nav-section { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.nav-section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 0 1.25rem 0.4rem;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.45rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.12s;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 12.5px;
+  position: relative;
+}
+.nav-item:hover { background: var(--bg3); color: var(--text); }
+.nav-item.active { background: var(--bg3); color: var(--text); }
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+}
+.nav-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border2);
+}
+.nav-dot.done { background: var(--green); border-color: var(--green); }
+.nav-badge {
+  margin-left: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ── MAIN ── */
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2.5rem 2rem 6rem;
+  max-width: 820px;
+}
+
+/* ── SECTION HEADER ── */
+.sec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.sec-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.sec-meta {}
+.sec-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+.sec-desc { font-size: 12.5px; color: var(--text2); margin-top: 4px; line-height: 1.6; }
+
+/* ── TOPIC BLOCK ── */
+.topic-block {
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+}
+.topic-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg2);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+.topic-header:hover { background: var(--bg3); }
+.topic-accent { width: 3px; height: 28px; border-radius: 2px; flex-shrink: 0; }
+.topic-meta { flex: 1; }
+.topic-name { font-weight: 600; font-size: 13.5px; color: var(--text); line-height: 1.3; }
+.topic-sub { font-size: 11.5px; color: var(--text3); margin-top: 1px; }
+.topic-stats { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.topic-count { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text3); }
+.topic-mini-bar { width: 60px; height: 3px; background: var(--bg4); border-radius: 999px; overflow: hidden; }
+.topic-mini-fill { height: 100%; border-radius: 999px; transition: width 0.3s; }
+.chevron { color: var(--text3); font-size: 11px; transition: transform 0.2s; }
+.topic-block.open .chevron { transform: rotate(180deg); }
+.topic-body { display: none; }
+.topic-block.open .topic-body { display: block; }
+
+/* ── CONCEPT ITEM ── */
+.concept {
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.concept:last-child { border-bottom: none; }
+.concept:hover { background: rgba(255,255,255,0.02); }
+.concept-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1.25rem;
+}
+.chk {
+  width: 17px; height: 17px;
+  border: 1.5px solid var(--border2);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.concept.checked .chk { background: var(--green); border-color: var(--green); }
+.concept.checked .chk::after {
+  content: '';
+  width: 4px; height: 8px;
+  border: 1.5px solid #08090e;
+  border-top: none; border-left: none;
+  transform: rotate(45deg) translate(-1px,-1px);
+  display: block;
+}
+.concept-body { flex: 1; }
+.concept-title {
+  font-size: 13px; font-weight: 500;
+  color: var(--text); line-height: 1.4;
+  transition: color 0.12s;
+}
+.concept.checked .concept-title { color: var(--text3); text-decoration: line-through; text-decoration-color: var(--text3); }
+.concept-detail {
+  display: none;
+  padding: 0 1.25rem 1rem 3.1rem;
+}
+.concept.open .concept-detail { display: block; }
+.concept-question {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-left: 3px solid;
+  border-radius: var(--r);
+  padding: 0.75rem 1rem;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+}
+.q-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+.q-text { color: var(--text); line-height: 1.6; }
+.concept-tip {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 0.65rem 0.9rem;
+  font-size: 11.5px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.concept-tip strong { color: var(--text); font-weight: 500; }
+.concept-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 4px; }
+.ctag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+.difficulty {
+  margin-left: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.d-easy { background: var(--green-bg); color: var(--green); }
+.d-med { background: var(--gold-bg); color: var(--gold); }
+.d-hard { background: var(--red-bg); color: var(--red); }
+
+/* colors por categoria */
+.c-gold .topic-accent, .c-gold .topic-mini-fill { background: var(--gold); }
+.c-gold .nav-item.active::before { background: var(--gold); }
+.c-blue .topic-accent, .c-blue .topic-mini-fill { background: var(--blue); }
+.c-green .topic-accent, .c-green .topic-mini-fill { background: var(--green); }
+.c-purple .topic-accent, .c-purple .topic-mini-fill { background: var(--purple); }
+.c-teal .topic-accent, .c-teal .topic-mini-fill { background: var(--teal); }
+.c-red .topic-accent, .c-red .topic-mini-fill { background: var(--red); }
+.c-orange .topic-accent, .c-orange .topic-mini-fill { background: var(--orange); }
+
+/* ── RESOURCES ── */
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 1rem; }
+.resource-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 1rem 1.1rem;
+  transition: border-color 0.15s;
+  text-decoration: none;
+}
+.resource-card:hover { border-color: var(--border2); }
+.rc-type { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 5px; }
+.rc-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+.rc-desc { font-size: 11.5px; color: var(--text3); line-height: 1.5; }
+.rc-free { font-size: 9px; font-family: 'IBM Plex Mono', monospace; padding: 1px 5px; border-radius: 3px; background: var(--green-bg); color: var(--green); margin-left: 6px; }
+
+/* sections nav colors */
+.nav-dados .nav-item.active::before, .nd { background: var(--blue); }
+.nav-full .nav-item.active::before, .nf { background: var(--purple); }
+.nav-comum .nav-item.active::before, .nc { background: var(--gold); }
+
+/* page sections */
+.page { display: none; }
+.page.active { display: block; }
+
+/* banner */
+.banner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--rl);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.banner p { font-size: 13px; color: var(--text2); line-height: 1.7; }
+.banner p + p { margin-top: 0.5rem; }
+.banner strong { color: var(--gold); font-weight: 500; }
+
+/* roadmap */
+.roadmap { margin-bottom: 2.5rem; }
+.rm-week {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1px;
+  position: relative;
+}
+.rm-week::before {
+  content: '';
+  position: absolute;
+  left: 29px; top: 36px; bottom: -1px;
+  width: 1px;
+  background: var(--border);
+}
+.rm-week:last-child::before { display: none; }
+.rm-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  flex-shrink: 0;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+.rm-content { flex: 1; padding-bottom: 1.5rem; }
+.rm-title { font-weight: 500; font-size: 13px; color: var(--text); margin-bottom: 4px; }
+.rm-items { font-size: 12px; color: var(--text2); line-height: 1.8; }
+
+/* footer */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.btn-reset {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: var(--r);
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.15s;
+}
+.btn-reset:hover { color: var(--red); border-color: rgba(248,113,113,0.3); }
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main { padding: 1.5rem 1rem 4rem; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-tag">// prep entrevistas</div>
+    <div class="sidebar-title">Junior<br><span>Pronto.</span></div>
+  </div>
+
+  <div class="sidebar-progress">
+    <div class="sp-row">
+      <span class="sp-label">Progresso geral</span>
+      <span class="sp-pct" id="gpct">0%</span>
+    </div>
+    <div class="bar-wrap"><div class="bar-fill" id="gbar" style="width:0%"></div></div>
+    <div class="sp-label" style="margin-top:5px" id="gcount">0 / 0 tópicos</div>
+  </div>
+
+  <div class="nav-section nav-comum">
+    <div class="nav-section-label">Geral</div>
+    <a class="nav-item active" onclick="showPage('home')"><span class="nav-dot" id="nd-home"></span>Início & Roadmap<span class="nav-badge" style="background:var(--gold-bg);color:var(--gold)">START</span></a>
+    <a class="nav-item" onclick="showPage('comportamental')"><span class="nav-dot" id="nd-comp"></span>Comportamental / RH</a>
+  </div>
+
+  <div class="nav-section nav-dados">
+    <div class="nav-section-label">Área: Dados</div>
+    <a class="nav-item" onclick="showPage('sql')"><span class="nav-dot" id="nd-sql"></span>SQL Profundo<span class="nav-badge" style="background:var(--red-bg);color:var(--red)">HOT</span></a>
+    <a class="nav-item" onclick="showPage('python-dados')"><span class="nav-dot" id="nd-pyd"></span>Python para Dados</a>
+    <a class="nav-item" onclick="showPage('estatistica')"><span class="nav-dot" id="nd-est"></span>Estatística Básica</a>
+    <a class="nav-item" onclick="showPage('eng-dados')"><span class="nav-dot" id="nd-eng"></span>Engenharia de Dados</a>
+  </div>
+
+  <div class="nav-section nav-full">
+    <div class="nav-section-label">Área: Fullstack</div>
+    <a class="nav-item" onclick="showPage('js-core')"><span class="nav-dot" id="nd-js"></span>JavaScript Core<span class="nav-badge" style="background:var(--red-bg);color:var(--red)">HOT</span></a>
+    <a class="nav-item" onclick="showPage('react')"><span class="nav-dot" id="nd-react"></span>React & Next.js</a>
+    <a class="nav-item" onclick="showPage('backend')"><span class="nav-dot" id="nd-back"></span>Backend & APIs</a>
+    <a class="nav-item" onclick="showPage('banco')"><span class="nav-dot" id="nd-banco"></span>Banco de Dados</a>
+    <a class="nav-item" onclick="showPage('infra')"><span class="nav-dot" id="nd-infra"></span>Infra & DevOps Básico</a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Extra</div>
+    <a class="nav-item" onclick="showPage('recursos')"><span class="nav-dot" id="nd-rec"></span>Recursos & Links</a>
+  </div>
+
+  <div class="sidebar-footer">
+    <button class="btn-reset" onclick="resetAll()">↺ Resetar progresso</button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--gold-bg)">🎯</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--gold)">Início</div>
+      <div class="sec-title">Seu plano de estudo</div>
+      <div class="sec-desc">Dados + Fullstack Junior. Enquanto os projetos ficam prontos, os fundamentos ficam sólidos.</div>
+    </div>
+  </div>
+
+  <div class="banner">
+    <p>Este guia cobre <strong>exatamente o que é cobrado em entrevistas</strong> para vagas junior de dados e fullstack em empresas brasileiras e remotas. Cada tópico tem as perguntas reais que você vai ouvir e o que o entrevistador quer ouvir.</p>
+    <p>Regra de ouro: <strong>estude um tópico por dia</strong>, escreva o conceito à mão ou explique em voz alta. Se não consegue explicar sem olhar, não está pronto. A entrevista não tem Google aberto.</p>
+  </div>
+
+  <div style="margin-bottom:1.5rem">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem">Roadmap sugerido — 16 semanas</div>
+    <div class="roadmap">
+      <div class="rm-week">
+        <div class="rm-num">1–2</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--blue)">SQL de verdade</div>
+          <div class="rm-items">SELECT avançado · JOINs · window functions · CTEs · índices · EXPLAIN · praticar no Mode ou SQLZoo todo dia</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">3–4</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--blue)">Python para dados</div>
+          <div class="rm-items">Tipos e estruturas · list comprehension · funções · Pandas básico ao intermediário · leitura de CSV/JSON/API</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">5</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--blue)">Estatística básica</div>
+          <div class="rm-items">Média · mediana · desvio padrão · correlação · o que é uma distribuição · quando a média mente</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">6–7</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--purple)">JavaScript Core</div>
+          <div class="rm-items">Event loop · closures · Promises · async/await · hoisting · prototypes · this · ES6+ features</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">8–9</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--purple)">React & HTTP</div>
+          <div class="rm-items">useState · useEffect · ciclo de renderização · reconciliation · HTTP methods · status codes · REST vs GraphQL</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">10–11</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--purple)">Backend & Banco</div>
+          <div class="rm-items">Node/Fastify básico · autenticação JWT · SQL no backend · ORM · migrations · N+1 problem</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">12</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--teal)">Engenharia de Dados</div>
+          <div class="rm-items">ETL vs ELT · o que é pipeline · idempotência · batch vs streaming · o que é dbt · o que é Airflow</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">13</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--green)">Infra básica</div>
+          <div class="rm-items">Docker · o que é um container vs VM · variáveis de ambiente · GitHub Actions básico · deploy manual uma vez</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">14–15</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--gold)">Comportamental + mock interviews</div>
+          <div class="rm-items">STAR method · perguntas de RH · simular entrevista em voz alta · gravar e rever · Pramp.com ou com amigo</div>
+        </div>
+      </div>
+      <div class="rm-week">
+        <div class="rm-num">16</div>
+        <div class="rm-content">
+          <div class="rm-title" style="color:var(--gold)">Revisão + candidaturas</div>
+          <div class="rm-items">Revisar pontos fracos · aplicar para 5–10 vagas · ajustar currículo com base nos feedbacks das entrevistas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPORTAMENTAL -->
+<div class="page" id="page-comportamental">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--gold-bg)">🗣️</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--gold)">RH & Comportamental</div>
+      <div class="sec-title">Perguntas que todo RH faz</div>
+      <div class="sec-desc">Use sempre o método STAR: Situação → Tarefa → Ação → Resultado. Sem isso, a resposta parece vaga.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-gold" id="tb-comp1">
+    <div class="topic-header" onclick="toggleTopic('tb-comp1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Perguntas clássicas de RH</div><div class="topic-sub">As que aparecem em 99% das entrevistas</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-comp1">0/8</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-comp1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Me fale sobre você"</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--gold)"><span class="q-label" style="color:var(--gold)">o que querem ouvir</span><span class="q-text">Trajetória técnica em 90 segundos. Formação → projetos relevantes → o que você está buscando. Não é autobiografia.</span></div>
+          <div class="concept-tip"><strong>Template:</strong> "Me formo em Engenharia de Software este ano pela [universidade]. Durante a faculdade desenvolvi dois projetos autorais — um pipeline de dados sobre o Cerrado usando Python e dbt, e um SaaS fullstack para produtores rurais. Tenho focado em [dados/fullstack] e estou buscando uma vaga remota onde possa contribuir e crescer tecnicamente."</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Por que você quer trabalhar aqui?"</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--gold)"><span class="q-label" style="color:var(--gold)">armadilha</span><span class="q-text">Resposta genérica ("admiro a cultura de vocês") elimina. Pesquise a empresa antes. Mencione produto específico, tech stack deles, ou notícia recente. Mostra que você realmente quer aquela vaga, não qualquer vaga.</span></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Qual sua maior fraqueza?"</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>Regra:</strong> fraqueza real + o que você está fazendo para melhorar. Nunca "trabalho demais" — isso é transparente demais. Exemplo honesto e maduro: "Ainda estou construindo minha base em estatística inferencial. Estou resolvendo isso com o curso X e aplicando nos projetos de dados que estou desenvolvendo."</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Me conte sobre um projeto que você se orgulha"</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--gold)"><span class="q-label" style="color:var(--gold)">como responder</span><span class="q-text">Use STAR. Conte o CerradoWatch ou ColheitaOS. Explique: qual problema existia, o que você construiu, quais foram as decisões técnicas mais difíceis, e qual foi o resultado (usuários, dados processados, etc.). Esse momento é onde o projeto de portfólio vira ouro.</span></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Como você lida com feedback negativo?"</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Mostre maturidade. Exemplo: "Encaro como dado — informação que me ajuda a melhorar. Já tive código recusado em review por falta de testes, reescrevi com cobertura adequada e aprendi por que aquele padrão importava."</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Onde você se vê em 3 anos?"</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Seja específico e realista. "Quero ser pleno sólido em engenharia de dados, contribuir em decisões de arquitetura de pipelines e quem sabe começar a mentorar outros juniores." Evite "gerente" ou "CTO" — soa desconectado da realidade de quem está começando.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Você prefere trabalhar sozinho ou em equipe?"</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Nunca escolha um lado absoluto. "Depende da fase. Para pensar em arquitetura ou resolver um bug complexo, prefiro foco individual. Para revisar decisões e aprender, colaboração é essencial. Me adapto bem aos dois contextos."</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">"Você tem alguma pergunta para nós?"</div></div><span class="difficulty d-hard">crítico</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--red)"><span class="q-label" style="color:var(--red)">nunca diga "não"</span><span class="q-text">Quem não pergunta nada parece desinteressado. Prepare 2–3 perguntas genuínas. Exemplos bons: "Como é o processo de code review aqui?", "Qual foi o maior desafio técnico do time nos últimos 6 meses?", "Como é a rotina de um junior no primeiro mês?"</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SQL -->
+<div class="page" id="page-sql">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--blue-bg)">🗄️</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--blue)">Dados — Eliminatório</div>
+      <div class="sec-title">SQL Profundo</div>
+      <div class="sec-desc">SQL é o filtro número 1 em entrevistas de dados. Se você travar aqui, não importa o projeto. Pratique até ser instintivo.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-blue" id="tb-sql1">
+    <div class="topic-header" onclick="toggleTopic('tb-sql1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Fundamentos que parecem simples mas caem</div><div class="topic-sub">GROUP BY, HAVING, subqueries, NULL</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-sql1">0/5</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-sql1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Diferença entre WHERE e HAVING</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real</span><span class="q-text">"Qual a diferença entre WHERE e HAVING? Quando usar cada um?"</span></div>
+          <div class="concept-tip"><strong>Resposta:</strong> WHERE filtra linhas ANTES do agrupamento. HAVING filtra grupos DEPOIS do GROUP BY. WHERE não pode usar funções de agregação (COUNT, SUM) — HAVING pode. Exemplo: <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">SELECT dept, COUNT(*) FROM employees GROUP BY dept HAVING COUNT(*) > 5</code></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Como NULL se comporta em comparações</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pegadinha clássica</span><span class="q-text">"O que retorna: SELECT * FROM tabela WHERE coluna != 'valor'? Retorna registros com NULL?"</span></div>
+          <div class="concept-tip"><strong>Resposta:</strong> Não. NULL não é igual nem diferente de nada — qualquer comparação com NULL retorna NULL (nem true nem false). Para filtrar NULL use IS NULL ou IS NOT NULL. Isso pega muita gente desprevenida em produção.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Subqueries correlacionadas</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real</span><span class="q-text">"Escreva uma query que retorne os funcionários que ganham mais que a média do seu departamento."</span></div>
+          <div class="concept-tip"><strong>Solução clássica com subquery correlacionada:</strong> <code style="background:var(--bg4);padding:2px 5px;border-radius:3px;font-size:11px;display:block;margin-top:4px;line-height:1.8">SELECT e1.nome, e1.salario, e1.dept<br>FROM funcionarios e1<br>WHERE e1.salario > (<br>&nbsp;&nbsp;SELECT AVG(e2.salario)<br>&nbsp;&nbsp;FROM funcionarios e2<br>&nbsp;&nbsp;WHERE e2.dept = e1.dept<br>)</code></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">DISTINCT vs GROUP BY — diferença real</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>DISTINCT</strong> remove linhas duplicadas no resultado. <strong>GROUP BY</strong> agrupa linhas para aplicar funções de agregação. Funcionalmente para contar únicos são equivalentes, mas GROUP BY é mais flexível (você pode adicionar COUNT, SUM, etc). Performance pode variar por banco.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">ORDER de execução de uma query SQL</div></div><span class="difficulty d-hard">difícil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta de sênior que cai em junior</span><span class="q-text">"Em que ordem o banco executa as cláusulas de um SELECT?"</span></div>
+          <div class="concept-tip"><strong>Ordem de execução:</strong> FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT. Por isso você não pode usar alias do SELECT no WHERE — o WHERE roda antes do SELECT ser processado.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-block c-blue" id="tb-sql2">
+    <div class="topic-header" onclick="toggleTopic('tb-sql2')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">JOINs — o favorito dos entrevistadores</div><div class="topic-sub">INNER, LEFT, RIGHT, FULL, SELF, CROSS</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-sql2">0/4</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-sql2"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">INNER vs LEFT JOIN — quando usar cada um</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta eliminatória</span><span class="q-text">"Qual a diferença entre INNER JOIN e LEFT JOIN? Me dê um exemplo de quando usar cada."</span></div>
+          <div class="concept-tip"><strong>INNER JOIN:</strong> só retorna linhas que têm correspondência nas duas tabelas. Use quando você só quer dados que existem nos dois lados.<br><br><strong>LEFT JOIN:</strong> retorna TODAS as linhas da tabela esquerda, com NULL onde não há correspondência à direita. Use quando você quer todos os registros mesmo sem match — ex: todos os clientes, mesmo os que nunca compraram.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">SELF JOIN — quando e como usar</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real</span><span class="q-text">"Como você buscaria o nome do gerente de cada funcionário, sendo que ambos estão na mesma tabela?"</span></div>
+          <div class="concept-tip"><code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">SELECT e.nome, g.nome AS gerente<br>FROM funcionarios e<br>LEFT JOIN funcionarios g ON e.gerente_id = g.id</code></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Encontrar registros sem correspondência (anti-join)</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">clássico</span><span class="q-text">"Liste todos os clientes que nunca fizeram um pedido."</span></div>
+          <div class="concept-tip"><code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">SELECT c.nome<br>FROM clientes c<br>LEFT JOIN pedidos p ON c.id = p.cliente_id<br>WHERE p.id IS NULL</code><br>O truque é o LEFT JOIN + WHERE NULL na chave do lado direito.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">UNION vs UNION ALL</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>UNION</strong> remove duplicatas (mais lento — faz sort). <strong>UNION ALL</strong> mantém tudo (mais rápido). Use UNION ALL por padrão e só use UNION quando precisar de unicidade — a diferença de performance em tabelas grandes é significativa.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-block c-blue" id="tb-sql3">
+    <div class="topic-header" onclick="toggleTopic('tb-sql3')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Window Functions — diferencial de junior</div><div class="topic-sub">ROW_NUMBER, RANK, LAG, LEAD, PARTITION BY</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-sql3">0/3</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-sql3"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">ROW_NUMBER vs RANK vs DENSE_RANK</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">diferença crítica</span><span class="q-text">Dado empate no valor: ROW_NUMBER sempre dá números únicos (1,2,3,4). RANK pula números após empate (1,1,3,4). DENSE_RANK não pula (1,1,2,3). Na prática: use DENSE_RANK para rankings de negócio (top 3 vendedores).</span></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">LAG e LEAD — comparar com linha anterior/próxima</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real de dados</span><span class="q-text">"Como calcular a variação de receita mês a mês em SQL?"</span></div>
+          <div class="concept-tip"><code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">SELECT mes, receita,<br>&nbsp;&nbsp;LAG(receita) OVER (ORDER BY mes) AS mes_anterior,<br>&nbsp;&nbsp;receita - LAG(receita) OVER (ORDER BY mes) AS variacao<br>FROM vendas</code></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Top N por grupo com PARTITION BY</div></div><span class="difficulty d-hard">difícil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">clássico de entrevista</span><span class="q-text">"Retorne os 2 funcionários mais bem pagos de cada departamento."</span></div>
+          <div class="concept-tip"><code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">SELECT * FROM (<br>&nbsp;&nbsp;SELECT nome, dept, salario,<br>&nbsp;&nbsp;&nbsp;&nbsp;ROW_NUMBER() OVER (<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARTITION BY dept ORDER BY salario DESC<br>&nbsp;&nbsp;&nbsp;&nbsp;) AS rn<br>&nbsp;&nbsp;FROM funcionarios<br>) t WHERE rn &lt;= 2</code></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-block c-blue" id="tb-sql4">
+    <div class="topic-header" onclick="toggleTopic('tb-sql4')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">CTEs, Performance e Índices</div><div class="topic-sub">WITH, EXPLAIN, índices compostos</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-sql4">0/3</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-sql4"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">CTEs (WITH) — legibilidade e reuso</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>CTE</strong> é um resultado temporário nomeado dentro da query. Torna queries complexas legíveis. Pode referenciar a mesma CTE múltiplas vezes. CTEs recursivas são usadas para hierarquias (org chart, categorias aninhadas). Prefira CTE a subquery aninhada para manutenção.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">O que é um índice e quando ele NÃO ajuda</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real</span><span class="q-text">"Você adicionaria um índice em toda coluna usada em WHERE? Por quê não?"</span></div>
+          <div class="concept-tip">Índice acelera leitura mas <strong>penaliza escrita</strong> (INSERT/UPDATE/DELETE mantém o índice). Em tabelas com muita escrita e pouca leitura, índice pode ser contraproducente. Índice também não ajuda quando a seletividade é baixa (ex: coluna booleana — metade da tabela vai retornar de qualquer forma).</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">EXPLAIN ANALYZE — ler um plano de execução</div></div><span class="difficulty d-hard">difícil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Saiba o que significa: <strong>Seq Scan</strong> (tabela inteira — ruim em tabelas grandes), <strong>Index Scan</strong> (usando índice — bom), <strong>Nested Loop / Hash Join / Merge Join</strong> (tipos de join). O número de rows estimated vs actual rows mostra se as estatísticas do banco estão atualizadas. Só mencionar que você usa EXPLAIN já impressiona entrevistador.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PYTHON DADOS -->
+<div class="page" id="page-python-dados">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--blue-bg)">🐍</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--blue)">Dados</div>
+      <div class="sec-title">Python para Dados</div>
+      <div class="sec-desc">Não é só Pandas. O entrevistador quer saber se você entende Python de verdade antes de usar as bibliotecas.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-blue" id="tb-pyd1">
+    <div class="topic-header" onclick="toggleTopic('tb-pyd1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Python Core que cai em dados</div><div class="topic-sub">List comprehension, generators, tipos mutáveis</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-pyd1">0/4</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-pyd1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">List comprehension vs loop for vs map</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real</span><span class="q-text">"Qual a diferença entre list comprehension, map() e um for loop? Quando usar cada?"</span></div>
+          <div class="concept-tip">List comprehension é mais pythonico e geralmente mais rápido que for loop. map() é lazy (retorna iterator) — melhor para datasets grandes. Generator expression (parênteses no lugar de colchetes) é ainda mais eficiente em memória. <strong>Regra:</strong> se vai usar o resultado inteiro, list comp. Se vai iterar uma vez ou o dado é grande, generator.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Mutável vs Imutável — por que importa em dados</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pegadinha</span><span class="q-text">"O que acontece quando você passa uma lista como argumento padrão de uma função?"</span></div>
+          <div class="concept-tip"><code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">def adicionar(item, lista=[]):  # BUG!<br>&nbsp;&nbsp;lista.append(item)<br>&nbsp;&nbsp;return lista</code><br>A lista padrão é criada UMA vez e reutilizada entre chamadas. Bug clássico. Solução: usar None como padrão e criar a lista dentro da função.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Context managers — with open() e por que usar</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">O bloco <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">with</code> garante que o recurso é fechado mesmo se ocorrer exceção. Fundamental para arquivos, conexões de banco, locks. Em pipelines de dados, não fechar conexões corretamente causa memory leak em produção.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Decorators — o que são e onde aparecem em dados</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Decorator é uma função que envolve outra função para adicionar comportamento. Em dados você vai ver decorators em frameworks como Prefect (<code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">@flow</code>, <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">@task</code>), FastAPI (<code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">@app.get</code>) e pytest (<code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">@pytest.fixture</code>). Entenda o conceito, não precisa criar do zero.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="topic-block c-blue" id="tb-pyd2">
+    <div class="topic-header" onclick="toggleTopic('tb-pyd2')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Pandas — o essencial</div><div class="topic-sub">O que entrevistadores de dados junior realmente testam</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-pyd2">0/4</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-pyd2"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">loc vs iloc — diferença real</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>loc</strong> seleciona por label/nome do índice e colunas. <strong>iloc</strong> seleciona por posição inteira (0, 1, 2...). Confundir os dois é bug clássico quando o índice não é sequencial (ex: após filtrar um DataFrame, os índices não reiniciam automaticamente).</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">groupby() + agg() — agregações complexas</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">teste prático comum</span><span class="q-text">"Dado um DataFrame de vendas, calcule por produto: total de vendas, média de preço e número de transações."</span></div>
+          <div class="concept-tip"><code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">df.groupby('produto').agg(<br>&nbsp;&nbsp;total=('valor', 'sum'),<br>&nbsp;&nbsp;media=('preco', 'mean'),<br>&nbsp;&nbsp;transacoes=('id', 'count')<br>).reset_index()</code></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Lidar com dados faltantes — estratégias</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta conceitual</span><span class="q-text">"Como você lida com valores nulos em um dataset? Sempre dropa ou sempre imputa?"</span></div>
+          <div class="concept-tip">Depende do contexto. <strong>Dropar:</strong> quando a % de nulos é pequena e aleatória. <strong>Imputar com média/mediana:</strong> variáveis numéricas sem outliers extremos. <strong>Imputar com moda:</strong> variáveis categóricas. <strong>Imputar com modelo:</strong> quando os nulos têm padrão. <strong>Manter como categoria:</strong> quando "ausente" é informação em si (ex: cliente que não preencheu renda).</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">merge() — equivalente ao SQL JOIN</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">pd.merge(df1, df2, on='id', how='left') é o LEFT JOIN do Pandas. Os <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">how</code> possíveis: 'inner', 'left', 'right', 'outer'. Saiba a diferença entre <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">merge</code> (horizontal, por chave) e <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">concat</code> (vertical, empilhar DataFrames).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ESTATÍSTICA -->
+<div class="page" id="page-estatistica">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--teal-bg)">📊</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--teal)">Dados</div>
+      <div class="sec-title">Estatística Básica</div>
+      <div class="sec-desc">Não precisa saber cálculo. Precisa saber quando os números mentem e por quê.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-teal" id="tb-est1">
+    <div class="topic-header" onclick="toggleTopic('tb-est1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Medidas de tendência central e dispersão</div><div class="topic-sub">Média, mediana, moda, desvio padrão, variância</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-est1">0/4</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-est1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Quando a média mente — a pergunta favorita</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--teal)"><span class="q-label" style="color:var(--teal)">pergunta real</span><span class="q-text">"Salário médio do Brasil é R$2.800. Isso quer dizer que metade das pessoas ganha mais que isso?"</span></div>
+          <div class="concept-tip">Não. Distribuição de renda é assimétrica à direita — poucos milionários puxam a média para cima. A <strong>mediana</strong> é mais representativa em distribuições assimétricas. Exemplo: 9 pessoas ganham R$ 1.000 e 1 ganha R$ 100.000. Média = R$ 10.900. Mediana = R$ 1.000. Saber isso em entrevista de dados faz diferença.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Desvio padrão vs variância — o que realmente significa</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Variância é a média dos quadrados das diferenças da média — unidade é quadrada (difícil de interpretar). Desvio padrão é a raiz da variância — mesma unidade dos dados, fácil de interpretar. <strong>Regra prática:</strong> em distribuição normal, 68% dos dados estão a 1 desvio padrão da média, 95% a 2 desvios. Use isso para identificar outliers.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Correlação não é causalidade — exemplos práticos</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--teal)"><span class="q-label" style="color:var(--teal)">pergunta conceitual</span><span class="q-text">"Encontramos correlação de 0.85 entre consumo de sorvete e afogamentos. Devemos reduzir venda de sorvete?"</span></div>
+          <div class="concept-tip">Variável confundidora: temperatura. Calor causa tanto consumo de sorvete quanto idas à praia (afogamentos). Correlação mede relação linear entre variáveis — não implica que uma causa a outra. Sempre pergunte: existe uma terceira variável explicando ambas?</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Outliers — identificar e decidir o que fazer</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Método IQR: outlier é valor abaixo de Q1 - 1.5*IQR ou acima de Q3 + 1.5*IQR. Mas antes de remover, pergunte: <strong>é erro de coleta ou é informação real?</strong> Uma venda de R$ 500.000 num dataset de varejo pode ser um cliente corporativo legítimo — remover seria perder informação de negócio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ENGENHARIA DE DADOS -->
+<div class="page" id="page-eng-dados">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--teal-bg)">⚙️</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--teal)">Dados — Conceitual</div>
+      <div class="sec-title">Engenharia de Dados</div>
+      <div class="sec-desc">Você não precisa ser especialista, mas precisa entender o vocabulário. Entrevistadores testam se você sabe onde está.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-teal" id="tb-eng1">
+    <div class="topic-header" onclick="toggleTopic('tb-eng1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Conceitos fundamentais de pipeline</div><div class="topic-sub">ETL, ELT, batch, streaming, idempotência</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-eng1">0/5</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-eng1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">ETL vs ELT — por que o mundo migrou para ELT</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>ETL:</strong> Extract → Transform → Load. Transforma antes de carregar. Era o padrão quando storage era caro. <strong>ELT:</strong> Extract → Load → Transform. Carrega cru primeiro, transforma depois no warehouse. Possível com warehouses modernos baratos (BigQuery, Snowflake). ELT é mais flexível — você pode retransformar sem re-extrair os dados.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Idempotência — por que todo pipeline precisa disso</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--teal)"><span class="q-label" style="color:var(--teal)">pergunta que separa junior de pleno</span><span class="q-text">"O que é um pipeline idempotente e por que isso importa?"</span></div>
+          <div class="concept-tip">Uma operação é idempotente quando pode ser executada múltiplas vezes com o mesmo resultado. Pipelines falham — o orquestrador vai re-executar. Se seu pipeline não é idempotente, você terá dados duplicados. Solução: usar INSERT ... ON CONFLICT DO UPDATE (upsert) em vez de INSERT simples.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Batch vs Streaming — quando usar cada</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>Batch:</strong> processa dados em lotes periódicos (hourly, daily). Simples, barato, suficiente para relatórios. <strong>Streaming:</strong> processa evento a evento em tempo real (Kafka, Flink). Necessário para detecção de fraude, alertas em tempo real. A maioria das empresas começa com batch e migra para streaming quando a latência importa.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">O que é dbt e por que virou padrão</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">dbt (data build tool) transforma SQL em código versionável com testes, documentação e dependências entre modelos. É o "Git para transformações SQL". Você escreve SQL SELECT, o dbt cria as tabelas/views. Habilidade muito pedida em vagas de analytics engineer e data engineer em fintechs.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Data Lake vs Data Warehouse vs Data Lakehouse</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>Data Lake:</strong> armazena dados brutos em qualquer formato (S3, GCS). Barato, flexível, mas vira "data swamp" sem governança. <strong>Data Warehouse:</strong> dados estruturados, schema definido, otimizado para query (BigQuery, Snowflake, Redshift). Caro mas rápido. <strong>Lakehouse:</strong> tenta combinar os dois (Delta Lake, Apache Iceberg) — storage de lake com capacidade analítica de warehouse.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS CORE -->
+<div class="page" id="page-js-core">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--purple-bg)">⚡</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--purple)">Fullstack — Eliminatório</div>
+      <div class="sec-title">JavaScript Core</div>
+      <div class="sec-desc">O filtro número 1 de entrevistas fullstack. Precisa entender o motor, não só a sintaxe.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-purple" id="tb-js1">
+    <div class="topic-header" onclick="toggleTopic('tb-js1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Event Loop & Assincronia</div><div class="topic-sub">O conceito mais cobrado em entrevistas JS</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-js1">0/4</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-js1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">O que é o Event Loop — explicar sem travar</div></div><span class="difficulty d-hard">crítico</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--purple)"><span class="q-label" style="color:var(--purple)">a pergunta</span><span class="q-text">"Me explica como o Event Loop funciona no JavaScript."</span></div>
+          <div class="concept-tip">JS é single-threaded — só executa uma coisa por vez. A Call Stack executa código síncrono. Operações assíncronas (fetch, setTimeout) vão para Web APIs. Quando terminam, o callback vai para a Task Queue (ou Microtask Queue para Promises). O Event Loop fica verificando: se a Call Stack está vazia, pega o próximo item da fila. Microtasks (Promises) têm prioridade sobre Macrotasks (setTimeout).</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Promise vs async/await — o que acontece por baixo</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">async/await é açúcar sintático para Promises. Uma função async sempre retorna uma Promise. await pausa a execução da função sem bloquear a thread. Erro clássico: usar await dentro de forEach (não funciona como esperado — use for...of ou Promise.all). Saber a diferença entre Promise.all, Promise.allSettled e Promise.race impressiona.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">O que é hoisting</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Hoisting é o comportamento do JS de "elevar" declarações para o topo do escopo antes da execução. <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">var</code> é hoisted e inicializado como undefined. <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">let</code> e <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">const</code> são hoisted mas ficam em Temporal Dead Zone até a declaração. Funções declaradas com <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">function</code> são hoisted inteiras. Arrow functions não.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Closure — o que é e onde aparece</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--purple)"><span class="q-label" style="color:var(--purple)">pergunta clássica</span><span class="q-text">"O que é closure? Me dê um exemplo prático."</span></div>
+          <div class="concept-tip">Closure é quando uma função "lembra" do escopo onde foi criada, mesmo após esse escopo ter encerrado. <code style="background:var(--bg4);padding:4px 6px;border-radius:3px;font-size:11px;display:block;line-height:1.8">function contador() {<br>&nbsp;&nbsp;let count = 0;<br>&nbsp;&nbsp;return () => ++count; // closure sobre count<br>}<br>const inc = contador();<br>inc(); // 1, inc(); // 2</code>Aparece em React (hooks são closures), debounce/throttle, módulos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="topic-block c-purple" id="tb-js2">
+    <div class="topic-header" onclick="toggleTopic('tb-js2')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">this, prototype e ES6+</div><div class="topic-sub">Conceitos que confundem junior</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-js2">0/3</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-js2"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">this — por que é confuso e como dominar</div></div><span class="difficulty d-hard">difícil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">this</code> depende de COMO a função é chamada, não onde foi definida. Regra: método de objeto → this = objeto. Função normal → this = global (ou undefined em strict mode). Arrow function → this = escopo léxico (herda de fora). Classe → this = instância. Por isso handlers de evento em React precisam de bind ou arrow function.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Spread, rest, destructuring — o básico que sempre cai</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Spread: <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">[...arr]</code> copia array, <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">{...obj}</code> copia objeto (shallow). Rest: <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">function f(...args)</code> agrupa argumentos em array. Destructuring: <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">const {name, age} = user</code>. Esses três aparecem em todo código React — dominar é obrigatório.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">== vs === — nunca use ==</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">==</code> faz coerção de tipo (0 == false é true, '' == false é true). <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">===</code> compara tipo E valor. Use sempre ===. Isso é tão básico que se errar, o entrevistador vai desconfiar do resto do seu conhecimento.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REACT -->
+<div class="page" id="page-react">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--purple-bg)">⚛️</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--purple)">Fullstack</div>
+      <div class="sec-title">React & Next.js</div>
+      <div class="sec-desc">React é obrigatório para fullstack. Next.js é o padrão do mercado. Foque nos conceitos, não na API.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-purple" id="tb-react1">
+    <div class="topic-header" onclick="toggleTopic('tb-react1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">React fundamentals</div><div class="topic-sub">Hooks, renderização, reconciliation</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-react1">0/5</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-react1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">useState — quando re-renderiza e quando não</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--purple)"><span class="q-label" style="color:var(--purple)">pegadinha</span><span class="q-text">"Se eu fizer setState com o mesmo valor atual, o componente re-renderiza?"</span></div>
+          <div class="concept-tip">React usa Object.is para comparação. Se o novo valor é idêntico (primitivos) ou a mesma referência (objetos/arrays), React pula a re-renderização. Por isso <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">setItems([...items, newItem])</code> e não <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">items.push(newItem); setItems(items)</code> — o push muta o mesmo array (mesma referência), React acha que não mudou.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">useEffect — dependências e cleanup</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">useEffect roda após cada render por padrão. Array de dependências controla quando roda. Array vazio = só na montagem. Sem array = todo render. <strong>Cleanup:</strong> a função retornada pelo useEffect roda antes do próximo efeito e na desmontagem. Essencial para cancelar fetches, limpar timers e remover event listeners — sem isso, memory leak.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">useMemo e useCallback — quando usar e quando é overkill</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>useMemo:</strong> memoiza o resultado de um cálculo. <strong>useCallback:</strong> memoiza a referência de uma função. Só use quando: (1) o cálculo é realmente caro, ou (2) você está passando a função como prop para um componente memoizado com React.memo. Usar em tudo é otimização prematura — tem custo de memória.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Por que a key em listas importa tanto</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--purple)"><span class="q-label" style="color:var(--purple)">pergunta real</span><span class="q-text">"Por que usar index como key em uma lista é um problema?"</span></div>
+          <div class="concept-tip">React usa keys para identificar qual item mudou durante a reconciliation. Se você usa index como key e reordena ou remove itens, React associa os estados/refs errados aos componentes. Exemplo: lista de inputs — reordenar com index como key vai misturar os valores dos campos. Use sempre um ID único e estável.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">SSR vs CSR vs SSG — o que Next.js resolve</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>CSR:</strong> HTML vazio, JS carrega e renderiza no cliente. Ruim para SEO, primeiro load lento. <strong>SSR:</strong> HTML renderizado no servidor a cada request. Bom para SEO e dados dinâmicos. <strong>SSG:</strong> HTML gerado em build time. Ultra rápido, mas dados estáticos. Next.js deixa você misturar por página — homepage SSG, dashboard CSR, página de produto SSR.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKEND -->
+<div class="page" id="page-backend">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--purple-bg)">🔌</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--purple)">Fullstack</div>
+      <div class="sec-title">Backend & APIs</div>
+      <div class="sec-desc">HTTP é o vocabulário do backend. Se você não souber os verbos e status codes de cabeça, vai travar.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-purple" id="tb-back1">
+    <div class="topic-header" onclick="toggleTopic('tb-back1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">HTTP & REST</div><div class="topic-sub">O que todo fullstack precisa saber</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-back1">0/5</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-back1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Status codes — os que você precisa saber de cor</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">2xx sucesso: 200 OK, 201 Created, 204 No Content. 3xx redirect: 301 Moved Permanently, 302 Found. 4xx client error: 400 Bad Request, 401 Unauthorized (não autenticado), 403 Forbidden (autenticado mas sem permissão), 404 Not Found, 422 Unprocessable Entity (validação), 429 Too Many Requests. 5xx server error: 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable. <strong>401 vs 403 é pegadinha clássica.</strong></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">PUT vs PATCH — idempotência na prática</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--purple)"><span class="q-label" style="color:var(--purple)">pergunta real</span><span class="q-text">"Qual a diferença entre PUT e PATCH? Quando usar cada?"</span></div>
+          <div class="concept-tip"><strong>PUT:</strong> substituição total do recurso. Você envia o objeto inteiro. <strong>PATCH:</strong> atualização parcial. Você envia só os campos que mudaram. PUT é idempotente (chamar duas vezes tem o mesmo resultado). PATCH pode ou não ser idempotente dependendo da implementação.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">JWT — como funciona de verdade</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--purple)"><span class="q-label" style="color:var(--purple)">pergunta real</span><span class="q-text">"JWT é seguro? O que está dentro do token? Como o servidor valida?"</span></div>
+          <div class="concept-tip">JWT tem 3 partes: Header (algoritmo), Payload (claims — userId, role, exp) e Signature. O payload é apenas Base64 — qualquer um pode decodificar. A segurança está na assinatura, que só quem tem a secret key pode gerar. O servidor valida a assinatura — não precisa de banco. <strong>Nunca colocar dados sensíveis no payload.</strong></div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">CORS — o erro que todo junior já viu</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">CORS (Cross-Origin Resource Sharing) é uma política de segurança do browser. Quando frontend em localhost:3000 chama API em localhost:4000, o browser bloqueia por origens diferentes. Solução: o servidor configura headers Access-Control-Allow-Origin. É proteção do browser, não do servidor — CORS não protege chamadas server-to-server.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">REST vs GraphQL — quando cada um faz sentido</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>REST:</strong> simples, cacheável, cada recurso tem endpoint próprio. Problema: over-fetching (receber mais dados que precisa) e under-fetching (precisar de múltiplas chamadas). <strong>GraphQL:</strong> cliente define exatamente o que quer. Flexível para UIs complexas. Mais complexo de implementar e cachear. Use REST para APIs públicas e simples. GraphQL para produtos com múltiplos clients (web, mobile) com necessidades diferentes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANCO -->
+<div class="page" id="page-banco">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--blue-bg)">🗃️</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--blue)">Fullstack & Dados</div>
+      <div class="sec-title">Banco de Dados no Backend</div>
+      <div class="sec-desc">Saber SQL é necessário. Saber como o banco se comporta em uma aplicação real é o diferencial.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-blue" id="tb-banco1">
+    <div class="topic-header" onclick="toggleTopic('tb-banco1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Conceitos de banco em aplicações</div><div class="topic-sub">N+1, transações, migrations, ORM</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-banco1">0/4</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-banco1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">O problema N+1 — o bug de performance mais comum</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--blue)"><span class="q-label" style="color:var(--blue)">pergunta real</span><span class="q-text">"O que é o problema N+1 em ORMs? Como resolver?"</span></div>
+          <div class="concept-tip">Você busca N posts (1 query) e para cada post busca o autor (N queries). Total: N+1 queries. Resolve com eager loading / JOIN: <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">include: { author: true }</code> no Prisma ou <code style="background:var(--bg4);padding:1px 4px;border-radius:3px;font-size:11px">eager_load</code> no ActiveRecord. Derruba aplicações em produção quando a tabela cresce — todo dev fullstack precisa saber isso.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Transações ACID — o que cada letra significa</div></div><span class="difficulty d-med">médio</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip"><strong>A</strong>tomicity: tudo ou nada. <strong>C</strong>onsistency: dados sempre em estado válido. <strong>I</strong>solation: transações concorrentes não se interferem. <strong>D</strong>urability: dados committed sobrevivem a falhas. Exemplo prático: transferência bancária — debita A e credita B numa transação. Se o sistema cair no meio, o rollback garante que não some dinheiro.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">SQL vs NoSQL — quando cada um faz sentido</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Use <strong>SQL</strong> quando: dados têm relações claras, consistência é crítica (financeiro), queries complexas são frequentes. Use <strong>NoSQL</strong> quando: schema muda muito, escala horizontal extrema é necessária, dados são documentos sem relações fortes (logs, sessões, catálogos). A maioria das startups começa com PostgreSQL e nunca precisa mudar.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Migrations — por que são inegociáveis</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Migration é um arquivo versionado que descreve uma mudança no schema do banco. Sem migrations: você altera o banco na mão, o colega tem o schema diferente, produção fica diferente de staging. Com migrations (Prisma Migrate, Flyway): todos têm o mesmo schema, mudanças são rastreáveis, rollback possível. Mencionar isso em entrevista mostra maturidade.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INFRA -->
+<div class="page" id="page-infra">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--green-bg)">🐳</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--green)">Fullstack & Dados</div>
+      <div class="sec-title">Infra & DevOps Básico</div>
+      <div class="sec-desc">Não precisa ser DevOps. Precisa não travar quando alguém falar em Docker ou CI/CD.</div>
+    </div>
+  </div>
+  <div class="topic-block open c-green" id="tb-infra1">
+    <div class="topic-header" onclick="toggleTopic('tb-infra1')">
+      <div class="topic-accent"></div>
+      <div class="topic-meta"><div class="topic-name">Docker & Containers</div><div class="topic-sub">O mínimo que todo dev precisa saber</div></div>
+      <div class="topic-stats"><span class="topic-count" id="tc-infra1">0/3</span><div class="topic-mini-bar"><div class="topic-mini-fill" id="tm-infra1"></div></div></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Container vs VM — explicar a diferença</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-question" style="border-left-color:var(--green)"><span class="q-label" style="color:var(--green)">pergunta real</span><span class="q-text">"Qual a diferença entre um container Docker e uma VM?"</span></div>
+          <div class="concept-tip">VM virtualiza hardware completo — tem SO próprio, kernel próprio, mais pesada. Container compartilha o kernel do host — mais leve, inicia em segundos. Docker é como um processo isolado com o ambiente dele, não uma máquina inteira. Por isso container Node.js começa em 1s, VM em 30s.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Dockerfile — o que cada instrução faz</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">FROM: imagem base. WORKDIR: diretório de trabalho. COPY: copia arquivos. RUN: executa comando durante o build (instala dependências). ENV: variável de ambiente. EXPOSE: documenta a porta (não publica). CMD: comando padrão ao iniciar o container. <strong>Importante:</strong> cada instrução cria uma layer — colocar COPY package.json antes de COPY . usa o cache de npm install quando só o código muda.</div>
+        </div>
+      </div>
+      <div class="concept" onclick="toggleConcept(this)">
+        <div class="concept-header"><div class="chk"></div><div class="concept-body"><div class="concept-title">Variáveis de ambiente — por que nunca hardcodar</div></div><span class="difficulty d-easy">fácil</span></div>
+        <div class="concept-detail">
+          <div class="concept-tip">Credenciais no código = vazamento quando você commita. Use .env para desenvolvimento local (no .gitignore), variáveis de ambiente no servidor de produção, e secrets gerenciados (GitHub Secrets, Doppler) no CI/CD. A diferença entre dev/staging/prod está quase sempre nas variáveis de ambiente, não no código.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECURSOS -->
+<div class="page" id="page-recursos">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:var(--orange-bg)">📚</div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow" style="color:var(--orange)">Recursos</div>
+      <div class="sec-title">Links e materiais curados</div>
+      <div class="sec-desc">Apenas o que realmente vale o seu tempo. Sem curso de 80 horas sobre array.</div>
+    </div>
+  </div>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem">Prática de SQL</div>
+  <div class="resource-grid" style="margin-bottom:1.5rem">
+    <a class="resource-card" href="https://sqlzoo.net" target="_blank"><div class="rc-type" style="color:var(--blue)">exercícios</div><div class="rc-name">SQLZoo <span class="rc-free">grátis</span></div><div class="rc-desc">Exercícios progressivos de SQL. Faça até o capítulo de window functions.</div></a>
+    <a class="resource-card" href="https://mode.com/sql-tutorial" target="_blank"><div class="rc-type" style="color:var(--blue)">tutorial</div><div class="rc-name">Mode SQL Tutorial <span class="rc-free">grátis</span></div><div class="rc-desc">SQL com dados reais e editor online. Ótimo para analytics SQL.</div></a>
+    <a class="resource-card" href="https://www.hackerrank.com/domains/sql" target="_blank"><div class="rc-type" style="color:var(--blue)">prática</div><div class="rc-name">HackerRank SQL <span class="rc-free">grátis</span></div><div class="rc-desc">Exercícios no formato de entrevista. Resolva tudo até "Advanced".</div></a>
+    <a class="resource-card" href="https://leetcode.com/studyplan/top-sql-50/" target="_blank"><div class="rc-type" style="color:var(--blue)">entrevista</div><div class="rc-name">LeetCode Top SQL 50 <span class="rc-free">grátis</span></div><div class="rc-desc">As 50 queries mais cobradas em entrevistas de dados. Faça todas.</div></a>
+  </div>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem">JavaScript & Fullstack</div>
+  <div class="resource-grid" style="margin-bottom:1.5rem">
+    <a class="resource-card" href="https://javascript.info" target="_blank"><div class="rc-type" style="color:var(--purple)">referência</div><div class="rc-name">javascript.info <span class="rc-free">grátis</span></div><div class="rc-desc">A melhor referência de JS em existência. Leia a parte de core language inteira.</div></a>
+    <a class="resource-card" href="https://react.dev/learn" target="_blank"><div class="rc-type" style="color:var(--purple)">oficial</div><div class="rc-name">React Docs (novo) <span class="rc-free">grátis</span></div><div class="rc-desc">Documentação oficial com exemplos interativos. Faça o tutorial completo.</div></a>
+    <a class="resource-card" href="https://nextjs.org/learn" target="_blank"><div class="rc-type" style="color:var(--purple)">tutorial</div><div class="rc-name">Next.js Learn <span class="rc-free">grátis</span></div><div class="rc-desc">Tutorial oficial do Next.js. Constrói um projeto completo do zero.</div></a>
+    <a class="resource-card" href="https://www.typescriptlang.org/docs/handbook/intro.html" target="_blank"><div class="rc-type" style="color:var(--purple)">referência</div><div class="rc-name">TypeScript Handbook <span class="rc-free">grátis</span></div><div class="rc-desc">Leia pelo menos até "Narrowing" e "Functions". Suficiente para entrevistas.</div></a>
+  </div>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem">Python & Dados</div>
+  <div class="resource-grid" style="margin-bottom:1.5rem">
+    <a class="resource-card" href="https://www.kaggle.com/learn/pandas" target="_blank"><div class="rc-type" style="color:var(--teal)">mini-curso</div><div class="rc-name">Kaggle — Pandas <span class="rc-free">grátis</span></div><div class="rc-desc">4 horas. Suficiente para ter os fundamentos de Pandas para entrevista.</div></a>
+    <a class="resource-card" href="https://www.kaggle.com/learn/data-visualization" target="_blank"><div class="rc-type" style="color:var(--teal)">mini-curso</div><div class="rc-name">Kaggle — Visualização <span class="rc-free">grátis</span></div><div class="rc-desc">Matplotlib e Seaborn. Saber plotar dados é cobrado em data analyst.</div></a>
+    <a class="resource-card" href="https://docs.getdbt.com/docs/introduction" target="_blank"><div class="rc-type" style="color:var(--teal)">docs</div><div class="rc-name">dbt Docs <span class="rc-free">grátis</span></div><div class="rc-desc">Leia "What is dbt?" e o tutorial de getting started. Suficiente para mencionar em entrevista.</div></a>
+  </div>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem">Mock Interviews & Prática</div>
+  <div class="resource-grid">
+    <a class="resource-card" href="https://www.pramp.com" target="_blank"><div class="rc-type" style="color:var(--gold)">prática</div><div class="rc-name">Pramp <span class="rc-free">grátis</span></div><div class="rc-desc">Entrevista técnica com humano real (troca). Melhor para simular a pressão real.</div></a>
+    <a class="resource-card" href="https://interviewing.io" target="_blank"><div class="rc-type" style="color:var(--gold)">prática</div><div class="rc-name">interviewing.io <span class="rc-free">grátis parcial</span></div><div class="rc-desc">Mock interviews com engenheiros de FAANG. Feedback técnico real.</div></a>
+    <a class="resource-card" href="https://www.youtube.com/@NeetCode" target="_blank"><div class="rc-type" style="color:var(--gold)">canal</div><div class="rc-name">NeetCode <span class="rc-free">grátis</span></div><div class="rc-desc">Para algoritmos e estrutura de dados. Assista se a vaga pedir LeetCode.</div></a>
+    <a class="resource-card" href="https://www.glassdoor.com.br" target="_blank"><div class="rc-type" style="color:var(--gold)">pesquisa</div><div class="rc-name">Glassdoor Brasil <span class="rc-free">grátis</span></div><div class="rc-desc">Veja exatamente o que foi perguntado nas entrevistas das empresas que você está mirando.</div></a>
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+const SKEY = 'prep_junior_v1';
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+
+function toggleTopic(id) {
+  document.getElementById(id).classList.toggle('open');
+  save();
+}
+
+function toggleConcept(el) {
+  el.classList.toggle('open');
+  save();
+}
+
+function toggle(el) {
+  el.classList.toggle('checked');
+  updateAll();
+  save();
+}
+
+// Clicking concept header checks it
+document.addEventListener('click', function(e) {
+  const concept = e.target.closest('.concept');
+  if (!concept) return;
+  const chk = e.target.closest('.chk');
+  if (chk) {
+    concept.classList.toggle('checked');
+    updateAll();
+    save();
+    e.stopPropagation();
+    return;
+  }
+});
+
+function updateAll() {
+  const allC = document.querySelectorAll('.concept');
+  const doneC = document.querySelectorAll('.concept.checked');
+  const pct = allC.length ? Math.round(doneC.length / allC.length * 100) : 0;
+  document.getElementById('gbar').style.width = pct + '%';
+  document.getElementById('gpct').textContent = pct + '%';
+  document.getElementById('gcount').textContent = doneC.length + ' / ' + allC.length + ' tópicos';
+
+  // per topic block
+  const blocks = ['comp1','sql1','sql2','sql3','sql4','pyd1','pyd2','est1','eng1','js1','js2','react1','back1','banco1','infra1'];
+  blocks.forEach(id => {
+    const tb = document.getElementById('tb-' + id);
+    if (!tb) return;
+    const items = tb.querySelectorAll('.concept');
+    const done = tb.querySelectorAll('.concept.checked');
+    const r = items.length ? done.length / items.length : 0;
+    const bar = document.getElementById('tm-' + id);
+    const cnt = document.getElementById('tc-' + id);
+    if (bar) bar.style.width = (r*100) + '%';
+    if (cnt) cnt.textContent = done.length + '/' + items.length;
+  });
+}
+
+function save() {
+  const state = { concepts: {}, topics: {}, pages: {} };
+  document.querySelectorAll('.concept').forEach((el, i) => { state.concepts[i] = el.classList.contains('checked'); });
+  document.querySelectorAll('.topic-block').forEach(el => { state.topics[el.id] = el.classList.contains('open'); });
+  document.querySelectorAll('.concept').forEach((el, i) => { state.pages[i] = el.classList.contains('open'); });
+  try { localStorage.setItem(SKEY, JSON.stringify(state)); } catch(e) {}
+}
+
+function load() {
+  try {
+    const raw = localStorage.getItem(SKEY);
+    if (!raw) return;
+    const state = JSON.parse(raw);
+    if (state.concepts) document.querySelectorAll('.concept').forEach((el, i) => { if (state.concepts[i]) el.classList.add('checked'); });
+    if (state.topics) document.querySelectorAll('.topic-block').forEach(el => {
+      if (state.topics[el.id] === true) el.classList.add('open');
+      if (state.topics[el.id] === false) el.classList.remove('open');
+    });
+    if (state.pages) document.querySelectorAll('.concept').forEach((el, i) => { if (state.pages[i]) el.classList.add('open'); });
+  } catch(e) {}
+}
+
+function resetAll() {
+  if (!confirm('Resetar todo o progresso?')) return;
+  document.querySelectorAll('.concept').forEach(el => { el.classList.remove('checked'); el.classList.remove('open'); });
+  try { localStorage.removeItem(SKEY); } catch(e) {}
+  updateAll();
+}
+
+load();
+updateAll();
+</script>
+</body>
+</html>

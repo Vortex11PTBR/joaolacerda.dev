@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e Cibersegurança." />
+  <title>Experiência — João Lacerda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="exp">
+  <canvas id="particles"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="noise"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo-link">
+      <span class="logo-bracket">&lt;</span><span class="logo-text">JL</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"        class="nav-link" data-i18n="nav.home">Início</a></li>
+      <li><a href="sobre.html"        class="nav-link" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="experiencia.html"  class="nav-link" data-i18n="nav.exp">Experiência</a></li>
+      <li><a href="projetos.html"     class="nav-link" data-i18n="nav.proj">Projetos</a></li>
+      <li><a href="certificacoes.html" class="nav-link" data-i18n="nav.certs">Certificações</a></li>
+      <li><a href="contato.html"      class="nav-link" data-i18n="nav.contact">Contato</a></li>
+      <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" data-i18n="nav.resume">Currículo</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" title="Switch language">
+          <span class="lang-opt" data-lang="pt">PT</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <aside class="sidebar sidebar-left">
+    <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" rel="noopener" aria-label="LinkedIn" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+<div class="sidebar-line"></div>
+  </aside>
+  <aside class="sidebar sidebar-right">
+    <a href="mailto:joao@joaolacerda.dev" class="sidebar-email">joao@joaolacerda.dev</a>
+    <div class="sidebar-line"></div>
+  </aside>
+  <main class="main-content">
+    <div class="page-header fade-in">
+      <span class="page-num mono text-cyan">02.</span>
+      <h1 class="page-title" data-i18n="exp.title">Experiência</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="experience-container fade-in">
+      <div class="exp-tabs" role="tablist">
+        <button class="exp-tab active" role="tab" data-tab="0" data-i18n="exp.tab0">Empresa A</button>
+        <button class="exp-tab" role="tab" data-tab="1" data-i18n="exp.tab1">Empresa B</button>
+        <button class="exp-tab" role="tab" data-tab="2" data-i18n="exp.tab2">Empresa C</button>
+        <button class="exp-tab" role="tab" data-tab="3" data-i18n="exp.tab3">Empresa D</button>
+      </div>
+      <div class="exp-panels">
+
+        <div class="exp-panel active" data-panel="0">
+          <h3 class="exp-title" data-i18n="exp.0.title">Engenheiro de Software Sênior <span class="exp-company" data-i18n="exp.0.company">@ Empresa A</span></h3>
+          <p class="exp-period mono"><span class="text-cyan">$</span> <span data-i18n="exp.0.period">Jan 2023 — Presente</span></p>
+          <ul class="exp-bullets">
+            <li data-i18n="exp.0.b1">Arquitetei e liderai a migração de sistema monolítico para microsserviços, reduzindo latência p99 em 60% e custos de infraestrutura em 35%.</li>
+            <li data-i18n="exp.0.b2">Projetei pipeline de event-streaming distribuído processando 2M+ eventos/dia usando Kafka e Go, habilitando dashboards analíticos em tempo real.</li>
+            <li data-i18n="exp.0.b3">Liderei equipe multifuncional de 8 engenheiros, estabelecendo padrões de engenharia, cultura de code review e playbooks de resposta a incidentes.</li>
+            <li data-i18n="exp.0.b4">Implementei comunicação inter-serviço via gRPC, melhorando o throughput em 4× sobre REST para serviços internos.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="tech-tag">Go</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Kafka</span>
+            <span class="tech-tag">AWS</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Terraform</span>
+          </div>
+        </div>
+
+        <div class="exp-panel" data-panel="1">
+          <h3 class="exp-title" data-i18n="exp.1.title">Engenheiro de Software II <span class="exp-company" data-i18n="exp.1.company">@ Empresa B</span></h3>
+          <p class="exp-period mono"><span class="text-cyan">$</span> <span data-i18n="exp.1.period">Mar 2021 — Dez 2022</span></p>
+          <ul class="exp-bullets">
+            <li data-i18n="exp.1.b1">Construí API gateway de alta disponibilidade suportando 50K req/s, com circuit breakers, rate limiting e tracing distribuído via OpenTelemetry.</li>
+            <li data-i18n="exp.1.b2">Desenvolvi ferramentas de plataforma interna que reduziram o tempo de deploy de serviços de 45 minutos para menos de 5 minutos.</li>
+            <li data-i18n="exp.1.b3">Colaborei com o time de SRE para alcançar 99,95% de uptime nos serviços core, implementando alertas abrangentes e automação de runbooks.</li>
+            <li data-i18n="exp.1.b4">Mentoreei 3 engenheiros juniores por meio de 1:1s estruturados, code reviews e sessões de pair programming.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="tech-tag">TypeScript</span><span class="tech-tag">Node.js</span><span class="tech-tag">Docker</span>
+            <span class="tech-tag">GCP</span><span class="tech-tag">Redis</span><span class="tech-tag">OpenTelemetry</span>
+          </div>
+        </div>
+
+        <div class="exp-panel" data-panel="2">
+          <h3 class="exp-title" data-i18n="exp.2.title">Engenheiro de Software <span class="exp-company" data-i18n="exp.2.company">@ Empresa C</span></h3>
+          <p class="exp-period mono"><span class="text-cyan">$</span> <span data-i18n="exp.2.period">Jun 2019 — Fev 2021</span></p>
+          <ul class="exp-bullets">
+            <li data-i18n="exp.2.b1">Entreguei features full stack para produto SaaS com 300K+ usuários, usando React e Node.js com backend PostgreSQL.</li>
+            <li data-i18n="exp.2.b2">Implementei suíte de testes end-to-end (Playwright) que capturou 30+ regressões antes de deploys em produção.</li>
+            <li data-i18n="exp.2.b3">Reformulei sistema de autenticação para suportar OAuth 2.0 e SAML SSO, viabilizando onboarding de clientes enterprise.</li>
+            <li data-i18n="exp.2.b4">Contribuí para bibliotecas open source e escreveu documentação técnica utilizada em toda a organização.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Playwright</span><span class="tech-tag">Python</span>
+          </div>
+        </div>
+
+        <div class="exp-panel" data-panel="3">
+          <h3 class="exp-title" data-i18n="exp.3.title">Engenheiro de Software Júnior <span class="exp-company" data-i18n="exp.3.company">@ Empresa D</span></h3>
+          <p class="exp-period mono"><span class="text-cyan">$</span> <span data-i18n="exp.3.period">Jan 2018 — Mai 2019</span></p>
+          <ul class="exp-bullets">
+            <li data-i18n="exp.3.b1">Desenvolvi APIs RESTful e mantive serviços backend em Java/Spring Boot para plataforma fintech.</li>
+            <li data-i18n="exp.3.b2">Escrevi testes unitários e de integração atingindo 85%+ de cobertura em módulos críticos de processamento de pagamentos.</li>
+            <li data-i18n="exp.3.b3">Participei de time Agile/Scrum, contribuindo para planejamento de sprints, retrospectivas e documentos de design técnico.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">MySQL</span>
+            <span class="tech-tag">REST</span><span class="tech-tag">JUnit</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Lacerda</span></p>
+    <p class="footer-sub">joaolacerda.dev &middot; 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

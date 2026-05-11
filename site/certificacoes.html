@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e Cibersegurança." />
+  <title>Certificações — João Lacerda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="certs">
+  <canvas id="particles"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="noise"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo-link">
+      <span class="logo-bracket">&lt;</span><span class="logo-text">JL</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"        class="nav-link" data-i18n="nav.home">Início</a></li>
+      <li><a href="sobre.html"        class="nav-link" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="experiencia.html"  class="nav-link" data-i18n="nav.exp">Experiência</a></li>
+      <li><a href="projetos.html"     class="nav-link" data-i18n="nav.proj">Projetos</a></li>
+      <li><a href="certificacoes.html" class="nav-link" data-i18n="nav.certs">Certificações</a></li>
+      <li><a href="contato.html"      class="nav-link" data-i18n="nav.contact">Contato</a></li>
+      <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" data-i18n="nav.resume">Currículo</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" title="Switch language">
+          <span class="lang-opt" data-lang="pt">PT</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <aside class="sidebar sidebar-left">
+    <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" rel="noopener" aria-label="LinkedIn" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+<div class="sidebar-line"></div>
+  </aside>
+  <aside class="sidebar sidebar-right">
+    <a href="mailto:joao@joaolacerda.dev" class="sidebar-email">joao@joaolacerda.dev</a>
+    <div class="sidebar-line"></div>
+  </aside>
+  <main class="main-content">
+    <div class="page-header fade-in">
+      <span class="page-num mono text-cyan">04.</span>
+      <h1 class="page-title" data-i18n="certs.title">Certificações</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="certs-categories">
+      <div class="cert-category fade-in">
+        <h2 class="cert-cat-title mono text-cyan" data-i18n="certcat.cloud">// Cloud &amp; Infra</h2>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-logo aws">AWS</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.saa.title">AWS Certified Solutions Architect</h4>
+              <p class="cert-issuer">Amazon Web Services</p>
+              <p class="cert-date mono" data-i18n="cert.saa.level">Professional · 2023</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo k8s">K8s</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.cka.title">Certified Kubernetes Administrator</h4>
+              <p class="cert-issuer">CNCF / Linux Foundation</p>
+              <p class="cert-date mono">CKA · 2022</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo hsh">HSH</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.tf.title">HashiCorp Certified: Terraform Associate</h4>
+              <p class="cert-issuer">HashiCorp</p>
+              <p class="cert-date mono" data-i18n="cert.tf.level">Associate · 2023</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category fade-in">
+        <h2 class="cert-cat-title mono text-cyan" data-i18n="certcat.data">// Dados &amp; IA</h2>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-logo gcp">GCP</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.gcp.title">Google Cloud Professional Data Engineer</h4>
+              <p class="cert-issuer">Google Cloud</p>
+              <p class="cert-date mono" data-i18n="cert.gcp.level">Professional · 2022</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo dbt" style="background:rgba(255,100,50,0.1);color:#ff6432;border-color:rgba(255,100,50,0.2)">dbt</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.dbt.title">dbt Analytics Engineering Certification</h4>
+              <p class="cert-issuer">dbt Labs</p>
+              <p class="cert-date mono">2023</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category fade-in">
+        <h2 class="cert-cat-title mono text-cyan" data-i18n="certcat.sec">// Cibersegurança</h2>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-logo" style="background:rgba(255,0,80,0.1);color:#ff0050;border:1px solid rgba(255,0,80,0.2);font-size:0.65rem">CEH</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.ceh.title">Certified Ethical Hacker (CEH)</h4>
+              <p class="cert-issuer">EC-Council</p>
+              <p class="cert-date mono">v12 · 2023</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo" style="background:rgba(0,212,255,0.08);color:var(--cyan);border:1px solid var(--border-cyan);font-size:0.65rem">SC-200</div>
+            <div class="cert-info">
+              <h4 class="cert-title" data-i18n="cert.sc200.title">Microsoft Security Operations Analyst</h4>
+              <p class="cert-issuer">Microsoft</p>
+              <p class="cert-date mono">SC-200 · 2024</p>
+            </div>
+            <a href="#" class="cert-link" target="_blank" rel="noopener" aria-label="Ver credencial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Lacerda</span></p>
+    <p class="footer-sub">joaolacerda.dev &middot; 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

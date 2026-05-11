@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e Cibersegurança." />
+  <title>João Lacerda — Engenheiro de Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <canvas id="particles"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="noise"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo-link">
+      <span class="logo-bracket">&lt;</span><span class="logo-text">JL</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"        class="nav-link" data-i18n="nav.home">Início</a></li>
+      <li><a href="sobre.html"        class="nav-link" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="experiencia.html"  class="nav-link" data-i18n="nav.exp">Experiência</a></li>
+      <li><a href="projetos.html"     class="nav-link" data-i18n="nav.proj">Projetos</a></li>
+      <li><a href="certificacoes.html" class="nav-link" data-i18n="nav.certs">Certificações</a></li>
+      <li><a href="contato.html"      class="nav-link" data-i18n="nav.contact">Contato</a></li>
+      <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" data-i18n="nav.resume">Currículo</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" title="Switch language">
+          <span class="lang-opt" data-lang="pt">PT</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <aside class="sidebar sidebar-left">
+    <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" rel="noopener" aria-label="LinkedIn" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+<div class="sidebar-line"></div>
+  </aside>
+  <aside class="sidebar sidebar-right">
+    <a href="mailto:joao@joaolacerda.dev" class="sidebar-email">joao@joaolacerda.dev</a>
+    <div class="sidebar-line"></div>
+  </aside>
+  <main class="main-hero">
+    <section class="hero" id="hero">
+      <div class="hero-text">
+        <p class="hero-greeting">
+          <span class="mono text-cyan" data-i18n="hero.greeting">~/joaolacerda</span>
+          <span class="cursor-blink"> $</span>
+        </p>
+        <h1 class="hero-name">João Lacerda<span class="dot-cyan">.</span></h1>
+        <h2 class="hero-title">
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </h2>
+        <p class="hero-description" data-i18n="hero.desc">
+          Construo sistemas que escalam, analiso dados que geram insights e desenvolvo
+          arquiteturas seguras — do front-end ao servidor, da pipeline ao modelo,
+          da aplicação à defesa.
+        </p>
+        <div class="hero-cta">
+          <a href="projetos.html" class="btn btn-primary" data-i18n="hero.cta.work">Ver Projetos</a>
+          <a href="contato.html" class="btn btn-secondary" data-i18n="hero.cta.contact">Falar Comigo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div><span class="stat-num mono" data-target="8">0</span><span class="stat-suffix mono">+</span></div>
+            <span class="stat-label" data-i18n="stat.years">Anos de Experiência</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div><span class="stat-num mono" data-target="40">0</span><span class="stat-suffix mono">+</span></div>
+            <span class="stat-label" data-i18n="stat.projects">Projetos Entregues</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div><span class="stat-num mono" data-target="12">0</span><span class="stat-suffix mono">M+</span></div>
+            <span class="stat-label" data-i18n="stat.users">Usuários Atendidos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo-col">
+        <div class="hero-photo-wrap">
+          <div class="photo-ring-pulse"></div>
+          <div class="photo-ring">
+            <div class="photo-inner">
+              <img src="photo.jpg" alt="João Lacerda" class="profile-photo" />
+              <div class="photo-fallback mono">JL</div>
+            </div>
+          </div>
+          <div class="photo-badge badge-fs">Full Stack</div>
+          <div class="photo-badge badge-data">Data &amp; BI</div>
+          <div class="photo-badge badge-sec">Security</div>
+          <div class="photo-badge badge-cloud">Cloud</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="areas-section" aria-label="Áreas de atuação">
+      <h2 class="areas-label mono text-cyan fade-in" data-i18n="areas.title">// áreas de atuação</h2>
+      <div class="areas-grid">
+        <a href="projetos.html" class="area-card fade-in">
+          <span class="area-icon">💻</span>
+          <h3 class="area-title" data-i18n="area.fullstack">Full Stack</h3>
+          <p class="area-desc" data-i18n="area.fullstack.desc">React, Node.js, TypeScript, APIs REST &amp; GraphQL, bancos relacionais e NoSQL.</p>
+        </a>
+        <a href="projetos.html" class="area-card fade-in">
+          <span class="area-icon">📊</span>
+          <h3 class="area-title" data-i18n="area.data">Dados &amp; BI</h3>
+          <p class="area-desc" data-i18n="area.data.desc">Pipelines ETL/ELT, Spark, Airflow, dbt, modelagem dimensional e dashboards.</p>
+        </a>
+        <a href="projetos.html" class="area-card fade-in">
+          <span class="area-icon">🔒</span>
+          <h3 class="area-title" data-i18n="area.security">Cibersegurança</h3>
+          <p class="area-desc" data-i18n="area.security.desc">OWASP, pentest, hardening, análise de vulnerabilidades e resposta a incidentes.</p>
+        </a>
+        <a href="projetos.html" class="area-card fade-in">
+          <span class="area-icon">☁️</span>
+          <h3 class="area-title" data-i18n="area.cloud">Cloud &amp; DevOps</h3>
+          <p class="area-desc" data-i18n="area.cloud.desc">AWS, GCP, Kubernetes, Terraform, CI/CD e arquiteturas de alta disponibilidade.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Lacerda</span></p>
+    <p class="footer-sub">joaolacerda.dev &middot; 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

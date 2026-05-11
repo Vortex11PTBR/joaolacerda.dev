@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e Cibersegurança." />
+  <title>Projetos — João Lacerda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="proj">
+  <canvas id="particles"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="noise"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo-link">
+      <span class="logo-bracket">&lt;</span><span class="logo-text">JL</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"        class="nav-link" data-i18n="nav.home">Início</a></li>
+      <li><a href="sobre.html"        class="nav-link" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="experiencia.html"  class="nav-link" data-i18n="nav.exp">Experiência</a></li>
+      <li><a href="projetos.html"     class="nav-link" data-i18n="nav.proj">Projetos</a></li>
+      <li><a href="certificacoes.html" class="nav-link" data-i18n="nav.certs">Certificações</a></li>
+      <li><a href="contato.html"      class="nav-link" data-i18n="nav.contact">Contato</a></li>
+      <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" data-i18n="nav.resume">Currículo</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" title="Switch language">
+          <span class="lang-opt" data-lang="pt">PT</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <aside class="sidebar sidebar-left">
+    <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" rel="noopener" aria-label="LinkedIn" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+<div class="sidebar-line"></div>
+  </aside>
+  <aside class="sidebar sidebar-right">
+    <a href="mailto:joao@joaolacerda.dev" class="sidebar-email">joao@joaolacerda.dev</a>
+    <div class="sidebar-line"></div>
+  </aside>
+  <main class="main-content">
+    <div class="page-header fade-in">
+      <span class="page-num mono text-cyan">03.</span>
+      <h1 class="page-title" data-i18n="proj.title">Projetos</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="proj-filters fade-in">
+      <button class="proj-filter active" data-filter="all" data-i18n="filter.all">Todos</button>
+      <button class="proj-filter" data-filter="fullstack" data-i18n="filter.fs">Full Stack</button>
+      <button class="proj-filter" data-filter="data" data-i18n="filter.data">Dados</button>
+      <button class="proj-filter" data-filter="security" data-i18n="filter.sec">Segurança</button>
+      <button class="proj-filter" data-filter="cloud" data-i18n="filter.cloud">Cloud</button>
+    </div>
+
+    <!-- Featured -->
+    <div class="featured-projects">
+      <article class="featured-project fade-in" data-category="cloud">
+        <div class="fp-image"><div class="fp-placeholder"><span>⚡</span></div></div>
+        <div class="fp-content">
+          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
+          <h3 class="project-title"><a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" data-i18n="proj.distroq.title">DistroQ — Fila de Tarefas Distribuída</a></h3>
+          <div class="project-description">
+            <p data-i18n="proj.distroq.desc">Fila de tarefas distribuída de alta performance em Go. Suporta agendamento por prioridade, jobs com atraso, dead-letter queues e retries com backoff exponencial. Processa 10K+ jobs/segundo com latência de enqueue sub-milissegundo.</p>
+          </div>
+          <ul class="project-tech-list"><li>Go</li><li>Redis</li><li>gRPC</li><li>Prometheus</li><li>Docker</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured-project reverse fade-in" data-category="data">
+        <div class="fp-image"><div class="fp-placeholder"><span>📊</span></div></div>
+        <div class="fp-content">
+          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
+          <h3 class="project-title"><a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" data-i18n="proj.datapipe.title">DataPipe — Plataforma ETL em Tempo Real</a></h3>
+          <div class="project-description">
+            <p data-i18n="proj.datapipe.desc">Plataforma de ingestão e transformação de dados em tempo real. Consome eventos de múltiplas fontes via Kafka, transforma com Spark Streaming e persiste em data warehouse. Dashboard de monitoramento com métricas de qualidade e lineage.</p>
+          </div>
+          <ul class="project-tech-list"><li>Python</li><li>Spark</li><li>Kafka</li><li>Airflow</li><li>dbt</li><li>BigQuery</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured-project fade-in" data-category="security">
+        <div class="fp-image"><div class="fp-placeholder"><span>🔒</span></div></div>
+        <div class="fp-content">
+          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
+          <h3 class="project-title"><a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" data-i18n="proj.vulnscan.title">VulnScan — Scanner de Vulnerabilidades Web</a></h3>
+          <div class="project-description">
+            <p data-i18n="proj.vulnscan.desc">Ferramenta automatizada de análise de segurança para APIs REST e aplicações web. Detecta falhas OWASP Top 10, gera relatórios com evidências e recomendações de remediação. Integra com CI/CD para shift-left security.</p>
+          </div>
+          <ul class="project-tech-list"><li>Python</li><li>OWASP</li><li>Docker</li><li>GitHub Actions</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Grid -->
+    <h3 class="other-title mono text-muted fade-in" data-i18n="proj.other">// outros projetos</h3>
+    <div class="projects-grid">
+      <article class="project-card fade-in" data-category="cloud">
+        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+        <h4 class="card-title" data-i18n="pc.ratelimit.title">API Rate Limiter</h4>
+        <p class="card-desc" data-i18n="pc.ratelimit.desc">Token bucket e sliding window para serviços Go HTTP. Suporte a modo distribuído com Redis.</p>
+        <ul class="card-tech"><li>Go</li><li>Redis</li><li>HTTP</li></ul>
+      </article>
+      <article class="project-card fade-in" data-category="data">
+        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+        <h4 class="card-title" data-i18n="pc.drift.title">Infra Drift Detector</h4>
+        <p class="card-desc" data-i18n="pc.drift.desc">Compara estado Terraform com infraestrutura cloud ao vivo e gera relatórios de drift com sugestões de remediação.</p>
+        <ul class="card-tech"><li>Python</li><li>Terraform</li><li>AWS</li></ul>
+      </article>
+      <article class="project-card fade-in" data-category="fullstack">
+        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="#" target="_blank" aria-label="Demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+        <h4 class="card-title" data-i18n="pc.metrics.title">Open Metrics Board</h4>
+        <p class="card-desc" data-i18n="pc.metrics.desc">Dashboard de métricas de engenharia em tempo real: DORA metrics, frequência de deploys e estatísticas de incidentes.</p>
+        <ul class="card-tech"><li>TypeScript</li><li>React</li><li>Datadog</li></ul>
+      </article>
+      <article class="project-card fade-in" data-category="data">
+        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+        <h4 class="card-title" data-i18n="pc.schema.title">Schema Guard</h4>
+        <p class="card-desc" data-i18n="pc.schema.desc">Valida compatibilidade de migrações Postgres e bloqueia breaking changes em pipelines CI/CD.</p>
+        <ul class="card-tech"><li>Go</li><li>PostgreSQL</li><li>GitHub Actions</li></ul>
+      </article>
+      <article class="project-card fade-in" data-category="security">
+        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+        <h4 class="card-title" data-i18n="pc.authsec.title">Auth Security Toolkit</h4>
+        <p class="card-desc" data-i18n="pc.authsec.desc">Biblioteca de autenticação segura: PKCE, TOTP, detecção de credential stuffing e auditoria de sessões.</p>
+        <ul class="card-tech"><li>Node.js</li><li>JWT</li><li>OAuth 2.0</li></ul>
+      </article>
+      <article class="project-card fade-in" data-category="fullstack">
+        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="#" target="_blank" aria-label="Demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+        <h4 class="card-title" data-i18n="pc.gql.title">GQL Batcher</h4>
+        <p class="card-desc" data-i18n="pc.gql.desc">Batching automático de queries e DataLoader para servidores GraphQL Node.js. Zero configuração, resolve N+1.</p>
+        <ul class="card-tech"><li>Node.js</li><li>GraphQL</li><li>TypeScript</li></ul>
+      </article>
+    </div>
+  </main>
+  <footer class="footer">
+    <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Lacerda</span></p>
+    <p class="footer-sub">joaolacerda.dev &middot; 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
