@@ -8,3 +8,6 @@ build/
 *.log
 jp/
 projetos/
+_audit_cache/
+_audit_results.json
+_audit_summary.txt
