@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>João Pedro Antunes Lacerda — Currículo</title>
+  <style>
+    /* ── Reset ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Base ───────────────────────────────────── */
+    html { font-size: 10.2pt; }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', system-ui, sans-serif;
+      background: #e8eaed;           /* cinza só para o browser, some no print */
+      color: #1a1a1a;
+      line-height: 1.4;
+    }
+
+    /* ── Page (A4 branco) ───────────────────────── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 13mm 15mm 12mm;
+      box-shadow: 0 6px 32px rgba(0,0,0,.18);
+    }
+
+    /* ══════════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════════ */
+    .cv-name {
+      text-align: center;
+      font-size: 21pt;
+      font-weight: 700;
+      letter-spacing: .4px;
+      color: #111;
+      line-height: 1.15;
+    }
+
+    .cv-role {
+      text-align: center;
+      font-size: 9pt;
+      color: #555;
+      margin: 3px 0 6px;
+      letter-spacing: .2px;
+    }
+
+    /* contato — duas linhas centralizadas */
+    .cv-contact {
+      text-align: center;
+      font-size: 8.6pt;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .cv-contact a {
+      color: #1a56db;
+      text-decoration: none;
+    }
+
+    /* site em destaque */
+    .cv-site {
+      font-size: 9.4pt;
+      font-weight: 700;
+      color: #1a56db;
+    }
+
+    .pipe { color: #999; margin: 0 6px; }
+
+    /* régua abaixo do header */
+    .header-rule {
+      border: none;
+      border-top: 2px solid #111;
+      margin: 7px 0 0;
+    }
+
+    /* ══════════════════════════════════════════════
+       SECTIONS
+    ══════════════════════════════════════════════ */
+    section { margin-top: 10px; }
+
+    .sec-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: #111;
+      border-bottom: 1.4px solid #111;
+      padding-bottom: 1px;
+      margin-bottom: 7px;
+    }
+
+    /* ── Perfil ─────────────────────────────────── */
+    .profile {
+      font-size: 8.4pt;
+      color: #333;
+      line-height: 1.65;
+    }
+
+    /* ── Skills (texto limpo) ───────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      row-gap: 2.5px;
+      font-size: 8.5pt;
+    }
+
+    .sk-label { font-weight: 700; color: #111; }
+    .sk-val   { color: #333; }
+
+    /* ── Entradas (Experiência / Formação) ──────── */
+    .entry { margin-bottom: 9px; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .entry-title {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .entry-date {
+      font-size: 7.8pt;
+      color: #555;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+
+    /* empresa/escola em itálico */
+    .entry-sub {
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #444;
+      margin: 1px 0 4px;
+    }
+
+    /* ── Bullets ────────────────────────────────── */
+    ul { list-style: none; }
+
+    ul li {
+      font-size: 8.1pt;
+      color: #333;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 2px;
+      line-height: 1.48;
+    }
+
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 3px;
+      color: #111;
+    }
+
+    strong { font-weight: 700; color: #111; }
+
+    /* ── Projetos ───────────────────────────────── */
+    .proj { margin-bottom: 8px; }
+    .proj:last-child { margin-bottom: 0; }
+
+    .proj-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .proj-name {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .proj-link {
+      font-size: 7.6pt;
+      color: #1a56db;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .proj-stack {
+      font-size: 8pt;
+      font-style: italic;
+      color: #555;
+      margin: 1px 0 3px;
+    }
+
+    /* ── Complementar ───────────────────────────── */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      row-gap: 3px;
+      font-size: 8.3pt;
+    }
+
+    .comp-label { font-weight: 700; color: #111; }
+    .comp-val   { color: #333; }
+
+    /* ══════════════════════════════════════════════
+       PRINT
+    ══════════════════════════════════════════════ */
+    @media print {
+      body { background: #fff; }
+
+      .page {
+        box-shadow: none;
+        padding: 11mm 14mm 10mm;
+      }
+
+      a { color: inherit !important; }
+    }
+
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════════ HEADER ══════════ -->
+  <div class="cv-name">João Pedro Antunes Lacerda</div>
+  <div class="cv-role">Desenvolvedor Full Stack &amp; Dados</div>
+
+  <div class="cv-contact">
+    Goiânia, GO
+    <span class="pipe">|</span>
+    (66) 98445-6613
+    <span class="pipe">|</span>
+    <a href="mailto:joaopedroantuneslacerda@gmail.com">joaopedroantuneslacerda@gmail.com</a>
+    <br>
+    <a class="cv-site" href="https://joaolacerda.dev">joaolacerda.dev</a>
+    <span class="pipe">|</span>
+    <a href="https://linkedin.com/in/joao-pedro-6575551b0">linkedin.com/in/joao-pedro</a>
+    <span class="pipe">|</span>
+    <a href="https://github.com/Vortex11PTBR">github.com/Vortex11PTBR</a>
+  </div>
+
+  <hr class="header-rule">
+
+  <!-- ══════════ PERFIL ══════════ -->
+  <section>
+    <div class="sec-title">Perfil</div>
+    <p class="profile">
+      Desenvolvedor em conclusão de Engenharia de Software com experiência prática em pipelines de dados, APIs REST
+      e aplicações full stack. Construo soluções completas — do banco de dados ao front-end — com foco em arquitetura
+      limpa, qualidade de código e entrega de valor real ao usuário final.
+    </p>
+  </section>
+
+  <!-- ══════════ HABILIDADES ══════════ -->
+  <section>
+    <div class="sec-title">Habilidades</div>
+    <div class="skills-grid">
+      <span class="sk-label">Linguagens</span>
+      <span class="sk-val">Python, JavaScript, TypeScript, SQL, Java</span>
+
+      <span class="sk-label">Dados &amp; BI</span>
+      <span class="sk-val">Pandas, NumPy, dbt, Apache Beam, ETL/ELT, Power BI, Streamlit, BigQuery</span>
+
+      <span class="sk-label">Full Stack</span>
+      <span class="sk-val">Next.js, React, FastAPI, Node.js, Fastify, REST APIs, Prisma, HTML/CSS</span>
+
+      <span class="sk-label">Banco de Dados</span>
+      <span class="sk-val">PostgreSQL, MySQL, Oracle, Redis</span>
+
+      <span class="sk-label">Ferramentas</span>
+      <span class="sk-val">Git, Docker, GitHub Actions, Linux, Vitest, Playwright</span>
+    </div>
+  </section>
+
+  <!-- ══════════ EXPERIÊNCIA ══════════ -->
+  <section>
+    <div class="sec-title">Experiência Profissional</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Estagiário de Desenvolvimento de Software</span>
+        <span class="entry-date">Ago 2025 — Dez 2025</span>
+      </div>
+      <div class="entry-sub">Gigabyte Soluções · Remoto</div>
+      <ul>
+        <li>Desenvolvimento de módulo web (HTML/CSS/JS + Python/FastAPI) integrado ao banco de dados de um ERP desktop.</li>
+        <li>Elaboração de planos de teste, homologação de aplicações e validação de requisitos antes da entrega ao cliente.</li>
+        <li>Produção de documentação técnica: manuais de usuário, especificações de processo e relatórios de suporte.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Operador de Sistema &amp; Atendimento</span>
+        <span class="entry-date">Jan 2021 — Jan 2025</span>
+      </div>
+      <div class="entry-sub">Quiosque Barra Chopp · Barra do Garças, MT</div>
+      <ul>
+        <li>Operava sistema de gestão integrado (NooChef): cadastro, atualização e exclusão de produtos diretamente no banco de dados.</li>
+        <li>Emissão de notas fiscais eletrônicas (NF-e) e conciliação de caixa com registros sistêmicos.</li>
+        <li>Controle sistemático de estoque com gestão de entradas, saídas e ajustes de inventário.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ PROJETOS ══════════ -->
+  <section>
+    <div class="sec-title">Projetos</div>
+
+    <!-- MEIFlow -->
+    <div class="proj">
+      <div class="proj-head">
+        <span class="proj-name">MEIFlow — SaaS de Gestão Financeira para MEIs</span>
+        <a class="proj-link" href="https://github.com/Vortex11PTBR/MEIFlow" target="_blank">↗ github.com/Vortex11PTBR/MEIFlow</a>
+      </div>
+      <div class="proj-stack">Next.js · TypeScript · Fastify · PostgreSQL · Prisma · Redis · BullMQ · Docker · Vercel + Railway</div>
+      <ul>
+        <li>SaaS <strong>multi-tenant</strong> para 15 M+ MEIs brasileiros: lançamento de receitas e despesas com <strong>categorização automática via LLM</strong> (Claude API), controle de clientes e serviços, e alerta de limite de faturamento anual de R$ 81 k.</li>
+        <li>Integração com API pública da Receita Federal para validação de CNPJ; notificações de vencimento do DAS via fila assíncrona BullMQ + Redis; autenticação JWT, CI/CD com GitHub Actions, deploy Vercel + Railway.</li>
+      </ul>
+    </div>
+
+    <!-- SaúdeBR -->
+    <div class="proj">
+      <div class="proj-head">
+        <span class="proj-name">SaúdeBR — Painel de Inteligência da Saúde Pública</span>
+        <a class="proj-link" href="https://github.com/Vortex11PTBR/SaudeBR" target="_blank">↗ github.com/Vortex11PTBR/SaudeBR</a>
+      </div>
+      <div class="proj-stack">Python · PostgreSQL · dbt · Power BI · DAX · DATASUS API · OpenDataSUS</div>
+      <ul>
+        <li>Pipeline Python que consome APIs DATASUS/OpenDataSUS — internações por CID-10, mortalidade por estado e leitos por município — com limpeza, padronização e carga em <strong>Star Schema</strong> no PostgreSQL.</li>
+        <li>Relatório Power BI com 3 views: internações, mortalidade (mapas de calor por região/faixa etária) e capacidade hospitalar; medidas DAX com <strong>taxa por 100 mil hab.</strong> e comparativo temporal entre anos.</li>
+      </ul>
+    </div>
+
+    <!-- CerradoWatch -->
+    <div class="proj">
+      <div class="proj-head">
+        <span class="proj-name">CerradoWatch — Pipeline ETL de Dados Ambientais</span>
+        <span style="display:flex; gap:10px; flex-shrink:0;">
+          <a class="proj-link" href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app" target="_blank">↗ dashboard ao vivo</a>
+          <a class="proj-link" href="https://github.com/Vortex11PTBR/CerradoWatch" target="_blank">↗ github</a>
+        </span>
+      </div>
+      <div class="proj-stack">Python · dbt · PostgreSQL · Streamlit · GitHub Actions · Neon</div>
+      <ul>
+        <li>Pipeline ETL que ingere dados de queimadas, desmatamento e clima de APIs públicas (INPE, NASA FIRMS, INMET), transforma com <strong>dbt</strong> e serve dashboard ao vivo via Streamlit.</li>
+        <li>Orquestração semanal por GitHub Actions com validação automática de qualidade; deploy Streamlit Cloud + Neon (PostgreSQL serverless).</li>
+      </ul>
+    </div>
+
+    <!-- Olympic Data ETL -->
+    <div class="proj">
+      <div class="proj-head">
+        <span class="proj-name">Olympic Data ETL — Data Warehouse Cloud</span>
+        <a class="proj-link" href="https://github.com/Vortex11PTBR/olympic-data-etl" target="_blank">↗ github.com/Vortex11PTBR/olympic-data-etl</a>
+      </div>
+      <div class="proj-stack">Python · Apache Beam · BigQuery · Star Schema</div>
+      <ul>
+        <li>Pipeline com <strong>Apache Beam</strong> que processa 10+ anos de dados olímpicos em BigQuery com Star Schema; queries <strong>20× mais rápidas</strong> com particionamento e clustering por país e ano.</li>
+      </ul>
+    </div>
+
+    <!-- AI SaaS -->
+    <div class="proj">
+      <div class="proj-head">
+        <span class="proj-name">AI SaaS Tool — Resumidor com Indexação Semântica</span>
+        <a class="proj-link" href="https://github.com/Vortex11PTBR/ai-saas-tool" target="_blank">↗ github.com/Vortex11PTBR/ai-saas-tool</a>
+      </div>
+      <div class="proj-stack">FastAPI · LangChain · Groq · Next.js · TypeScript · ChromaDB · Docker</div>
+      <ul>
+        <li>SaaS completo com FastAPI + LangChain + LLMs (Groq) no back-end, Next.js + TypeScript no front-end, indexação vetorial ChromaDB; deploy automatizado com Docker + CI/CD.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ FORMAÇÃO ══════════ -->
+  <section>
+    <div class="sec-title">Formação</div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Bacharelado em Engenharia de Software</span>
+        <span class="entry-date">Cursando</span>
+      </div>
+      <div class="entry-sub">Centro Universitário de Goiás — UniGOIÁS · Goiânia, GO</div>
+      <p style="font-size:7.8pt; color:#555; margin-top:2px;">
+        Disciplinas relevantes: Banco de Dados, Engenharia de Requisitos, Análise e Projeto de Sistemas
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ COMPLEMENTAR ══════════ -->
+  <section>
+    <div class="sec-title">Complementar</div>
+    <div class="comp-grid">
+      <span class="comp-label">Idiomas</span>
+      <span class="comp-val">Português — Nativo &nbsp;·&nbsp; Inglês — Fluente</span>
+
+      <span class="comp-label">Certificações</span>
+      <span class="comp-val">
+        Google / Coursera — Crash Course on Python (2025) &nbsp;·&nbsp;
+        Mate Academy — JavaScript Essentials (2026) &nbsp;·&nbsp;
+        Anthropic — AI Collaboration &amp; Claude Development (2026)
+      </span>
+    </div>
+  </section>
+
+</div><!-- /page -->
+</body>
+</html>

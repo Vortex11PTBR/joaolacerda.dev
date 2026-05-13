@@ -1,0 +1,971 @@
+{
+  "joaolacerda.dev": [
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "jp/blueprint_engenharia_elite.html",
+      "line": 918,
+      "source": "history",
+      "rule": "Secret assignment",
+      "detail": "Secret assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx",
+      "line": 30,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx",
+      "line": 31,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx",
+      "line": 32,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx",
+      "line": 33,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx",
+      "line": 55,
+      "source": "history",
+      "rule": "secret assignment",
+      "detail": "secret assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/components/cheat-panel.tsx",
+      "line": 251,
+      "source": "history",
+      "rule": "Token assignment",
+      "detail": "Token assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/components/cheat-panel.tsx",
+      "line": 254,
+      "source": "history",
+      "rule": "Token assignment",
+      "detail": "Token assignment present but low confidence",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "joaolacerda.dev",
+      "path": "projetos/fullstack/codestream/src/lib/cheatsheets.ts",
+      "line": 103,
+      "source": "history",
+      "rule": "secret assignment",
+      "detail": "secret assignment appears templated/example",
+      "commit": "70706377d0c7d624a49e1fd933067732362b419b"
+    }
+  ],
+  "MEIFlow": [
+    {
+      "severity": "CRITICAL",
+      "repo": "MEIFlow",
+      "path": ".env.example",
+      "line": 2,
+      "source": "current-ghapi",
+      "rule": "Database URL",
+      "detail": "Credentialed DB URL: post...uire"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": ".env.example",
+      "line": 1,
+      "source": "current-ghapi",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "MEIFlow",
+      "path": ".env.example",
+      "line": 2,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Credentialed DB URL: post...uire"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": ".github/workflows/ci.yml",
+      "line": 25,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://fake:fake@localhost:5432/fake?schema=public"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": ".github/workflows/ci.yml",
+      "line": 26,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://fake:fake@localhost:5432/fake?schema=public"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": "README.md",
+      "line": 35,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://user:pass@host/db?sslmode=require"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": "README.md",
+      "line": 43,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Database URL without obvious embedded creds: postgresql://..."
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": "README.md",
+      "line": 44,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Database URL without obvious embedded creds: postgresql://..."
+    },
+    {
+      "severity": "WARNING",
+      "repo": "MEIFlow",
+      "path": ".env.example",
+      "line": 1,
+      "source": "history",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    }
+  ],
+  "CerradoWatch": [
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": ".env.example",
+      "line": 6,
+      "source": "current-ghapi",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://user:password@host/db?sslmode=require"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": ".env.example",
+      "line": 6,
+      "source": "current-ghapi",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "ingestion/config.py",
+      "line": 14,
+      "source": "current-ghapi",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://user:pass@host/db?sslmode=require"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "ingestion/config.py",
+      "line": 43,
+      "source": "current-ghapi",
+      "rule": "Database URL",
+      "detail": "Database URL without obvious embedded creds: postgresql://,"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": ".env.example",
+      "line": 1,
+      "source": "current-ghapi",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": ".env.example",
+      "line": 6,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://user:password@host/db?sslmode=require"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": ".env.example",
+      "line": 6,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 31,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 35,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Database URL without obvious embedded creds: postgresql://,"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 38,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dbt/profiles.yml",
+      "line": 9,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "ingestion/config.py",
+      "line": 14,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Example DB URL pattern: postgresql://user:pass@host/db?sslmode=require"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "ingestion/config.py",
+      "line": 43,
+      "source": "current-local",
+      "rule": "Database URL",
+      "detail": "Database URL without obvious embedded creds: postgresql://,"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 31,
+      "source": "history",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example",
+      "commit": "1cbd8a21d4a7e475c7d60ede0323a29638ed7d09"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 35,
+      "source": "history",
+      "rule": "Database URL",
+      "detail": "Database URL without obvious embedded creds: postgresql://,",
+      "commit": "1cbd8a21d4a7e475c7d60ede0323a29638ed7d09"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 38,
+      "source": "history",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example",
+      "commit": "1cbd8a21d4a7e475c7d60ede0323a29638ed7d09"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dashboard/data.py",
+      "line": 32,
+      "source": "history",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example",
+      "commit": "50854ff984846d5fa386c8438d28d0f1237a47d6"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": "dbt/profiles.yml",
+      "line": 9,
+      "source": "history",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example",
+      "commit": "87e98b0090e09171bf1b6c4290aeedf71f36c438"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "CerradoWatch",
+      "path": ".env.example",
+      "line": 1,
+      "source": "history",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    }
+  ],
+  "game_scroller": [],
+  "olympic-data-etl": [
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": ".env.example",
+      "line": 1,
+      "source": "current-ghapi",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": ".github/workflows/deploy.yml",
+      "line": 199,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": ".github/workflows/deploy.yml",
+      "line": 206,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": "GITHUB_ACTIONS_QUICK_START.md",
+      "line": 19,
+      "source": "current-local",
+      "rule": "SECRET assignment",
+      "detail": "SECRET assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": "GITHUB_ACTIONS_QUICK_START.md",
+      "line": 23,
+      "source": "current-local",
+      "rule": "SECRET assignment",
+      "detail": "SECRET assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": "GITHUB_ACTIONS_SETUP.md",
+      "line": 80,
+      "source": "current-local",
+      "rule": "Secret assignment",
+      "detail": "Secret assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": "GITHUB_ACTIONS_SETUP.md",
+      "line": 87,
+      "source": "current-local",
+      "rule": "Secret assignment",
+      "detail": "Secret assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "olympic-data-etl",
+      "path": ".env.example",
+      "line": 1,
+      "source": "history",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    }
+  ],
+  "github-streaming-analytics": [],
+  "Automotive-Parts-E-Commerce-Platform": [],
+  "ai-saas-tool": [
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "backend/auth.py",
+      "line": 22,
+      "source": "current-ghapi",
+      "rule": "token assignment",
+      "detail": "token=auth...)[1]"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/auth_clerk.py",
+      "line": 38,
+      "source": "current-ghapi",
+      "rule": "token assignment",
+      "detail": "token assignment present but low confidence"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/auth_clerk.py",
+      "line": 50,
+      "source": "current-ghapi",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": ".env.example",
+      "line": 1,
+      "source": "current-ghapi",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/.env.example",
+      "line": 1,
+      "source": "current-ghapi",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "frontend/.env.local.example",
+      "line": 1,
+      "source": "current-ghapi",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": ".github/workflows/auto-deploy.yml",
+      "line": 20,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": ".github/workflows/deploy.yml",
+      "line": 19,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "backend/auth.py",
+      "line": 22,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token=auth...)[1]"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/auth_clerk.py",
+      "line": 38,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token assignment present but low confidence"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/auth_clerk.py",
+      "line": 50,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/billing.py",
+      "line": 35,
+      "source": "current-local",
+      "rule": "secret assignment",
+      "detail": "secret assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "docs/clerk-setup.md",
+      "line": 11,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "frontend/.next/static/chunks/polyfills.js",
+      "line": 3,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": ".github/workflows/visual-regression.yml",
+      "line": 75,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "b4be0b7899879391c6657da9830d2d89a8a2d798"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_pr.ps1",
+      "line": 2,
+      "source": "history",
+      "rule": "Token assignment",
+      "detail": "Token=$env...OKEN",
+      "commit": "4abd75681ca2674aad2b8453a66ae8fa63f92817"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_pr.ps1",
+      "line": 10,
+      "source": "history",
+      "rule": "Token assignment",
+      "detail": "Token=[Run...re))",
+      "commit": "4abd75681ca2674aad2b8453a66ae8fa63f92817"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_pr.ps1",
+      "line": 28,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "4abd75681ca2674aad2b8453a66ae8fa63f92817"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_pr.sh",
+      "line": 4,
+      "source": "history",
+      "rule": "TOKEN assignment",
+      "detail": "TOKEN assignment appears templated/example",
+      "commit": "4abd75681ca2674aad2b8453a66ae8fa63f92817"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_pr.sh",
+      "line": 42,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token=appl...ls\")",
+      "commit": "4abd75681ca2674aad2b8453a66ae8fa63f92817"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_release_and_upload.ps1",
+      "line": 6,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token=$env...OKEN",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_release_and_upload.ps1",
+      "line": 9,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/create_release_and_upload.ps1",
+      "line": 32,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/post_pr_comment.ps1",
+      "line": 5,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token=$env...OKEN",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/post_pr_comment.ps1",
+      "line": 7,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/post_short_pr_comment.ps1",
+      "line": 5,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token=$env...OKEN",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/post_short_pr_comment.ps1",
+      "line": 7,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/run_pr_and_release.ps1",
+      "line": 1,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token=$env...OKEN",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "ai-saas-tool",
+      "path": "scripts/update_pr_body.ps1",
+      "line": 6,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token=$env...OKEN",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "scripts/update_pr_body.ps1",
+      "line": 8,
+      "source": "history",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example",
+      "commit": "babe1e1e00fb3fb1a9027d6bf5798199dc417f7e"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": ".env.example",
+      "line": 1,
+      "source": "history",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "backend/.env.example",
+      "line": 1,
+      "source": "history",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "ai-saas-tool",
+      "path": "frontend/.env.local.example",
+      "line": 1,
+      "source": "history",
+      "rule": "Suspicious file",
+      "detail": "Suspicious file path present"
+    }
+  ],
+  "task-manager": [
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/auth.ts",
+      "line": 14,
+      "source": "current-ghapi",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/auth.ts",
+      "line": 45,
+      "source": "current-ghapi",
+      "rule": "secret assignment",
+      "detail": "secret assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/auth.ts",
+      "line": 49,
+      "source": "current-ghapi",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "task-manager",
+      "path": "src/lib/auth-actions.ts",
+      "line": 10,
+      "source": "current-ghapi",
+      "rule": "password assignment",
+      "detail": "password=form...ring"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/lib/auth-actions.ts",
+      "line": 20,
+      "source": "current-ghapi",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/app/auth/register/page.tsx",
+      "line": 32,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "task-manager",
+      "path": "src/app/auth/signin/page.tsx",
+      "line": 10,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password=form...rd\")"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/app/auth/signin/page.tsx",
+      "line": 39,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/auth.ts",
+      "line": 14,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/auth.ts",
+      "line": 45,
+      "source": "current-local",
+      "rule": "secret assignment",
+      "detail": "secret assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/auth.ts",
+      "line": 49,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token assignment appears templated/example"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "task-manager",
+      "path": "src/lib/auth-actions.ts",
+      "line": 10,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password=form...ring"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "task-manager",
+      "path": "src/lib/auth-actions.ts",
+      "line": 20,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    }
+  ],
+  "introduction-to-git-and-github": [
+    {
+      "severity": "CRITICAL",
+      "repo": "introduction-to-git-and-github",
+      "path": "eng/authentication/01-personal-access-tokens.md",
+      "line": 14,
+      "source": "current-local",
+      "rule": "Token assignment",
+      "detail": "Token=Clic...en`."
+    },
+    {
+      "severity": "WARNING",
+      "repo": "introduction-to-git-and-github",
+      "path": "eng/authentication/01-personal-access-tokens.md",
+      "line": 16,
+      "source": "current-local",
+      "rule": "Token assignment",
+      "detail": "Token assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "introduction-to-git-and-github",
+      "path": "eng/authentication/01-personal-access-tokens.md",
+      "line": 24,
+      "source": "current-local",
+      "rule": "Password assignment",
+      "detail": "Password assignment appears templated/example"
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "introduction-to-git-and-github",
+      "path": "pt/autenticacao/01-tokens-acesso-pessoal.md",
+      "line": 14,
+      "source": "current-local",
+      "rule": "Token assignment",
+      "detail": "Token=Cliq...en`."
+    },
+    {
+      "severity": "CRITICAL",
+      "repo": "introduction-to-git-and-github",
+      "path": "pt/autenticacao/01-tokens-acesso-pessoal.md",
+      "line": 15,
+      "source": "current-local",
+      "rule": "token assignment",
+      "detail": "token=`rep...ção."
+    },
+    {
+      "severity": "WARNING",
+      "repo": "introduction-to-git-and-github",
+      "path": "pt/autenticacao/01-tokens-acesso-pessoal.md",
+      "line": 16,
+      "source": "current-local",
+      "rule": "Token assignment",
+      "detail": "Token assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "introduction-to-git-and-github",
+      "path": "pt/autenticacao/01-tokens-acesso-pessoal.md",
+      "line": 24,
+      "source": "current-local",
+      "rule": "Password assignment",
+      "detail": "Password assignment appears templated/example"
+    }
+  ],
+  "SaudeBR": [],
+  "Zanga": [
+    {
+      "severity": "WARNING",
+      "repo": "Zanga",
+      "path": "index.html",
+      "line": 14,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "Zanga",
+      "path": "script.js",
+      "line": 57,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "Zanga",
+      "path": "script.js",
+      "line": 61,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    },
+    {
+      "severity": "WARNING",
+      "repo": "Zanga",
+      "path": "script.js",
+      "line": 64,
+      "source": "current-local",
+      "rule": "password assignment",
+      "detail": "password assignment appears templated/example"
+    }
+  ],
+  "Task-Tracker": []
+}

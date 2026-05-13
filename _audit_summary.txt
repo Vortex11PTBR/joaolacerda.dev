@@ -1,0 +1,98 @@
+WARNING: joaolacerda.dev/jp/blueprint_engenharia_elite.html:918 [history] commit 70706377d0c7 - Secret assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx:30 [history] commit 70706377d0c7 - token assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx:31 [history] commit 70706377d0c7 - token assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx:32 [history] commit 70706377d0c7 - token assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx:33 [history] commit 70706377d0c7 - token assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/app/room/[slug]/editor-shell.tsx:55 [history] commit 70706377d0c7 - secret assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/components/cheat-panel.tsx:251 [history] commit 70706377d0c7 - Token assignment appears templated/example
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/components/cheat-panel.tsx:254 [history] commit 70706377d0c7 - Token assignment present but low confidence
+WARNING: joaolacerda.dev/projetos/fullstack/codestream/src/lib/cheatsheets.ts:103 [history] commit 70706377d0c7 - secret assignment appears templated/example
+CRITICAL: MEIFlow/.env.example:2 [current-ghapi] - Credentialed DB URL: post...uire
+CRITICAL: MEIFlow/.env.example:2 [current-local] - Credentialed DB URL: post...uire
+WARNING: MEIFlow/.env.example:1 [current-ghapi] - Suspicious file path present
+WARNING: MEIFlow/.github/workflows/ci.yml:25 [current-local] - Example DB URL pattern: postgresql://fake:fake@localhost:5432/fake?schema=public
+WARNING: MEIFlow/.github/workflows/ci.yml:26 [current-local] - Example DB URL pattern: postgresql://fake:fake@localhost:5432/fake?schema=public
+WARNING: MEIFlow/README.md:35 [current-local] - Example DB URL pattern: postgresql://user:pass@host/db?sslmode=require
+WARNING: MEIFlow/README.md:43 [current-local] - Database URL without obvious embedded creds: postgresql://...
+WARNING: MEIFlow/README.md:44 [current-local] - Database URL without obvious embedded creds: postgresql://...
+WARNING: MEIFlow/.env.example:1 [history] - Suspicious file path present
+SAFE: Vortex11PTBR is clean
+WARNING: CerradoWatch/.env.example:6 [current-ghapi] - Example DB URL pattern: postgresql://user:password@host/db?sslmode=require
+WARNING: CerradoWatch/.env.example:6 [current-ghapi] - password assignment appears templated/example
+WARNING: CerradoWatch/ingestion/config.py:14 [current-ghapi] - Example DB URL pattern: postgresql://user:pass@host/db?sslmode=require
+WARNING: CerradoWatch/ingestion/config.py:43 [current-ghapi] - Database URL without obvious embedded creds: postgresql://,
+WARNING: CerradoWatch/.env.example:1 [current-ghapi] - Suspicious file path present
+WARNING: CerradoWatch/.env.example:6 [current-local] - Example DB URL pattern: postgresql://user:password@host/db?sslmode=require
+WARNING: CerradoWatch/.env.example:6 [current-local] - password assignment appears templated/example
+WARNING: CerradoWatch/dashboard/data.py:31 [current-local] - password assignment appears templated/example
+WARNING: CerradoWatch/dashboard/data.py:35 [current-local] - Database URL without obvious embedded creds: postgresql://,
+WARNING: CerradoWatch/dashboard/data.py:38 [current-local] - password assignment appears templated/example
+WARNING: CerradoWatch/dbt/profiles.yml:9 [current-local] - password assignment appears templated/example
+WARNING: CerradoWatch/ingestion/config.py:14 [current-local] - Example DB URL pattern: postgresql://user:pass@host/db?sslmode=require
+WARNING: CerradoWatch/ingestion/config.py:43 [current-local] - Database URL without obvious embedded creds: postgresql://,
+WARNING: CerradoWatch/dashboard/data.py:31 [history] commit 1cbd8a21d4a7 - password assignment appears templated/example
+WARNING: CerradoWatch/dashboard/data.py:35 [history] commit 1cbd8a21d4a7 - Database URL without obvious embedded creds: postgresql://,
+WARNING: CerradoWatch/dashboard/data.py:38 [history] commit 1cbd8a21d4a7 - password assignment appears templated/example
+WARNING: CerradoWatch/dashboard/data.py:32 [history] commit 50854ff98484 - password assignment appears templated/example
+WARNING: CerradoWatch/dbt/profiles.yml:9 [history] commit 87e98b0090e0 - password assignment appears templated/example
+WARNING: CerradoWatch/.env.example:1 [history] - Suspicious file path present
+SAFE: game_scroller is clean
+WARNING: olympic-data-etl/.env.example:1 [current-ghapi] - Suspicious file path present
+WARNING: olympic-data-etl/.github/workflows/deploy.yml:199 [current-local] - password assignment appears templated/example
+WARNING: olympic-data-etl/.github/workflows/deploy.yml:206 [current-local] - password assignment appears templated/example
+WARNING: olympic-data-etl/GITHUB_ACTIONS_QUICK_START.md:19 [current-local] - SECRET assignment appears templated/example
+WARNING: olympic-data-etl/GITHUB_ACTIONS_QUICK_START.md:23 [current-local] - SECRET assignment appears templated/example
+WARNING: olympic-data-etl/GITHUB_ACTIONS_SETUP.md:80 [current-local] - Secret assignment appears templated/example
+WARNING: olympic-data-etl/GITHUB_ACTIONS_SETUP.md:87 [current-local] - Secret assignment appears templated/example
+WARNING: olympic-data-etl/.env.example:1 [history] - Suspicious file path present
+SAFE: github-streaming-analytics is clean
+SAFE: Automotive-Parts-E-Commerce-Platform is clean
+CRITICAL: ai-saas-tool/backend/auth.py:22 [current-ghapi] - token=auth...)[1]
+CRITICAL: ai-saas-tool/backend/auth.py:22 [current-local] - token=auth...)[1]
+CRITICAL: ai-saas-tool/scripts/create_pr.ps1:2 [history] commit 4abd75681ca2 - Token=$env...OKEN
+CRITICAL: ai-saas-tool/scripts/create_pr.ps1:10 [history] commit 4abd75681ca2 - Token=[Run...re))
+CRITICAL: ai-saas-tool/scripts/create_pr.sh:42 [history] commit 4abd75681ca2 - token=appl...ls")
+CRITICAL: ai-saas-tool/scripts/create_release_and_upload.ps1:6 [history] commit babe1e1e00fb - token=$env...OKEN
+CRITICAL: ai-saas-tool/scripts/post_pr_comment.ps1:5 [history] commit babe1e1e00fb - token=$env...OKEN
+CRITICAL: ai-saas-tool/scripts/post_short_pr_comment.ps1:5 [history] commit babe1e1e00fb - token=$env...OKEN
+CRITICAL: ai-saas-tool/scripts/run_pr_and_release.ps1:1 [history] commit babe1e1e00fb - token=$env...OKEN
+CRITICAL: ai-saas-tool/scripts/update_pr_body.ps1:6 [history] commit babe1e1e00fb - token=$env...OKEN
+WARNING: ai-saas-tool/backend/auth_clerk.py:38 [current-ghapi] - token assignment present but low confidence
+WARNING: ai-saas-tool/backend/auth_clerk.py:50 [current-ghapi] - token assignment appears templated/example
+WARNING: ai-saas-tool/.env.example:1 [current-ghapi] - Suspicious file path present
+WARNING: ai-saas-tool/backend/.env.example:1 [current-ghapi] - Suspicious file path present
+WARNING: ai-saas-tool/frontend/.env.local.example:1 [current-ghapi] - Suspicious file path present
+WARNING: ai-saas-tool/.github/workflows/auto-deploy.yml:20 [current-local] - token assignment appears templated/example
+WARNING: ai-saas-tool/.github/workflows/deploy.yml:19 [current-local] - token assignment appears templated/example
+WARNING: ai-saas-tool/backend/auth_clerk.py:38 [current-local] - token assignment present but low confidence
+WARNING: ai-saas-tool/backend/auth_clerk.py:50 [current-local] - token assignment appears templated/example
+WARNING: ai-saas-tool/backend/billing.py:35 [current-local] - secret assignment appears templated/example
+CRITICAL: task-manager/src/lib/auth-actions.ts:10 [current-ghapi] - password=form...ring
+CRITICAL: task-manager/src/app/auth/signin/page.tsx:10 [current-local] - password=form...rd")
+CRITICAL: task-manager/src/lib/auth-actions.ts:10 [current-local] - password=form...ring
+WARNING: task-manager/src/auth.ts:14 [current-ghapi] - password assignment appears templated/example
+WARNING: task-manager/src/auth.ts:45 [current-ghapi] - secret assignment appears templated/example
+WARNING: task-manager/src/auth.ts:49 [current-ghapi] - token assignment appears templated/example
+WARNING: task-manager/src/lib/auth-actions.ts:20 [current-ghapi] - password assignment appears templated/example
+WARNING: task-manager/src/app/auth/register/page.tsx:32 [current-local] - password assignment appears templated/example
+WARNING: task-manager/src/app/auth/signin/page.tsx:39 [current-local] - password assignment appears templated/example
+WARNING: task-manager/src/auth.ts:14 [current-local] - password assignment appears templated/example
+WARNING: task-manager/src/auth.ts:45 [current-local] - secret assignment appears templated/example
+WARNING: task-manager/src/auth.ts:49 [current-local] - token assignment appears templated/example
+WARNING: task-manager/src/lib/auth-actions.ts:20 [current-local] - password assignment appears templated/example
+SAFE: javascript-basics is clean
+CRITICAL: introduction-to-git-and-github/eng/authentication/01-personal-access-tokens.md:14 [current-local] - Token=Clic...en`.
+CRITICAL: introduction-to-git-and-github/pt/autenticacao/01-tokens-acesso-pessoal.md:14 [current-local] - Token=Cliq...en`.
+CRITICAL: introduction-to-git-and-github/pt/autenticacao/01-tokens-acesso-pessoal.md:15 [current-local] - token=`rep...ção.
+WARNING: introduction-to-git-and-github/eng/authentication/01-personal-access-tokens.md:16 [current-local] - Token assignment appears templated/example
+WARNING: introduction-to-git-and-github/eng/authentication/01-personal-access-tokens.md:24 [current-local] - Password assignment appears templated/example
+WARNING: introduction-to-git-and-github/pt/autenticacao/01-tokens-acesso-pessoal.md:16 [current-local] - Token assignment appears templated/example
+WARNING: introduction-to-git-and-github/pt/autenticacao/01-tokens-acesso-pessoal.md:24 [current-local] - Password assignment appears templated/example
+SAFE: SaudeBR is clean
+WARNING: Zanga/index.html:14 [current-local] - password assignment appears templated/example
+WARNING: Zanga/script.js:57 [current-local] - password assignment appears templated/example
+WARNING: Zanga/script.js:61 [current-local] - password assignment appears templated/example
+WARNING: Zanga/script.js:64 [current-local] - password assignment appears templated/example
+SAFE: PythonEx1 is clean
+SAFE: Task-Tracker is clean
+SAFE: n1 is clean
