@@ -798,7 +798,7 @@
           <div class="feature-card fade-in">
             <div class="feat-icon amber">⚡</div>
             <div class="feat-title">Alertas de DAS automáticos</div>
-            <div class="feat-desc">Sistema de filas com BullMQ envia e-mail automaticamente 5 dias antes do vencimento do DAS. Zero chance de esquecer e levar multa.</div>
+            <div class="feat-desc">Vercel Cron Jobs dispara o endpoint de alerta todo dia 10 do mês. O e-mail é enviado via Resend 5 dias antes do vencimento do DAS. Zero chance de esquecer e levar multa.</div>
           </div>
           <div class="feature-card fade-in">
             <div class="feat-icon green">📊</div>
@@ -846,9 +846,9 @@
           <div class="arch-layer">
             <div class="arch-layer-title">Backend</div>
             <div class="arch-items">
-              <div class="arch-item">Fastify + TypeScript</div>
+              <div class="arch-item">Next.js API Routes</div>
               <div class="arch-item">PostgreSQL + Prisma ORM</div>
-              <div class="arch-item">Redis + BullMQ</div>
+              <div class="arch-item">NextAuth.js + bcryptjs</div>
               <div class="arch-item">Resend (e-mail)</div>
               <div class="arch-item">Claude API (IA)</div>
             </div>
@@ -857,36 +857,34 @@
             <div class="arch-layer-title">Infraestrutura</div>
             <div class="arch-items">
               <div class="arch-item">Docker Compose (dev)</div>
-              <div class="arch-item">Vercel (frontend)</div>
-              <div class="arch-item">Railway (backend)</div>
-              <div class="arch-item">GitHub Actions CI/CD</div>
+              <div class="arch-item">Vercel (deploy + cron)</div>
               <div class="arch-item">Neon (PostgreSQL)</div>
+              <div class="arch-item">GitHub Actions CI/CD</div>
             </div>
           </div>
           <div class="arch-layer">
-            <div class="arch-layer-title">Qualidade & Segurança</div>
+            <div class="arch-layer-title">Qualidade</div>
             <div class="arch-items">
-              <div class="arch-item">Vitest + Supertest</div>
-              <div class="arch-item">ESLint + Prettier</div>
-              <div class="arch-item">Conventional Commits</div>
-              <div class="arch-item">Row Level Security</div>
-              <div class="arch-item">LGPD compliance</div>
+              <div class="arch-item">ESLint</div>
+              <div class="arch-item">Zod (validação)</div>
+              <div class="arch-item">TypeScript strict</div>
+              <div class="arch-item">Isolamento por tenant</div>
             </div>
           </div>
         </div>
         <div class="stack-tags">
-          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Next.js 14</span>
           <span class="stack-tag">TypeScript</span>
-          <span class="stack-tag">Fastify</span>
+          <span class="stack-tag">Tailwind CSS</span>
           <span class="stack-tag">PostgreSQL</span>
           <span class="stack-tag">Prisma</span>
-          <span class="stack-tag">Redis</span>
-          <span class="stack-tag">BullMQ</span>
+          <span class="stack-tag">NextAuth.js</span>
           <span class="stack-tag">Claude API</span>
+          <span class="stack-tag">Resend</span>
+          <span class="stack-tag">Zod</span>
           <span class="stack-tag">Docker</span>
           <span class="stack-tag">GitHub Actions</span>
           <span class="stack-tag">Vercel</span>
-          <span class="stack-tag">Railway</span>
         </div>
       </div>
     </section>
@@ -897,7 +895,7 @@
         <div class="narrative-block fade-in">
           <p class="narrative-quote">
             "Construí um <strong>SaaS multi-tenant de gestão financeira para MEIs</strong> com
-            <strong>fila assíncrona de notificações</strong> via BullMQ, integração direta com a
+            <strong>Vercel Cron Jobs</strong> para notificações automáticas de DAS, integração direta com a
             <strong>API da Receita Federal</strong> para validação de CNPJ, e
             <strong>categorização automática de lançamentos via LLM</strong> (Claude API).
             O sistema monitora o limite de faturamento anual de R$ 81.000 e envia alertas proativos.
@@ -911,7 +909,7 @@
 
   <footer>
     <p>MEIFlow · construído por <a href="index.html">João Lacerda</a> · <a href="https://github.com/Vortex11PTBR/MEIFlow" target="_blank" rel="noopener">GitHub/MEIFlow</a></p>
-    <p style="margin-top:6px">Next.js · Fastify · PostgreSQL · Redis · BullMQ · Claude API</p>
+    <p style="margin-top:6px">Next.js · Prisma · PostgreSQL · Claude API · Resend · Vercel</p>
   </footer>
 
   <script>
