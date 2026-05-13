@@ -10,7 +10,7 @@ const i18n = {
     'nav.proj':'Projetos','nav.certs':'Certificações','nav.contact':'Contato','nav.resume':'Currículo',
     'hero.greeting':'~/joaolacerda',
     'hero.desc':'Construo sistemas que escalam, analiso dados que geram insights e desenvolvo arquiteturas seguras — do front-end ao servidor, da pipeline ao modelo, da aplicação à defesa.',
-    'hero.cta.work':'Ver Projetos','hero.cta.contact':'Falar Comigo',
+    'hero.cta.work':'Ver Projetos','hero.cta.contact':'Falar Comigo','hero.available':'Disponível para oportunidades',
     'stat.years':'Anos de Experiência','stat.projects':'Projetos com Deploy','stat.users':'Usuários Atendidos','stat.tech':'Tecnologias','stat.langs':'Idiomas Fluentes',
     'areas.title':'// áreas de atuação',
     'area.fullstack':'Full Stack','area.fullstack.desc':'React, Node.js, TypeScript, APIs REST & GraphQL, bancos relacionais e NoSQL.',
@@ -74,7 +74,7 @@ const i18n = {
     'contact.p1':'Estou aberto a novas oportunidades — estágio, trainee ou projetos freelance em full stack e dados.',
     'contact.p2':'Se quiser discutir um projeto ou simplesmente dizer olá — minha caixa de entrada está sempre aberta.',
     'contact.btn':'Enviar Mensagem →',
-    'form.name':'Nome','form.email':'E-mail','form.subject':'Assunto','form.message':'Mensagem','form.send':'Enviar Mensagem',
+    'form.name':'Nome','form.email':'E-mail','form.subject':'Assunto','form.message':'Mensagem','form.send':'Enviar Mensagem','form.pendingNote':'Por enquanto, o envio abre seu cliente de e-mail. Você também pode escrever para joao@joaolacerda.dev.',
     'footer.built':'Desenhado & desenvolvido por',
   },
   en: {
@@ -82,7 +82,7 @@ const i18n = {
     'nav.proj':'Projects','nav.certs':'Certifications','nav.contact':'Contact','nav.resume':'Resume',
     'hero.greeting':'~/joaolacerda',
     'hero.desc':'I build systems that scale, analyze data that generates insights, and develop secure architectures — from front-end to server, from pipeline to model, from application to defense.',
-    'hero.cta.work':'View Projects','hero.cta.contact':'Get In Touch',
+    'hero.cta.work':'View Projects','hero.cta.contact':'Get In Touch','hero.available':'Open to opportunities',
     'stat.years':'Years Experience','stat.projects':'Deployed Projects','stat.users':'Users Reached','stat.tech':'Technologies','stat.langs':'Fluent Languages',
     'areas.title':'// areas of expertise',
     'area.fullstack':'Full Stack','area.fullstack.desc':'React, Node.js, TypeScript, REST & GraphQL APIs, relational and NoSQL databases.',
@@ -146,7 +146,7 @@ const i18n = {
     'contact.p1':'I am open to new opportunities — internships, trainee roles, or freelance projects in full stack and data.',
     'contact.p2':'If you want to discuss a project or just say hi — my inbox is always open.',
     'contact.btn':'Send Message →',
-    'form.name':'Name','form.email':'Email','form.subject':'Subject','form.message':'Message','form.send':'Send Message',
+    'form.name':'Name','form.email':'Email','form.subject':'Subject','form.message':'Message','form.send':'Send Message','form.pendingNote':'For now, submission opens your email client. You can also write to joao@joaolacerda.dev.',
     'footer.built':'Designed & built by',
   }
 };
@@ -227,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.width = W; canvas.height = H;
   const CYAN = '0,212,255', PURPLE = '124,58,237';
   const COUNT = Math.min(Math.floor((W * H) / 16000), 90);
+  const mouse = { x: -9999, y: -9999, active: false };
   class P {
     constructor() { this.reset(true); }
     reset(init) {
@@ -248,15 +249,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const particles = Array.from({length: COUNT}, () => new P());
   function drawLines() {
-    for (let i = 0; i < particles.length; i++)
-      for (let j = i+1; j < particles.length; j++) {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-        const d = Math.sqrt(dx*dx+dy*dy);
-        if (d < 120) { ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.strokeStyle=`rgba(${CYAN},${(1-d/120)*0.07})`; ctx.lineWidth=0.5; ctx.stroke(); }
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${CYAN},${(1 - d / 120) * 0.07})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
       }
+      if (!mouse.active) continue;
+      const mdx = particles[i].x - mouse.x, mdy = particles[i].y - mouse.y;
+      const md = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (md < 150) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(${CYAN},${(1 - md / 150) * 0.12})`;
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+    }
   }
   function animate() { ctx.clearRect(0,0,W,H); drawLines(); particles.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(animate); }
   animate();
+  addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; }, {passive:true});
+  addEventListener('mouseleave', () => { mouse.active = false; }, {passive:true});
   addEventListener('resize', () => { W=innerWidth; H=innerHeight; canvas.width=W; canvas.height=H; }, {passive:true});
 })();
 
@@ -372,8 +394,69 @@ document.addEventListener('DOMContentLoaded', () => {
   (function loop() { cx+=(mx-cx)*.06; cy+=(my-cy)*.06; g.style.left=cx+'px'; g.style.top=cy+'px'; requestAnimationFrame(loop); })();
 })();
 
+// ── Scroll progress bar ────────────────────────────────
+(function() {
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.prepend(bar);
+  window.addEventListener('scroll', () => {
+    const pct = (scrollY / (document.documentElement.scrollHeight - innerHeight)) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, {passive: true});
+})();
+
+// ── Hero entrance animation ────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const heroText = document.querySelector('.hero-text');
+  if (heroText) requestAnimationFrame(() => heroText.classList.add('anim-done'));
+});
+
+// ── 3D card tilt ──────────────────────────────────────
+(function() {
+  if (matchMedia('(pointer:coarse)').matches) return;
+  function addTilt(selector) {
+    document.querySelectorAll(selector).forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    addTilt('.area-card');
+    addTilt('.project-card');
+    addTilt('.cert-card');
+    addTilt('.cert-card-link');
+  });
+})();
+
+// ── Contact form ───────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  if (!form || form.dataset.pending !== 'true') return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.querySelector('#name')?.value || '';
+    const email = form.querySelector('#email')?.value || '';
+    const subject = form.querySelector('#subject')?.value || 'Contato pelo site';
+    const message = form.querySelector('#message')?.value || '';
+    const body = `From: ${name} (${email})\n\n${message}`;
+    const mailtoUrl = `mailto:joao@joaolacerda.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl);
+    const lang = typeof currentLang !== 'undefined' ? currentLang : 'pt';
+    const msg = lang === 'pt'
+      ? '✓ Seu cliente de e-mail foi aberto! Você também pode escrever diretamente para'
+      : '✓ Your email client was opened! You can also write directly to';
+    const sub = 'joao@joaolacerda.dev';
+    form.innerHTML = `<div class="form-success"><div class="form-success-icon">✉️</div><div class="form-success-text"><span class="text-cyan">${msg}</span></div><div class="form-success-email">${sub}</div></div>`;
+  });
+});
+
 // ── Console easter egg ─────────────────────────────────
-console.log('%c┌──────────────────────────────────────┐\n│  João Lacerda · joaolacerda.dev      │\n│  Full Stack · Dados · Cibersegurança  │\n└──────────────────────────────────────┘', 'color:#00d4ff;font-family:monospace;font-size:13px');
+console.log('%c┌──────────────────────────────────────┐\n│  João Lacerda · joaolacerda.dev      │\n│  Full Stack · Dados · IA & LLMs      │\n└──────────────────────────────────────┘', 'color:#00d4ff;font-family:monospace;font-size:13px');
 console.log('%cOlá! Curioso(a) sobre o código? 👋\njoao@joaolacerda.dev', 'color:#94a3b8;font-family:monospace;font-size:11px');
 
 

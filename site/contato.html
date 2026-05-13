@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e Cibersegurança." />
+  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e IA & LLMs." />
   <title>Contato — João Lacerda</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,7 +84,7 @@
         <a href="mailto:joao@joaolacerda.dev" class="btn btn-primary contact-cta" data-i18n="contact.btn">Enviar Mensagem →</a>
       </div>
 
-      <form class="contact-form" id="contactForm" novalidate>
+      <form class="contact-form" id="contactForm" data-pending="true" novalidate>
         <div class="form-group">
           <label class="form-label" for="name" data-i18n="form.name">Nome</label>
           <input class="form-input" type="text" id="name" name="name" placeholder="João Silva" required />
@@ -102,6 +102,7 @@
           <textarea class="form-input form-textarea" id="message" name="message" rows="5" placeholder="Olá João, gostaria de..." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="form.send">Enviar Mensagem</button>
+        <p class="form-note mono" data-i18n="form.pendingNote">Por enquanto, o envio abre seu cliente de e-mail. Você também pode escrever para joao@joaolacerda.dev.</p>
       </form>
     </div>
   </main>
