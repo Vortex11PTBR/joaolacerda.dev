@@ -11,3 +11,9 @@ projetos/
 _audit_cache/
 _audit_results.json
 _audit_summary.txt
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
