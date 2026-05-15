@@ -1,159 +1,657 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="João Lacerda – Engenheiro de Software Full Stack, Dados e IA & LLMs." />
-  <title>Projetos — João Lacerda</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body data-page="proj">
-  <canvas id="particles"></canvas>
-  <div class="grid-overlay"></div>
-  <div class="noise"></div>
-  <nav class="nav" id="nav">
-    <a href="index.html" class="logo-link">
-      <span class="logo-bracket">&lt;</span><span class="logo-text">JL</span><span class="logo-bracket">/&gt;</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html"        class="nav-link" data-i18n="nav.home">Início</a></li>
-      <li><a href="sobre.html"        class="nav-link" data-i18n="nav.about">Sobre</a></li>
-      <li><a href="experiencia.html"  class="nav-link" data-i18n="nav.exp">Experiência</a></li>
-      <li><a href="projetos.html"     class="nav-link" data-i18n="nav.proj">Projetos</a></li>
-      <li><a href="certificacoes.html" class="nav-link" data-i18n="nav.certs">Certificações</a></li>
-      <li><a href="contato.html"      class="nav-link" data-i18n="nav.contact">Contato</a></li>
-      <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" data-i18n="nav.resume">Currículo</a></li>
-      <li>
-        <button class="lang-toggle" id="langToggle" title="Switch language">
-          <span class="lang-opt" data-lang="pt">PT</span>
-          <span class="lang-sep">|</span>
-          <span class="lang-opt" data-lang="en">EN</span>
-        </button>
-      </li>
-    </ul>
-  </nav>
-  <aside class="sidebar sidebar-left">
-    <a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener" aria-label="GitHub" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0" target="_blank" rel="noopener" aria-label="LinkedIn" class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-<div class="sidebar-line"></div>
-  </aside>
-  <aside class="sidebar sidebar-right">
-    <a href="mailto:joao@joaolacerda.dev" class="sidebar-email">joao@joaolacerda.dev</a>
-    <div class="sidebar-line"></div>
-  </aside>
-  <main class="main-content">
-    <div class="page-header fade-in">
-      <span class="page-num mono text-cyan">03.</span>
-      <h1 class="page-title" data-i18n="proj.title">Projetos</h1>
-      <div class="section-line"></div>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="João Lacerda – Engenheiro de Software Full Stack, Dados e IA & LLMs."
+        />
+        <title>Projetos — João Lacerda</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body data-page="proj">
+        <canvas id="particles"></canvas>
+        <div class="grid-overlay"></div>
+        <div class="noise"></div>
+        <nav class="nav" id="nav">
+            <a href="index.html" class="logo-link">
+                <span class="logo-bracket">&lt;</span
+                ><span class="logo-text">JL</span
+                ><span class="logo-bracket">/&gt;</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="index.html" class="nav-link" data-i18n="nav.home"
+                        >Início</a
+                    >
+                </li>
+                <li>
+                    <a href="sobre.html" class="nav-link" data-i18n="nav.about"
+                        >Sobre</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="experiencia.html"
+                        class="nav-link"
+                        data-i18n="nav.exp"
+                        >Experiência</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="projetos.html"
+                        class="nav-link"
+                        data-i18n="nav.proj"
+                        >Projetos</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="certificacoes.html"
+                        class="nav-link"
+                        data-i18n="nav.certs"
+                        >Certificações</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="contato.html"
+                        class="nav-link"
+                        data-i18n="nav.contact"
+                        >Contato</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="resume.pdf"
+                        target="_blank"
+                        class="nav-resume-btn"
+                        data-i18n="nav.resume"
+                        >Currículo</a
+                    >
+                </li>
+                <li>
+                    <button
+                        class="lang-toggle"
+                        id="langToggle"
+                        title="Switch language"
+                    >
+                        <span class="lang-opt" data-lang="pt">PT</span>
+                        <span class="lang-sep">|</span>
+                        <span class="lang-opt" data-lang="en">EN</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <aside class="sidebar sidebar-left">
+            <a
+                href="https://github.com/Vortex11PTBR"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                class="sidebar-icon"
+                ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    /></svg
+            ></a>
+            <a
+                href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                class="sidebar-icon"
+                ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" /></svg
+            ></a>
+            <div class="sidebar-line"></div>
+        </aside>
+        <aside class="sidebar sidebar-right">
+            <a href="mailto:joao@joaolacerda.dev" class="sidebar-email"
+                >joao@joaolacerda.dev</a
+            >
+            <div class="sidebar-line"></div>
+        </aside>
+        <main class="main-content">
+            <div class="page-header fade-in">
+                <span class="page-num mono text-cyan">03.</span>
+                <h1 class="page-title" data-i18n="proj.title">Projetos</h1>
+                <div class="section-line"></div>
+            </div>
 
-    <div class="proj-filters fade-in">
-      <button class="proj-filter active" data-filter="all" data-i18n="filter.all">Todos</button>
-      <button class="proj-filter" data-filter="fullstack" data-i18n="filter.fs">Full Stack</button>
-      <button class="proj-filter" data-filter="data" data-i18n="filter.data">Dados</button>
-      <button class="proj-filter" data-filter="ai" data-i18n="filter.ai">IA &amp; LLMs</button>
-    </div>
+            <div class="proj-filters fade-in">
+                <button
+                    class="proj-filter active"
+                    data-filter="all"
+                    data-i18n="filter.all"
+                >
+                    Todos
+                </button>
+                <button
+                    class="proj-filter"
+                    data-filter="fullstack"
+                    data-i18n="filter.fs"
+                >
+                    Full Stack
+                </button>
+                <button
+                    class="proj-filter"
+                    data-filter="data"
+                    data-i18n="filter.data"
+                >
+                    Dados
+                </button>
+                <button
+                    class="proj-filter"
+                    data-filter="ai"
+                    data-i18n="filter.ai"
+                >
+                    IA &amp; LLMs
+                </button>
+            </div>
 
-    <!-- Featured -->
-    <div class="featured-projects">
-      <article class="featured-project fade-in" data-category="fullstack">
-        <a href="https://mei-flow-eight.vercel.app" target="_blank" rel="noopener" class="fp-image" style="display:block;text-decoration:none;"><img src="img/meiflow/dashboard.png" alt="MEIFlow Dashboard" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0.9;" /></a>
-        <div class="fp-content">
-          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
-          <h3 class="project-title"><a href="https://mei-flow-eight.vercel.app" target="_blank" rel="noopener" data-i18n="proj.meiflow.title">MEIFlow — SaaS de Gestão Financeira para MEIs</a></h3>
-          <div class="project-description">
-            <p data-i18n="proj.meiflow.desc">SaaS multi-tenant para os 15 milhões de MEIs brasileiros. Dashboard financeiro com categorização automática de lançamentos via IA (Claude API), integração com a Receita Federal para validação de CNPJ, monitoramento do limite anual de R$ 81 mil e notificações de DAS via fila assíncrona BullMQ + Redis.</p>
-          </div>
-          <ul class="project-tech-list"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>NextAuth</li><li>Redis</li><li>Claude AI</li><li>Docker</li><li>Tailwind CSS</li><li>Vitest</li></ul>
-          <div class="project-links">
-            <a href="https://github.com/Vortex11PTBR/MEIFlow" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-            <a href="https://mei-flow-eight.vercel.app" target="_blank" rel="noopener" aria-label="Ver site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-          </div>
-        </div>
-      </article>
+            <!-- Featured -->
+            <div class="featured-projects">
+                <article
+                    class="featured-project fade-in"
+                    data-category="fullstack"
+                >
+                    <a
+                        href="https://mei-flow-eight.vercel.app"
+                        target="_blank"
+                        rel="noopener"
+                        class="fp-image"
+                        style="display: block; text-decoration: none"
+                        ><img
+                            src="img/meiflow/dashboard.png"
+                            alt="MEIFlow Dashboard"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: inherit;
+                                opacity: 0.9;
+                            "
+                    /></a>
+                    <div class="fp-content">
+                        <p class="project-overline" data-i18n="proj.featured">
+                            Destaque
+                        </p>
+                        <h3 class="project-title">
+                            <a
+                                href="https://mei-flow-eight.vercel.app"
+                                target="_blank"
+                                rel="noopener"
+                                data-i18n="proj.meiflow.title"
+                                >MEIFlow — SaaS de Gestão Financeira para
+                                MEIs</a
+                            >
+                        </h3>
+                        <div class="project-description">
+                            <p data-i18n="proj.meiflow.desc">
+                                SaaS multi-tenant para os 15 milhões de MEIs
+                                brasileiros. Dashboard financeiro com
+                                categorização automática de lançamentos via IA
+                                (Claude API), integração com a Receita Federal
+                                para validação de CNPJ, monitoramento do limite
+                                anual de R$ 81 mil e notificações de DAS via
+                                fila assíncrona BullMQ + Redis.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Next.js</li>
+                            <li>TypeScript</li>
+                            <li>PostgreSQL</li>
+                            <li>Prisma</li>
+                            <li>NextAuth</li>
+                            <li>Redis</li>
+                            <li>Claude AI</li>
+                            <li>Docker</li>
+                            <li>Tailwind CSS</li>
+                            <li>Vitest</li>
+                        </ul>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/MEIFlow"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="GitHub"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                    /></svg
+                            ></a>
+                            <a
+                                href="https://mei-flow-eight.vercel.app"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Ver site"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" /></svg
+                            ></a>
+                        </div>
+                    </div>
+                </article>
 
-      <article class="featured-project reverse fade-in" data-category="data">
-        <a href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app" target="_blank" rel="noopener" class="fp-image" style="display:block;text-decoration:none;"><img src="https://raw.githubusercontent.com/Vortex11PTBR/CerradoWatch/main/screenshots/home.png" alt="CerradoWatch Dashboard" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" onerror="this.parentElement.innerHTML='<div class=fp-placeholder><span>🌿</span></div>'" /></a>
-        <div class="fp-content">
-          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
-          <span class="proj-live-badge">● LIVE</span>
-          <h3 class="project-title"><a href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app" target="_blank" rel="noopener" data-i18n="proj.cerradowatch.title">CerradoWatch — Pipeline ETL de Dados Ambientais</a></h3>
-          <div class="project-description">
-            <p data-i18n="proj.cerradowatch.desc">Pipeline ETL que ingere dados de queimadas, desmatamento e clima de APIs públicas (INPE, NASA FIRMS, INMET), transforma com dbt e serve dashboard interativo ao vivo via Streamlit. Orquestração semanal por GitHub Actions com validação automática de qualidade de dados.</p>
-          </div>
-          <ul class="project-tech-list"><li>Python</li><li>dbt</li><li>PostgreSQL</li><li>FastAPI</li><li>Streamlit</li><li>Prefect</li><li>GitHub Actions</li><li>Neon</li><li>Docker</li></ul>
-          <div class="project-links">
-            <a href="https://github.com/Vortex11PTBR/CerradoWatch" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-            <a href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app" target="_blank" rel="noopener" aria-label="Dashboard ao vivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-          </div>
-        </div>
-      </article>
+                <article
+                    class="featured-project reverse fade-in"
+                    data-category="data"
+                >
+                    <a
+                        href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app"
+                        target="_blank"
+                        rel="noopener"
+                        class="fp-image"
+                        style="display: block; text-decoration: none"
+                        ><img
+                            src="https://raw.githubusercontent.com/Vortex11PTBR/CerradoWatch/main/screenshots/home.png"
+                            alt="CerradoWatch Dashboard"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: inherit;
+                            "
+                            onerror="
+                                this.parentElement.innerHTML =
+                                    '<div class=fp-placeholder><span>🌿</span></div>'
+                            "
+                    /></a>
+                    <div class="fp-content">
+                        <p class="project-overline" data-i18n="proj.featured">
+                            Destaque
+                        </p>
+                        <span class="proj-live-badge">● LIVE</span>
+                        <h3 class="project-title">
+                            <a
+                                href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app"
+                                target="_blank"
+                                rel="noopener"
+                                data-i18n="proj.cerradowatch.title"
+                                >CerradoWatch — Pipeline ETL de Dados
+                                Ambientais</a
+                            >
+                        </h3>
+                        <div class="project-description">
+                            <p data-i18n="proj.cerradowatch.desc">
+                                Pipeline ETL que ingere dados de queimadas,
+                                desmatamento e clima de APIs públicas (INPE,
+                                NASA FIRMS, INMET), transforma com dbt e serve
+                                dashboard interativo ao vivo via Streamlit.
+                                Orquestração semanal por GitHub Actions com
+                                validação automática de qualidade de dados.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Python</li>
+                            <li>dbt</li>
+                            <li>PostgreSQL</li>
+                            <li>FastAPI</li>
+                            <li>Streamlit</li>
+                            <li>Prefect</li>
+                            <li>GitHub Actions</li>
+                            <li>Neon</li>
+                            <li>Docker</li>
+                        </ul>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/CerradoWatch"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="GitHub"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                    /></svg
+                            ></a>
+                            <a
+                                href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Dashboard ao vivo"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" /></svg
+                            ></a>
+                        </div>
+                    </div>
+                </article>
 
-      <article class="featured-project fade-in" data-category="data">
-        <a href="https://brasilbid.streamlit.app" target="_blank" rel="noopener" class="fp-image" style="display:block;text-decoration:none;"><img src="https://raw.githubusercontent.com/Vortex11PTBR/brasilibid/master/screenshots/visao-geral.png" alt="BrasilBid Dashboard" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" onerror="this.parentElement.innerHTML='<div class=fp-placeholder style=&quot;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)&quot;><span>🏛️</span></div>'" /></a>
-        <div class="fp-content">
-          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
-          <span class="proj-live-badge">● LIVE</span>
-          <h3 class="project-title"><a href="https://brasilbid.streamlit.app" target="_blank" rel="noopener" data-i18n="proj.brasilibid.title">BrasilBid — Monitor de Licitações Públicas</a></h3>
-          <div class="project-description">
-            <p data-i18n="proj.brasilibid.desc">Pipeline ETL que ingere licitações do PNCP (Portal Nacional de Contratações Públicas) via API oficial, carga em PostgreSQL no Neon, transforma com dbt e serve app interativo ao vivo via Streamlit. R$ 8 bilhões em licitações monitoradas de 27 UFs e 1.400+ órgãos públicos brasileiros.</p>
-          </div>
-          <ul class="project-tech-list"><li>Python</li><li>dbt</li><li>PostgreSQL</li><li>FastAPI</li><li>Streamlit</li><li>Power BI</li><li>Apache Airflow</li><li>Docker</li><li>Neon</li></ul>
-          <div class="project-links">
-            <a href="https://github.com/Vortex11PTBR/brasilibid" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-            <a href="https://brasilbid.streamlit.app" target="_blank" rel="noopener" aria-label="App ao vivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiYjQzNDdiMmMtMzczMi00MmY0LWIyZjMtMDg2NTEwNTUzZjE2IiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=c90308a9d2662513e95b" target="_blank" rel="noopener" aria-label="Dashboard Power BI"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h1v9H9zm4-3h1v12h-1zm4 6h1v6h-1z"/></svg></a>
-          </div>
-        </div>
-      </article>
+                <article class="featured-project fade-in" data-category="data">
+                    <a
+                        href="https://brasilbid.streamlit.app"
+                        target="_blank"
+                        rel="noopener"
+                        class="fp-image"
+                        style="display: block; text-decoration: none"
+                        ><img
+                            src="https://raw.githubusercontent.com/Vortex11PTBR/brasilibid/master/screenshots/visao-geral.png"
+                            alt="BrasilBid Dashboard"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: inherit;
+                            "
+                            onerror="
+                                this.parentElement.innerHTML =
+                                    '<div class=fp-placeholder style=&quot;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)&quot;><span>🏛️</span></div>'
+                            "
+                    /></a>
+                    <div class="fp-content">
+                        <p class="project-overline" data-i18n="proj.featured">
+                            Destaque
+                        </p>
+                        <span class="proj-live-badge">● LIVE</span>
+                        <h3 class="project-title">
+                            <a
+                                href="https://brasilbid.streamlit.app"
+                                target="_blank"
+                                rel="noopener"
+                                data-i18n="proj.brasilibid.title"
+                                >BrasilBid — Monitor de Licitações Públicas</a
+                            >
+                        </h3>
+                        <div class="project-description">
+                            <p data-i18n="proj.brasilibid.desc">
+                                Pipeline ETL que ingere licitações do PNCP
+                                (Portal Nacional de Contratações Públicas) via
+                                API oficial, carga em PostgreSQL no Neon,
+                                transforma com dbt e serve app interativo ao
+                                vivo via Streamlit. R$ 8 bilhões em licitações
+                                monitoradas de 27 UFs e 1.400+ órgãos públicos
+                                brasileiros.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Python</li>
+                            <li>dbt</li>
+                            <li>PostgreSQL</li>
+                            <li>FastAPI</li>
+                            <li>Streamlit</li>
+                            <li>Power BI</li>
+                            <li>Apache Airflow</li>
+                            <li>Docker</li>
+                            <li>Neon</li>
+                        </ul>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/brasilibid"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="GitHub"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                    /></svg
+                            ></a>
+                            <a
+                                href="https://brasilbid.streamlit.app"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="App ao vivo"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" /></svg
+                            ></a>
+                            <a
+                                href="https://app.powerbi.com/view?r=eyJrIjoiYjQzNDdiMmMtMzczMi00MmY0LWIyZjMtMDg2NTEwNTUzZjE2IiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=c90308a9d2662513e95b"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Dashboard Power BI"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <rect
+                                        x="3"
+                                        y="3"
+                                        width="18"
+                                        height="18"
+                                        rx="2"
+                                    />
+                                    <path
+                                        d="M9 9h1v9H9zm4-3h1v12h-1zm4 6h1v6h-1z"
+                                    /></svg
+                            ></a>
+                        </div>
+                    </div>
+                </article>
 
-      <article class="featured-project reverse fade-in" data-category="data">
-          <a href="" target="_blank" rel="noopener" class="fp-image" style="display:block;text-decoration:none;"><img src="https://raw.githubusercontent.com/Vortex11PTBR/SaudeBR/blob/master/Captura%20de%20tela%202026-05-14%20161601.png" alt="CerradoWatch Dashboard" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" onerror="this.parentElement.innerHTML='<div class=fp-placeholder><span>🌿</span></div>'" /></a>
-          <div class="fp-content">
-        <div class="fp-image"><div class="fp-placeholder"><span>🏥</span></div></div>
-        <div class="fp-content">
-          <p class="project-overline" data-i18n="proj.featured">Destaque</p>
-          <h3 class="project-title"><a href="https://github.com/Vortex11PTBR/SaudeBR" target="_blank" rel="noopener" data-i18n="proj.saudebr.title">SaúdeBR — Painel de Inteligência da Saúde Pública</a></h3>
-          <div class="project-description">
-            <p data-i18n="proj.saudebr.desc">Pipeline Python que consome APIs DATASUS/OpenDataSUS — internações por CID-10, mortalidade por estado e leitos por município — com limpeza e carga em Star Schema no PostgreSQL. Relatório Power BI com mapas de calor e taxa por 100 mil hab.</p>
-          </div>
-          <ul class="project-tech-list"><li>Python</li><li>PostgreSQL</li><li>dbt</li><li>Power BI</li><li>DAX</li><li>Star Schema</li><li>DATASUS API</li></ul>
-          <div class="project-links">
-            <a href="https://github.com/Vortex11PTBR/SaudeBR" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-          </div>
-        </div>
-      </article>
+                <article
+                    class="featured-project reverse fade-in"
+                    data-category="data"
+                >
+                    <a
+                        href="https://github.com/Vortex11PTBR/SaudeBR"
+                        target="_blank"
+                        rel="noopener"
+                        class="fp-image"
+                        style="display: block; text-decoration: none"
+                    >
+                        <img
+                            src="https://github.com/user-attachments/assets/e4fc9a91-d6a6-43c9-9bf0-7c0ef91b525b"
+                            alt="SaúdeBR Dashboard"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: inherit;
+                            "
+                        />
+                    </a>
+                    <div class="fp-content">
+                        <p class="project-overline" data-i18n="proj.featured">
+                            Destaque
+                        </p>
+                        <h3 class="project-title">
+                            <a
+                                href="https://github.com/Vortex11PTBR/SaudeBR"
+                                target="_blank"
+                                rel="noopener"
+                                data-i18n="proj.saudebr.title"
+                                >SaúdeBR — Painel de Inteligência da Saúde
+                                Pública</a
+                            >
+                        </h3>
+                        <div class="project-description">
+                            <p data-i18n="proj.saudebr.desc">
+                                Pipeline Python que consome APIs
+                                DATASUS/OpenDataSUS — internações por CID-10,
+                                mortalidade por estado e leitos por município —
+                                com limpeza e carga em Star Schema no
+                                PostgreSQL. Relatório Power BI com mapas de
+                                calor e taxa por 100 mil hab.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Python</li>
+                            <li>PostgreSQL</li>
+                            <li>dbt</li>
+                            <li>Power BI</li>
+                            <li>DAX</li>
+                            <li>Star Schema</li>
+                            <li>DATASUS API</li>
+                        </ul>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/SaudeBR"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="GitHub"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
 
-    </div>
-
-    <!-- Grid -->
-    <h3 class="other-title mono text-muted fade-in" data-i18n="proj.other">// outros projetos</h3>
-    <div class="projects-grid">
-      <article class="project-card fade-in" data-category="data">
-        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR/olympic-data-etl" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
-        <h4 class="card-title" data-i18n="pc.olympic.title">Olympic Data ETL — Data Warehouse</h4>
-        <p class="card-desc" data-i18n="pc.olympic.desc">Pipeline com Apache Beam que processa 10+ anos de dados olímpicos em BigQuery com Star Schema; queries 20× mais rápidas com particionamento por país e ano.</p>
-        <ul class="card-tech"><li>Python</li><li>Apache Beam</li><li>BigQuery</li><li>Star Schema</li></ul>
-      </article>
-      <article class="project-card fade-in" data-category="data">
-        <div class="card-top"><span class="card-folder">📁</span><div class="card-links"><a href="https://github.com/Vortex11PTBR/github-streaming-analytics" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
-        <h4 class="card-title" data-i18n="pc.streaming.title">GitHub Streaming Analytics</h4>
-        <p class="card-desc" data-i18n="pc.streaming.desc">Pipeline de streaming que ingere GitHub Events via Kafka, processa com Spark Structured Streaming e persiste métricas em Parquet para dashboards analíticos.</p>
-        <ul class="card-tech"><li>Python</li><li>Kafka</li><li>Spark</li><li>Docker</li></ul>
-      </article>
-    </div>
-  </main>
-  <footer class="footer">
-    <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Lacerda</span></p>
-    <p class="footer-sub">joaolacerda.dev &middot; 2026</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
+            <!-- Grid -->
+            <h3
+                class="other-title mono text-muted fade-in"
+                data-i18n="proj.other"
+            >
+                // outros projetos
+            </h3>
+            <div class="projects-grid">
+                <article class="project-card fade-in" data-category="data">
+                    <div class="card-top">
+                        <span class="card-folder">📁</span>
+                        <div class="card-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/olympic-data-etl"
+                                target="_blank"
+                                aria-label="GitHub"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                    /></svg
+                            ></a>
+                        </div>
+                    </div>
+                    <h4 class="card-title" data-i18n="pc.olympic.title">
+                        Olympic Data ETL — Data Warehouse
+                    </h4>
+                    <p class="card-desc" data-i18n="pc.olympic.desc">
+                        Pipeline com Apache Beam que processa 10+ anos de dados
+                        olímpicos em BigQuery com Star Schema; queries 20× mais
+                        rápidas com particionamento por país e ano.
+                    </p>
+                    <ul class="card-tech">
+                        <li>Python</li>
+                        <li>Apache Beam</li>
+                        <li>BigQuery</li>
+                        <li>Star Schema</li>
+                    </ul>
+                </article>
+                <article class="project-card fade-in" data-category="data">
+                    <div class="card-top">
+                        <span class="card-folder">📁</span>
+                        <div class="card-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/github-streaming-analytics"
+                                target="_blank"
+                                aria-label="GitHub"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                    /></svg
+                            ></a>
+                        </div>
+                    </div>
+                    <h4 class="card-title" data-i18n="pc.streaming.title">
+                        GitHub Streaming Analytics
+                    </h4>
+                    <p class="card-desc" data-i18n="pc.streaming.desc">
+                        Pipeline de streaming que ingere GitHub Events via
+                        Kafka, processa com Spark Structured Streaming e
+                        persiste métricas em Parquet para dashboards analíticos.
+                    </p>
+                    <ul class="card-tech">
+                        <li>Python</li>
+                        <li>Kafka</li>
+                        <li>Spark</li>
+                        <li>Docker</li>
+                    </ul>
+                </article>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>
+                <span data-i18n="footer.built"
+                    >Desenhado &amp; desenvolvido por</span
+                >
+                <span class="highlight">João Lacerda</span>
+            </p>
+            <p class="footer-sub">joaolacerda.dev &middot; 2026</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
 </html>
