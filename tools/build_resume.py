@@ -154,7 +154,7 @@ CONTENT = {
         "jobs": [
             (
                 "Assistente de TI",
-                "Rede Nilo Supermercados, Goiás, Brasil",
+                "Rede Nilo Supermercados, Barra do Garças, MT, Brasil",
                 "Set 2026 – Presente",
                 [
                     "Presto suporte L1/L2 a 80+ PDVs em 7 lojas, diagnosticando e resolvendo falhas de hardware e software.",
@@ -262,7 +262,7 @@ CONTENT = {
         "jobs": [
             (
                 "IT Assistant",
-                "Rede Nilo Supermarkets, Goiás, Brazil",
+                "Rede Nilo Supermarkets, Barra do Garças, MT, Brazil",
                 "Sep 2026 – Present",
                 [
                     "Provide L1/L2 support for 80+ POS terminals across 7 stores, diagnosing and resolving hardware/software failures.",

@@ -47,7 +47,7 @@ const i18n = {
     'exp.title':'Experiência',
     'exp.tab0':'Rede Nilo','exp.tab1':'Gigabyte Soluções','exp.tab2':'Quiosque Barra Chopp',
     'exp.0.title':'Assistente de TI','exp.0.company':'@ Rede Nilo Supermercados',
-    'exp.0.period':'Set 2026 — Presente · Goiás, Brasil · Em atividade',
+    'exp.0.period':'Set 2026 — Presente · Barra do Garças, MT · Em atividade',
     'exp.0.b1':'Suporte técnico e correção de PDVs, com diagnóstico e resolução de falhas nas lojas.',
     'exp.0.b2':'Criação de usuários e atribuição de funções e permissões no banco de dados MySQL.',
     'exp.0.b3':'Análise e correção manual de cupons fiscais.',
@@ -135,7 +135,7 @@ const i18n = {
     'exp.title':'Experience',
     'exp.tab0':'Rede Nilo','exp.tab1':'Gigabyte Soluções','exp.tab2':'Quiosque Barra Chopp',
     'exp.0.title':'IT Assistant','exp.0.company':'@ Rede Nilo Supermercados',
-    'exp.0.period':'Sep 2026 — Present · Goiás, Brazil · Current role',
+    'exp.0.period':'Sep 2026 — Present · Barra do Garças, MT · Current role',
     'exp.0.b1':'Technical support and POS repair, diagnosing and resolving failures across stores.',
     'exp.0.b2':'Created database users and assigned roles and permissions in MySQL.',
     'exp.0.b3':'Analysis and manual correction of fiscal receipts.',
@@ -780,6 +780,25 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListener('resize', () => { syncSource(); readStickyTop(); update(); }, { passive: true });
   update();
 });
+
+// ── Experience: fit the first section to the remaining viewport ──
+(function initExpFit() {
+  const main = document.querySelector('.main-content--exp');
+  if (!main) return;
+  const first = main.querySelector('.exp-section');
+  if (!first) return;
+
+  const measure = () => {
+    let top = 0;
+    let el = first;
+    while (el) { top += el.offsetTop; el = el.offsetParent; }
+    main.style.setProperty('--exp-first-offset', Math.round(top) + 'px');
+  };
+
+  measure();
+  addEventListener('load', measure);
+  addEventListener('resize', measure, { passive: true });
+})();
 
 // ── Hero portrait parallax ─────────────────────────────
 (function initParallax() {
