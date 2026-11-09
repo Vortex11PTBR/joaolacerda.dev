@@ -178,8 +178,9 @@ CONTENT = {
                 "Quiosque Barra Chopp, Barra do Garças, Brasil",
                 "Jan 2021 – Jan 2025",
                 [
-                    "Operei sistema de gestão integrado (NooChef), mantendo dados de produtos diretamente no banco.",
-                    "Emiti notas fiscais eletrônicas (NF-e) e conciliei caixa com registros sistêmicos.",
+                    "Operei o sistema de gestão integrado (NooChef), mantendo os dados de produtos diretamente no banco.",
+                    "Desenvolvi o site oficial do quiosque (barrachopp.com), do design ao deploy.",
+                    "Realizei o atendimento ao público no dia a dia do quiosque.",
                 ],
             ),
         ],
@@ -285,8 +286,9 @@ CONTENT = {
                 "Quiosque Barra Chopp, Barra do Garças, Brazil",
                 "Jan 2021 – Jan 2025",
                 [
-                    "Operated an integrated management system (NooChef), maintaining product data directly in the database.",
-                    "Issued electronic invoices (NF-e) and reconciled cash against system records.",
+                    "Operated the integrated management system (NooChef), maintaining product data directly in the database.",
+                    "Built the official website (barrachopp.com), from design to deployment.",
+                    "Handled day-to-day customer service at the kiosk.",
                 ],
             ),
         ],
