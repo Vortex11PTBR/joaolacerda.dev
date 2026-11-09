@@ -1,13 +1,27 @@
+# Dependencias / build
 node_modules/
 .next/
 dist/
 build/
+__pycache__/
+*.pyc
+
+# Ambiente
 .env
 .env.local
+
+# Sistema / editor
 .DS_Store
+Thumbs.db
 *.log
-jp/
-projetos/
-_audit_cache/
-_audit_results.json
-_audit_summary.txt
+
+# Artefatos gerados (screenshots / validação)
+# _shot_*.html vem de tools/mkshots.py
+_shot_*.html
+_s_*.png
+_v_*.png
+
+# Fontes locais que não são publicadas neste repositório
+videos-src/
+github-profile/
+resume-original.pdf

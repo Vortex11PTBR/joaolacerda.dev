@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="João Lacerda – Engenheiro de Software Full Stack, Dados e IA & LLMs."
+            content="João Pedro — Engenheiro de Software Full Stack, Dados e Cloud. Produtos em produção com Next.js, TypeScript, Python, dbt e AWS."
         />
-        <title>Projetos — João Lacerda</title>
+        <title>Projetos — João Pedro</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
@@ -21,10 +21,8 @@
         <div class="grid-overlay"></div>
         <div class="noise"></div>
         <nav class="nav" id="nav">
-            <a href="index.html" class="logo-link">
-                <span class="logo-bracket">&lt;</span
-                ><span class="logo-text">JL</span
-                ><span class="logo-bracket">/&gt;</span>
+            <a href="index.html" class="logo-link" aria-label="João Pedro — início">
+                <span class="logo-text">JP</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -112,7 +110,7 @@
                     /></svg
             ></a>
             <a
-                href="https://www.linkedin.com/in/jo%C3%A3o-pedro-6575551b0"
+                href="https://www.linkedin.com/in/jpalacerda/"
                 target="_blank"
                 rel="noopener"
                 aria-label="LinkedIn"
@@ -132,15 +130,15 @@
             <div class="sidebar-line"></div>
         </aside>
         <aside class="sidebar sidebar-right">
-            <a href="mailto:joao@joaolacerda.dev" class="sidebar-email"
-                >joao@joaolacerda.dev</a
+            <a href="mailto:joaopedroantuneslacerda@gmail.com" class="sidebar-email"
+                >joaopedroantuneslacerda@gmail.com</a
             >
             <div class="sidebar-line"></div>
         </aside>
         <main class="main-content">
             <div class="page-header fade-in">
                 <span class="page-num mono text-cyan">03.</span>
-                <h1 class="page-title" data-i18n="proj.title">Projetos</h1>
+                <h1 class="page-title" data-i18n="proj.title">Projetos em produção</h1>
                 <div class="section-line"></div>
             </div>
 
@@ -166,17 +164,74 @@
                 >
                     Dados
                 </button>
-                <button
-                    class="proj-filter"
-                    data-filter="ai"
-                    data-i18n="filter.ai"
-                >
-                    IA &amp; LLMs
-                </button>
             </div>
 
             <!-- Featured -->
             <div class="featured-projects">
+                <article
+                    class="featured-project reverse fade-in"
+                    data-category="fullstack"
+                >
+                    <a
+                        href="https://barrachopp.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="fp-image"
+                    >
+                        <img
+                            src="img/barrachopp.png"
+                            alt="BarraChopp — site institucional"
+                        />
+                    </a>
+                    <div class="fp-content">
+                        <p class="project-overline" data-i18n="proj.featured">
+                            Destaque
+                        </p>
+                        <span class="proj-live-badge"><i class="live-dot" aria-hidden="true"></i>LIVE</span>
+                        <h3 class="project-title">
+                            <a
+                                href="https://barrachopp.com/"
+                                target="_blank"
+                                rel="noopener"
+                                data-i18n="proj.barrachopp.title"
+                                >BarraChopp — Site institucional em produção</a
+                            >
+                        </h3>
+                        <div class="project-description">
+                            <p data-i18n="proj.barrachopp.desc">
+                                Site institucional para o Barra Chopp, com
+                                apresentação do espaço, cardápio, kit de chope e
+                                contato direto pelo WhatsApp. Projeto completo de
+                                ponta a ponta: design, front-end e publicação.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Responsive</li>
+                        </ul>
+                        <div class="project-links">
+                            <a
+                                href="https://barrachopp.com/"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Ver site"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" /></svg
+                            ></a>
+                        </div>
+                    </div>
+                </article>
                 <article
                     class="featured-project fade-in"
                     data-category="fullstack"
@@ -202,6 +257,7 @@
                         <p class="project-overline" data-i18n="proj.featured">
                             Destaque
                         </p>
+                        <span class="proj-live-badge"><i class="live-dot" aria-hidden="true"></i>LIVE</span>
                         <h3 class="project-title">
                             <a
                                 href="https://mei-flow-eight.vercel.app"
@@ -216,24 +272,19 @@
                             <p data-i18n="proj.meiflow.desc">
                                 SaaS multi-tenant para os 15 milhões de MEIs
                                 brasileiros. Dashboard financeiro com
-                                categorização automática de lançamentos via IA
-                                (Claude API), integração com a Receita Federal
-                                para validação de CNPJ, monitoramento do limite
-                                anual de R$ 81 mil e notificações de DAS via
-                                fila assíncrona BullMQ + Redis.
+                                categorização automática, integração com a
+                                Receita Federal para validação de CNPJ,
+                                monitoramento do limite anual de R$ 81 mil e
+                                notificações de DAS via fila assíncrona.
                             </p>
                         </div>
                         <ul class="project-tech-list">
                             <li>Next.js</li>
                             <li>TypeScript</li>
                             <li>PostgreSQL</li>
-                            <li>Prisma</li>
                             <li>NextAuth</li>
-                            <li>Redis</li>
-                            <li>Claude AI</li>
-                            <li>Docker</li>
                             <li>Tailwind CSS</li>
-                            <li>Vitest</li>
+                            <li>Docker</li>
                         </ul>
                         <div class="project-links">
                             <a
@@ -293,14 +344,14 @@
                             "
                             onerror="
                                 this.parentElement.innerHTML =
-                                    '<div class=fp-placeholder><span>🌿</span></div>'
+                                    '<div class=fp-placeholder><span class=fp-initials>CW</span></div>'
                             "
                     /></a>
                     <div class="fp-content">
                         <p class="project-overline" data-i18n="proj.featured">
                             Destaque
                         </p>
-                        <span class="proj-live-badge">● LIVE</span>
+                        <span class="proj-live-badge"><i class="live-dot" aria-hidden="true"></i>LIVE</span>
                         <h3 class="project-title">
                             <a
                                 href="https://cerradowatch-g6wx9wwwr6mwydqvjwzyue.streamlit.app"
@@ -329,7 +380,6 @@
                             <li>Streamlit</li>
                             <li>Prefect</li>
                             <li>GitHub Actions</li>
-                            <li>Neon</li>
                             <li>Docker</li>
                         </ul>
                         <div class="project-links">
@@ -387,14 +437,14 @@
                             "
                             onerror="
                                 this.parentElement.innerHTML =
-                                    '<div class=fp-placeholder style=&quot;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)&quot;><span>🏛️</span></div>'
+                                    '<div class=fp-placeholder><span class=fp-initials>BB</span></div>'
                             "
                     /></a>
                     <div class="fp-content">
                         <p class="project-overline" data-i18n="proj.featured">
                             Destaque
                         </p>
-                        <span class="proj-live-badge">● LIVE</span>
+                        <span class="proj-live-badge"><i class="live-dot" aria-hidden="true"></i>LIVE</span>
                         <h3 class="project-title">
                             <a
                                 href="https://brasilbid.streamlit.app"
@@ -406,13 +456,11 @@
                         </h3>
                         <div class="project-description">
                             <p data-i18n="proj.brasilibid.desc">
-                                Pipeline ETL que ingere licitações do PNCP
-                                (Portal Nacional de Contratações Públicas) via
-                                API oficial, carga em PostgreSQL no Neon,
-                                transforma com dbt e serve app interativo ao
-                                vivo via Streamlit. R$ 8 bilhões em licitações
-                                monitoradas de 27 UFs e 1.400+ órgãos públicos
-                                brasileiros.
+                                Pipeline ETL que ingere licitações do PNCP via
+                                API oficial, carrega em PostgreSQL, transforma
+                                com dbt e serve um app interativo via Streamlit.
+                                Mais de R$ 8 bilhões em licitações monitoradas de
+                                27 UFs e 1.400+ órgãos públicos.
                             </p>
                         </div>
                         <ul class="project-tech-list">
@@ -424,7 +472,6 @@
                             <li>Power BI</li>
                             <li>Apache Airflow</li>
                             <li>Docker</li>
-                            <li>Neon</li>
                         </ul>
                         <div class="project-links">
                             <a
@@ -485,59 +532,62 @@
                     </div>
                 </article>
 
-                <article class="featured-project reverse fade-in" data-category="data">
-                  <!-- Link do Power BI na Imagem -->
-                  <a href="https://app.powerbi.com/view?r=eyJrIjoiN2E0OGUzOTYtZTc4Mi00ZGIyLTg1NmUtOTBmNzU2MTk0YWVlIiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=ae73dffa23c0ecd2e3ba" target="_blank" rel="noopener" class="fp-image" style="display:block;text-decoration:none;">
-                    <img src="https://github.com/user-attachments/assets/e4fc9a91-d6a6-43c9-9bf0-7c0ef91b525b" alt="SaúdeBR Dashboard" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
-                  </a>
-                  <div class="fp-content">
-                    <p class="project-overline" data-i18n="proj.featured">Destaque</p>
-                    <!-- Link do Power BI no Título -->
-                    <h3 class="project-title">
-                      <a href="https://app.powerbi.com/view?r=eyJrIjoiN2E0OGUzOTYtZTc4Mi00ZGIyLTg1NmUtOTBmNzU2MTk0YWVlIiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=ae73dffa23c0ecd2e3ba" target="_blank" rel="noopener" data-i18n="proj.saudebr.title">SaúdeBR — Painel de Inteligência da Saúde Pública</a>
-                    </h3>
-                    <div class="project-description">
-                      <p data-i18n="proj.saudebr.desc">Pipeline Python que consome APIs DATASUS/OpenDataSUS — internações por CID-10, mortalidade por estado e leitos por município — com limpeza e carga em Star Schema no PostgreSQL. Relatório Power BI com mapas de calor e taxa por 100 mil hab.</p>
-                    </div>
-                    <ul class="project-tech-list">
-                      <li>Python</li>
-                      <li>PostgreSQL</li>
-                      <li>dbt</li>
-                      <li>Power BI</li>
-                      <li>DAX</li>
-                      <li>Star Schema</li>
-                      <li>DATASUS API</li>
-                    </ul>
-                    <div class="project-links">
-                      <!-- Link do GitHub mantido aqui nos ícones -->
-                      <a href="https://github.com/Vortex11PTBR/SaudeBR" target="_blank" rel="noopener" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
-                      </a>
-                      <!-- Adicionei o ícone de "link externo" para o Power BI -->
-                      <a href="https://app.powerbi.com/view?r=eyJrIjoiN2E0OGUzOTYtZTc4Mi00ZGIyLTg1NmUtOTBmNzU2MTk0YWVlIiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=ae73dffa23c0ecd2e3ba" target="_blank" rel="noopener" title="Ver Relatório">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                </article>
-
-            <!-- Grid -->
-            <h3
-                class="other-title mono text-muted fade-in"
-                data-i18n="proj.other"
-            >
-                // outros projetos
-            </h3>
-            <div class="projects-grid">
-                <article class="project-card fade-in" data-category="data">
-                    <div class="card-top">
-                        <span class="card-folder">📁</span>
-                        <div class="card-links">
+                <article
+                    class="featured-project reverse fade-in"
+                    data-category="data"
+                >
+                    <a
+                        href="https://app.powerbi.com/view?r=eyJrIjoiN2E0OGUzOTYtZTc4Mi00ZGIyLTg1NmUtOTBmNzU2MTk0YWVlIiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=ae73dffa23c0ecd2e3ba"
+                        target="_blank"
+                        rel="noopener"
+                        class="fp-image"
+                        style="display: block; text-decoration: none"
+                    >
+                        <img
+                            src="https://github.com/user-attachments/assets/e4fc9a91-d6a6-43c9-9bf0-7c0ef91b525b"
+                            alt="SaúdeBR Dashboard"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit"
+                        />
+                    </a>
+                    <div class="fp-content">
+                        <p class="project-overline" data-i18n="proj.featured">
+                            Destaque
+                        </p>
+                        <span class="proj-live-badge"><i class="live-dot" aria-hidden="true"></i>LIVE</span>
+                        <h3 class="project-title">
                             <a
-                                href="https://github.com/Vortex11PTBR/olympic-data-etl"
+                                href="https://app.powerbi.com/view?r=eyJrIjoiN2E0OGUzOTYtZTc4Mi00ZGIyLTg1NmUtOTBmNzU2MTk0YWVlIiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=ae73dffa23c0ecd2e3ba"
                                 target="_blank"
+                                rel="noopener"
+                                data-i18n="proj.saudebr.title"
+                                >SaúdeBR — Painel de Inteligência da Saúde
+                                Pública</a
+                            >
+                        </h3>
+                        <div class="project-description">
+                            <p data-i18n="proj.saudebr.desc">
+                                Pipeline Python que consome APIs
+                                DATASUS/OpenDataSUS — internações por CID-10,
+                                mortalidade por estado e leitos por município —
+                                com limpeza e carga em Star Schema no PostgreSQL.
+                                Relatório Power BI com mapas de calor e taxa por
+                                100 mil hab.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Python</li>
+                            <li>PostgreSQL</li>
+                            <li>dbt</li>
+                            <li>Power BI</li>
+                            <li>DAX</li>
+                            <li>Star Schema</li>
+                            <li>DATASUS API</li>
+                        </ul>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/Vortex11PTBR/SaudeBR"
+                                target="_blank"
+                                rel="noopener"
                                 aria-label="GitHub"
                                 ><svg
                                     viewBox="0 0 24 24"
@@ -549,31 +599,11 @@
                                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
                                     /></svg
                             ></a>
-                        </div>
-                    </div>
-                    <h4 class="card-title" data-i18n="pc.olympic.title">
-                        Olympic Data ETL — Data Warehouse
-                    </h4>
-                    <p class="card-desc" data-i18n="pc.olympic.desc">
-                        Pipeline com Apache Beam que processa 10+ anos de dados
-                        olímpicos em BigQuery com Star Schema; queries 20× mais
-                        rápidas com particionamento por país e ano.
-                    </p>
-                    <ul class="card-tech">
-                        <li>Python</li>
-                        <li>Apache Beam</li>
-                        <li>BigQuery</li>
-                        <li>Star Schema</li>
-                    </ul>
-                </article>
-                <article class="project-card fade-in" data-category="data">
-                    <div class="card-top">
-                        <span class="card-folder">📁</span>
-                        <div class="card-links">
                             <a
-                                href="https://github.com/Vortex11PTBR/github-streaming-analytics"
+                                href="https://app.powerbi.com/view?r=eyJrIjoiN2E0OGUzOTYtZTc4Mi00ZGIyLTg1NmUtOTBmNzU2MTk0YWVlIiwidCI6ImY5OTZjZmRiLTQyYWMtNGVhZC1iYzQzLThmZmY3Njc0Zjg4NiIsImMiOjR9&pageName=ae73dffa23c0ecd2e3ba"
                                 target="_blank"
-                                aria-label="GitHub"
+                                rel="noopener"
+                                aria-label="Ver relatório"
                                 ><svg
                                     viewBox="0 0 24 24"
                                     fill="none"
@@ -581,36 +611,52 @@
                                     stroke-width="2"
                                 >
                                     <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                                    /></svg
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" /></svg
                             ></a>
                         </div>
                     </div>
-                    <h4 class="card-title" data-i18n="pc.streaming.title">
-                        GitHub Streaming Analytics
-                    </h4>
-                    <p class="card-desc" data-i18n="pc.streaming.desc">
-                        Pipeline de streaming que ingere GitHub Events via
-                        Kafka, processa com Spark Structured Streaming e
-                        persiste métricas em Parquet para dashboards analíticos.
-                    </p>
-                    <ul class="card-tech">
-                        <li>Python</li>
-                        <li>Kafka</li>
-                        <li>Spark</li>
-                        <li>Docker</li>
-                    </ul>
                 </article>
             </div>
         </main>
         <footer class="footer">
-            <p>
-                <span data-i18n="footer.built"
-                    >Desenhado &amp; desenvolvido por</span
-                >
-                <span class="highlight">João Lacerda</span>
-            </p>
-            <p class="footer-sub">joaolacerda.dev &middot; 2026</p>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="João Pedro — início">JP<span>.</span></a>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Engenheiro de software — full stack, dados e cloud. Construindo produtos digitais que vão do banco ao navegador.</p>
+                    <a href="resume.pdf" target="_blank" class="footer-cta" data-i18n="nav.resume">Currículo</a>
+                </div>
+                <nav class="footer-col">
+                    <p class="footer-title" data-i18n="footer.nav">Navegação</p>
+                    <ul class="footer-links">
+                        <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+                        <li><a href="projetos.html" data-i18n="nav.proj">Projetos</a></li>
+                        <li><a href="experiencia.html" data-i18n="nav.exp">Experiência</a></li>
+                        <li><a href="certificacoes.html" data-i18n="nav.certs">Certificações</a></li>
+                        <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-col">
+                    <p class="footer-title" data-i18n="footer.social">Redes</p>
+                    <ul class="footer-links">
+                        <li><a href="https://www.linkedin.com/in/jpalacerda/" target="_blank" rel="noopener">LinkedIn<span class="footer-arrow">↗</span></a></li>
+                        <li><a href="https://github.com/Vortex11PTBR" target="_blank" rel="noopener">GitHub<span class="footer-arrow">↗</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-title" data-i18n="footer.contact">Contato</p>
+                    <ul class="footer-links">
+                        <li><span data-i18n="footer.location">Goiânia, Goiás — Brasil</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><span data-i18n="footer.built">Desenhado &amp; desenvolvido por</span> <span class="highlight">João Pedro</span></p>
+                <p class="footer-rights" data-i18n="footer.rights">© 2026 João Pedro. Todos os direitos reservados.</p>
+                <a href="#" class="footer-top" data-i18n="footer.top">Voltar ao topo</a>
+            </div>
         </footer>
         <script src="script.js"></script>
     </body>

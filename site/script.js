@@ -8,172 +8,258 @@ const i18n = {
   pt: {
     'nav.home':'Início','nav.about':'Sobre','nav.exp':'Experiência',
     'nav.proj':'Projetos','nav.certs':'Certificações','nav.contact':'Contato','nav.resume':'Currículo',
-    'hero.greeting':'~/joaolacerda',
-    'hero.desc':'Construo sistemas que escalam, analiso dados que geram insights e desenvolvo arquiteturas seguras — do front-end ao servidor, da pipeline ao modelo, da aplicação à defesa.',
-    'hero.cta.work':'Ver Projetos','hero.cta.contact':'Falar Comigo','hero.available':'Disponível para oportunidades',
-    'stat.years':'Anos de Experiência','stat.projects':'Projetos com Deploy','stat.users':'Usuários Atendidos','stat.tech':'Tecnologias','stat.langs':'Idiomas Fluentes',
-    'areas.title':'// áreas de atuação',
-    'area.fullstack':'Full Stack','area.fullstack.desc':'React, Node.js, TypeScript, APIs REST & GraphQL, bancos relacionais e NoSQL.',
-    'area.data':'Dados & BI','area.data.desc':'Pipelines ETL/ELT, Spark, Airflow, dbt, modelagem dimensional e dashboards.',
-    'area.ai':'IA & LLMs','area.ai.desc':'LangChain, RAG, indexação vetorial e integração com Claude, GPT e Groq.',
-    'area.devops':'Cloud & DevOps','area.devops.desc':'Docker, GitHub Actions, CI/CD pipelines, Vercel, Railway e deploy contínuo.',
-    'about.title':'Sobre Mim',
-    'about.p1':'Olá, sou João — estudante de Engenharia de Software na UniGOIÁS e desenvolvedor apaixonado por construir produtos completos, desde APIs e front-ends até pipelines de dados e integrações com IA.',
-    'about.p2':'Tenho experiência prática com desenvolvimento full stack (Next.js, Node.js, PostgreSQL) e engenharia de dados (Python, dbt, Spark, BigQuery), aplicando boas práticas em todos os projetos que desenvolvo.',
-    'about.p3':'Atualmente exploro a interseção entre full stack, dados e IA, construindo ferramentas que combinam essas áreas para resolver problemas reais.',
-    'about.skills.title':'// tecnologias','about.edu.title':'// formação','about.resume':'⬇ Baixar Currículo','about.lang.title':'// idiomas','about.lang.pt':'Português','about.lang.pt.level':'Nativo','about.lang.en':'Inglês','about.lang.en.level':'Fluente',
-    'sk.fullstack':'Full Stack','sk.data':'Dados & BI','sk.ai':'IA & LLMs','sk.infra':'Banco & DevOps',
-    'edu.degree':'Bacharelado em Engenharia de Software','edu.school':'Centro Universitário de Goiás — UniGOIÁS · Goiânia, GO','edu.status':'Cursando',
-    'exp.title':'Experiência','exp.tab0':'Gigabyte Soluções','exp.tab1':'Quiosque Barra Chopp',
-    'exp.0.title':'Estagiário de Desenvolvimento','exp.0.company':'@ Gigabyte Soluções','exp.0.period':'Ago 2025 — Dez 2025',
-    'exp.0.b1':'Apoio no desenvolvimento e manutenção de sistemas internos com JavaScript e Node.js.',
-    'exp.0.b2':'Colaboração com a equipe de TI na análise de requisitos e documentação técnica de processos.',
-    'exp.0.b3':'Automação de tarefas repetitivas com scripts Python, reduzindo tempo manual em processos administrativos.',
-    'exp.0.b4':'Participação em metodologia ágil (Scrum), contribuindo com estimativas e entregas de sprint.',
-    'exp.1.title':'Operador de Quiosque','exp.1.company':'@ Quiosque Barra Chopp','exp.1.period':'Jan 2021 — Jan 2025',
-    'exp.1.b1':'Gestão de operações diárias do quiosque, controle de estoque e atendimento ao cliente.',
-    'exp.1.b2':'Registro e controle de vendas, desenvolvendo habilidades de organização e gestão de dados operacionais.',
-    'exp.1.b3':'Desenvolvimento de comunicação e resolução de problemas em ambiente de alta demanda.',
-    'exp.2.title':'Engenheiro de Software','exp.2.company':'@ Empresa C','exp.2.period':'Jun 2019 — Fev 2021',
-    'exp.2.b1':'Entreguei features full stack para produto SaaS com 300K+ usuários usando React e Node.js.',
-    'exp.2.b2':'Implementei suíte de testes E2E (Playwright) que capturou 30+ regressões antes de deploys.',
-    'exp.2.b3':'Reformulei sistema de autenticação para suportar OAuth 2.0 e SAML SSO.',
-    'exp.2.b4':'Contribuí para bibliotecas open source e documentação técnica usada em toda a organização.',
-    'exp.3.title':'Engenheiro de Software Júnior','exp.3.company':'@ Empresa D','exp.3.period':'Jan 2018 — Mai 2019',
-    'exp.3.b1':'Desenvolvi APIs RESTful e mantive serviços backend em Java/Spring Boot para plataforma fintech.',
-    'exp.3.b2':'Escrevi testes unitários e de integração atingindo 85%+ de cobertura em módulos de pagamentos.',
-    'exp.3.b3':'Participei de time Agile/Scrum, contribuindo para sprints, retrospectivas e design docs.',
-    'proj.title':'Projetos','proj.featured':'Destaque','proj.other':'// outros projetos',
-    'filter.all':'Todos','filter.fs':'Full Stack','filter.data':'Dados','filter.ai':'IA & LLMs',
+    'hero.role':'Engenheiro de Software — Full Stack & Dados',
+    'hero.desc':'Construo produtos digitais em produção: interfaces rápidas, APIs consistentes e pipelines que transformam dados em decisão — do banco ao navegador.',
+    'hero.cta.work':'Ver projetos em produção','hero.cta.contact':'Falar comigo',
+    'stat.projects':'Produtos em produção','stat.langs':'Idiomas',
+    'stat.award':'Laureado','stat.award.label':'Láurea acadêmica',
+    'comp.kicker':'// áreas de atuação','comp.title':'Minhas áreas',
+    'comp.lede':'Três frentes conectadas: a interface que a pessoa usa, o dado que orienta a decisão e a infraestrutura que sustenta as duas.',
+    'comp.fs.kicker':'Engenharia de produto','comp.fs.title':'Full Stack',
+    'comp.fs.desc':'Interfaces, APIs e produtos completos — do banco de dados ao navegador. Aplicações em produção com foco em performance, acessibilidade e código simples de manter.',
+    'comp.data.kicker':'Engenharia de dados','comp.data.title':'Dados & BI',
+    'comp.data.desc':'Pipelines ETL/ELT, modelagem dimensional e dashboards que transformam dado bruto em decisão — da ingestão de APIs públicas à camada de apresentação.',
+    'comp.cloud.kicker':'Infraestrutura & deploy','comp.cloud.title':'Cloud',
+    'comp.cloud.desc':'Deploy, automação e confiabilidade: ambientes isolados, integração e entrega contínuas e monitoramento — sem depender de processos manuais para publicar.',
+    'reel.kicker':'// entrega','reel.line':'Do primeiro commit ao produto em operação.',
+    'home.work.title':'// em produção',
+    'home.work.all':'Ver todos os projetos',
+    'home.work.barrachopp':'Site institucional',
+    'home.work.meiflow':'SaaS financeiro',
+    'home.work.cerradowatch':'Dados ambientais',
+    'home.work.brasilbid':'Licitações públicas',
+    'about.title':'Sobre',
+    'about.p1':'Sou engenheiro de software formado pela UniGOIÁS, laureado — a mais alta distinção acadêmica da instituição. Atuo no ponto em que produto e dados se encontram: interfaces claras, APIs bem desenhadas e pipelines confiáveis.',
+    'about.p2':'Já coloquei produtos reais em produção — de um SaaS de gestão financeira para MEIs a sites institucionais, dashboards públicos e pipelines de dados ambientais. Gosto de resolver o problema inteiro, do banco ao navegador, com código simples de manter.',
+    'about.p3':'Hoje meu foco é <span class="text-cyan">full stack</span> e <span class="text-cyan">engenharia de dados</span>, com base sólida em <span class="text-cyan">cloud e automação</span>. Trabalho o ciclo completo — e entrego.',
+    'about.skills.title':'// tecnologias','about.edu.title':'// formação','about.resume':'Baixar currículo',
+    'about.lang.title':'// idiomas',
+    'about.lang.pt':'Português','about.lang.pt.level':'Nativo',
+    'about.lang.en':'Inglês','about.lang.en.level':'Fluente',
+    'about.lang.es':'Espanhol','about.lang.es.level':'Avançado',
+    'sk.fullstack':'Full Stack','sk.data':'Dados & BI','sk.cloud':'Cloud',
+    'edu.degree':'Bacharel em Engenharia de Software',
+    'edu.school':'Centro Universitário de Goiás — UniGOIÁS · Goiânia, GO',
+    'edu.status':'Graduado em 2026',
+    'edu.laureate':'Laureado',
+    'edu.laureate.desc':'Láurea acadêmica em Engenharia de Software — UniGOIÁS',
+    'edu.laureate.note':'Melhor desempenho da turma de 2026',
+    'exp.title':'Experiência',
+    'exp.tab0':'Rede Nilo','exp.tab1':'Gigabyte Soluções','exp.tab2':'Quiosque Barra Chopp',
+    'exp.0.title':'Assistente de TI','exp.0.company':'@ Rede Nilo Supermercados',
+    'exp.0.period':'Set 2026 — Presente · Goiás, Brasil · Em atividade',
+    'exp.0.b1':'Suporte técnico e correção de PDVs, com diagnóstico e resolução de falhas nas lojas.',
+    'exp.0.b2':'Criação de usuários e atribuição de funções e permissões no banco de dados MySQL.',
+    'exp.0.b3':'Análise e correção manual de cupons fiscais.',
+    'exp.0.b4':'Operação e suporte ao ERP TOTVS no dia a dia das lojas.',
+    'exp.0.b5':'Implantação e acompanhamento de self checkouts (caixas automáticos).',
+    'exp.0.b6':'Desenvolvimento de ferramentas e automações internas para aumentar eficiência e produtividade.',
+    'exp.1.title':'Estagiário de Desenvolvimento de Software','exp.1.company':'@ Gigabyte Soluções','exp.1.period':'Ago 2025 — Dez 2025 · Remoto',
+    'exp.1.b1':'Desenvolvimento de módulo web (HTML/CSS/JS + Python/FastAPI) integrado ao banco de dados de um ERP desktop legado.',
+    'exp.1.b2':'Elaboração de planos de teste, homologação de aplicações e validação de requisitos antes da entrega ao cliente.',
+    'exp.1.b3':'Produção de documentação técnica: manuais de usuário, especificações de processo e relatórios de suporte.',
+    'exp.2.title':'Operador de Sistema & Atendimento','exp.2.company':'@ Quiosque Barra Chopp','exp.2.period':'Jan 2021 — Jan 2025 · Barra do Garças, MT',
+    'exp.2.b1':'Operava sistema de gestão integrado (NooChef): cadastro, atualização e exclusão de produtos diretamente no banco de dados.',
+    'exp.2.b2':'Emissão de notas fiscais eletrônicas (NF-e) e conciliação de caixa com registros sistêmicos.',
+    'exp.2.b3':'Controle sistemático de estoque com gestão de entradas, saídas e ajustes de inventário.',
+    'proj.title':'Projetos em produção','proj.featured':'Destaque',
+    'filter.all':'Todos','filter.fs':'Full Stack','filter.data':'Dados',
+    'proj.barrachopp.title':'BarraChopp — Site institucional em produção',
+    'proj.barrachopp.desc':'Site institucional para o Barra Chopp, com apresentação do espaço, cardápio, kit de chope e contato direto pelo WhatsApp. Projeto completo de ponta a ponta: design, front-end e publicação.',
     'proj.meiflow.title':'MEIFlow — SaaS de Gestão Financeira para MEIs',
-    'proj.meiflow.desc':'SaaS multi-tenant para os 15 milhões de MEIs brasileiros. Dashboard financeiro com categorização automática via IA (Claude API), integração com a Receita Federal, monitoramento do limite de R$ 81 mil e notificações de DAS via fila assíncrona BullMQ + Redis.',
+    'proj.meiflow.desc':'SaaS multi-tenant para os 15 milhões de MEIs brasileiros. Dashboard financeiro com categorização automática, integração com a Receita Federal para validação de CNPJ, monitoramento do limite anual de R$ 81 mil e notificações de DAS via fila assíncrona.',
     'proj.cerradowatch.title':'CerradoWatch — Pipeline ETL de Dados Ambientais',
-    'proj.cerradowatch.desc':'Pipeline ETL que ingere dados de queimadas, desmatamento e clima de APIs públicas (INPE, NASA FIRMS, INMET), transforma com dbt e serve dashboard interativo ao vivo via Streamlit. Orquestração semanal por GitHub Actions.',
+    'proj.cerradowatch.desc':'Pipeline ETL que ingere dados de queimadas, desmatamento e clima de APIs públicas (INPE, NASA FIRMS, INMET), transforma com dbt e serve um dashboard interativo via Streamlit. Orquestração semanal por GitHub Actions.',
+    'proj.brasilibid.title':'BrasilBid — Monitor de Licitações Públicas',
+    'proj.brasilibid.desc':'Pipeline ETL que ingere licitações do PNCP via API oficial, carrega em PostgreSQL, transforma com dbt e serve um app interativo via Streamlit. Mais de R$ 8 bilhões em licitações monitoradas de 27 UFs e 1.400+ órgãos públicos.',
     'proj.saudebr.title':'SaúdeBR — Painel de Inteligência da Saúde Pública',
-    'proj.saudebr.desc':'Pipeline Python que consome APIs DATASUS/OpenDataSUS com limpeza e carga em Star Schema no PostgreSQL. Relatório Power BI com mapas de calor e taxa por 100 mil hab.',
-    'proj.ai.title':'AI SaaS Tool — Resumidor com Indexação Semântica',
-    'proj.ai.desc':'SaaS completo com FastAPI + LangChain + LLMs (Groq) no back-end, Next.js + TypeScript no front-end, indexação vetorial com ChromaDB e deploy via Docker + CI/CD.',
-    'pc.olympic.title':'Olympic Data ETL — Data Warehouse',
-    'pc.olympic.desc':'Pipeline com Apache Beam que processa 10+ anos de dados olímpicos em BigQuery com Star Schema; queries 20× mais rápidas com particionamento por país e ano.',
-    'pc.streaming.title':'GitHub Streaming Analytics',
-    'pc.streaming.desc':'Pipeline de streaming que ingere GitHub Events via Kafka, processa com Spark Structured Streaming e persiste métricas em Parquet para dashboards analíticos.',
-    'pc.automotive.title':'Automotive Parts E-Commerce',
-    'pc.automotive.desc':'Plataforma de e-commerce de peças automotivas com catálogo, carrinho, autenticação e integração com meios de pagamento.',
-    'pc.taskmanager.title':'Task Manager',
-    'pc.taskmanager.desc':'Gerenciador de tarefas com autenticação, boards kanban e organização por projetos. API REST com testes automatizados.',
-    'pc.zanga.title':'Zanga',
-    'pc.zanga.desc':'Projeto web com back-end em Node.js e front-end moderno, explorando arquitetura de componentes e integração de APIs.',
-    'pc.game.title':'Game Scroller',
-    'pc.game.desc':'Jogo de plataforma side-scroller em JavaScript puro, com física de plataforma, sistema de colisão e mecânicas de progressão.',
+    'proj.saudebr.desc':'Pipeline Python que consome APIs DATASUS/OpenDataSUS — internações por CID-10, mortalidade por estado e leitos por município — com limpeza e carga em Star Schema no PostgreSQL. Relatório Power BI com mapas de calor e taxa por 100 mil hab.',
     'certs.title':'Certificações',
+    'certcat.edu':'// formação acadêmica',
     'certcat.courses':'// Cursos & Certificações',
+    'cert.eng.title':'Engenharia de Software — Bacharelado',
+    'cert.eng.issuer':'UniGOIÁS · Goiânia, GO',
     'cert.google.title':'Crash Course on Python','cert.google.level':'Concluído · 2025',
     'cert.mate.title':'JavaScript Essentials','cert.mate.level':'Concluído · 2026',
-    'cert.anthropic.title':'AI Collaboration & Claude Development','cert.anthropic.level':'Concluído · 2026',
     'contact.title':'Contato','contact.heading':'Vamos conversar.',
-    'contact.p1':'Estou aberto a novas oportunidades — estágio, trainee ou projetos freelance em full stack e dados.',
-    'contact.p2':'Se quiser discutir um projeto ou simplesmente dizer olá — minha caixa de entrada está sempre aberta.',
-    'contact.btn':'Enviar Mensagem →',
-    'form.name':'Nome','form.email':'E-mail','form.subject':'Assunto','form.message':'Mensagem','form.send':'Enviar Mensagem','form.pendingNote':'Por enquanto, o envio abre seu cliente de e-mail. Você também pode escrever para joao@joaolacerda.dev.',
+    'contact.p1':'Atuo em engenharia de software, com foco em full stack, dados e cloud. Gosto de conversar sobre arquitetura, produtos digitais e projetos freelance.',
+    'contact.p2':'Se quiser discutir um projeto ou simplesmente dizer olá, minha caixa de entrada está sempre aberta.',
+    'contact.btn':'Enviar mensagem →',
+    'form.name':'Nome','form.email':'E-mail','form.subject':'Assunto','form.message':'Mensagem','form.send':'Enviar mensagem','form.pendingNote':'Por enquanto, o envio abre seu cliente de e-mail. Você também pode escrever para joaopedroantuneslacerda@gmail.com.',
     'footer.built':'Desenhado & desenvolvido por',
+    'footer.tagline':'Engenheiro de software — full stack, dados e cloud. Construindo produtos digitais que vão do banco ao navegador.',
+    'footer.nav':'Navegação','footer.social':'Redes','footer.contact':'Contato',
+    'footer.location':'Goiânia, Goiás — Brasil',
+    'footer.rights':'© 2026 João Pedro. Todos os direitos reservados.',
+    'footer.top':'Voltar ao topo',
   },
   en: {
     'nav.home':'Home','nav.about':'About','nav.exp':'Experience',
     'nav.proj':'Projects','nav.certs':'Certifications','nav.contact':'Contact','nav.resume':'Resume',
-    'hero.greeting':'~/joaolacerda',
-    'hero.desc':'I build systems that scale, analyze data that generates insights, and develop secure architectures — from front-end to server, from pipeline to model, from application to defense.',
-    'hero.cta.work':'View Projects','hero.cta.contact':'Get In Touch','hero.available':'Open to opportunities',
-    'stat.years':'Years Experience','stat.projects':'Deployed Projects','stat.users':'Users Reached','stat.tech':'Technologies','stat.langs':'Fluent Languages',
-    'areas.title':'// areas of expertise',
-    'area.fullstack':'Full Stack','area.fullstack.desc':'React, Node.js, TypeScript, REST & GraphQL APIs, relational and NoSQL databases.',
-    'area.data':'Data & BI','area.data.desc':'ETL/ELT pipelines, Spark, Airflow, dbt, dimensional modeling, and dashboards.',
-    'area.ai':'AI & LLMs','area.ai.desc':'LangChain, RAG, vector indexing and integration with Claude, GPT and Groq.',
-    'area.devops':'Cloud & DevOps','area.devops.desc':'Docker, GitHub Actions, CI/CD pipelines, Vercel, Railway and continuous deployment.',
-    'about.title':'About Me',
-    'about.p1':'Hi, I am João — a Software Engineering student at UniGOIÁS and a developer passionate about building complete products, from APIs and front-ends to data pipelines and AI integrations.',
-    'about.p2':'I have hands-on experience with full stack development (Next.js, Node.js, PostgreSQL) and data engineering (Python, dbt, Spark, BigQuery), applying best practices in every project I build.',
-    'about.p3':'I currently explore the intersection of full stack, data and AI, building tools that combine these areas to solve real problems.',
-    'about.skills.title':'// technologies','about.edu.title':'// education','about.resume':'⬇ Download Resume','about.lang.title':'// languages','about.lang.pt':'Portuguese','about.lang.pt.level':'Native','about.lang.en':'English','about.lang.en.level':'Fluent',
-    'sk.fullstack':'Full Stack','sk.data':'Data & BI','sk.ai':'AI & LLMs','sk.infra':'DB & DevOps',
-    'edu.degree':'Bachelor in Software Engineering','edu.school':'Centro Universitário de Goiás — UniGOIÁS · Goiânia, GO','edu.status':'In Progress',
-    'exp.title':'Experience','exp.tab0':'Gigabyte Soluções','exp.tab1':'Quiosque Barra Chopp',
-    'exp.0.title':'Development Intern','exp.0.company':'@ Gigabyte Soluções','exp.0.period':'Aug 2025 — Dec 2025',
-    'exp.0.b1':'Supported development and maintenance of internal systems using JavaScript and Node.js.',
-    'exp.0.b2':'Collaborated with the IT team on requirements analysis and technical process documentation.',
-    'exp.0.b3':'Automated repetitive tasks with Python scripts, reducing manual time in administrative processes.',
-    'exp.0.b4':'Participated in Agile (Scrum) methodology, contributing to sprint estimates and deliveries.',
-    'exp.1.title':'Kiosk Operator','exp.1.company':'@ Quiosque Barra Chopp','exp.1.period':'Jan 2021 — Jan 2025',
-    'exp.1.b1':'Managed daily kiosk operations, inventory control and customer service.',
-    'exp.1.b2':'Sales recording and tracking, developing organizational and operational data management skills.',
-    'exp.1.b3':'Communication and problem-solving skills honed in a high-demand environment.',
-    'exp.2.title':'Software Engineer','exp.2.company':'@ Company C','exp.2.period':'Jun 2019 — Feb 2021',
-    'exp.2.b1':'Delivered full-stack features for a SaaS product with 300K+ users using React and Node.js.',
-    'exp.2.b2':'Implemented E2E test suite (Playwright) that caught 30+ regressions before production deploys.',
-    'exp.2.b3':'Revamped auth system to support OAuth 2.0 and SAML SSO, enabling enterprise onboarding.',
-    'exp.2.b4':'Contributed to open-source libraries and technical documentation used across the org.',
-    'exp.3.title':'Junior Software Engineer','exp.3.company':'@ Company D','exp.3.period':'Jan 2018 — May 2019',
-    'exp.3.b1':'Developed RESTful APIs and maintained Java/Spring Boot backend services for a fintech platform.',
-    'exp.3.b2':'Wrote unit and integration tests achieving 85%+ coverage on critical payment modules.',
-    'exp.3.b3':'Participated in Agile/Scrum team, contributing to sprint planning, retros and tech design docs.',
-    'proj.title':'Projects','proj.featured':'Featured','proj.other':'// other projects',
-    'filter.all':'All','filter.fs':'Full Stack','filter.data':'Data','filter.ai':'AI & LLMs',
+    'hero.role':'Software Engineer — Full Stack & Data',
+    'hero.desc':'I build digital products in production: fast interfaces, consistent APIs and pipelines that turn data into decisions — from the database to the browser.',
+    'hero.cta.work':'View live projects','hero.cta.contact':'Get in touch',
+    'stat.projects':'Products in production','stat.langs':'Languages',
+    'stat.award':'Laureate','stat.award.label':'Academic honours',
+    'comp.kicker':'// expertise','comp.title':'Areas of expertise',
+    'comp.lede':'Three connected fronts: the interface people use, the data that guides decisions and the infrastructure that sustains both.',
+    'comp.fs.kicker':'Product engineering','comp.fs.title':'Full Stack',
+    'comp.fs.desc':'Interfaces, APIs and complete products — from the database to the browser. Applications in production focused on performance, accessibility and code that is simple to maintain.',
+    'comp.data.kicker':'Data engineering','comp.data.title':'Data & BI',
+    'comp.data.desc':'ETL/ELT pipelines, dimensional modelling and dashboards that turn raw data into decisions — from public API ingestion to the presentation layer.',
+    'comp.cloud.kicker':'Infrastructure & deployment','comp.cloud.title':'Cloud',
+    'comp.cloud.desc':'Deployment, automation and reliability: isolated environments, continuous integration and delivery, and monitoring — without relying on manual release steps.',
+    'reel.kicker':'// delivery','reel.line':'From the first commit to the product in operation.',
+    'home.work.title':'// in production',
+    'home.work.all':'See all projects',
+    'home.work.barrachopp':'Institutional site',
+    'home.work.meiflow':'Finance SaaS',
+    'home.work.cerradowatch':'Environmental data',
+    'home.work.brasilbid':'Public procurement',
+    'about.title':'About',
+    'about.p1':'I am a software engineer graduated from UniGOIÁS, laureate — the highest academic distinction awarded by the institution. I work where product and data meet: clear interfaces, well-designed APIs and reliable pipelines.',
+    'about.p2':'I have shipped real products to production — from a financial management SaaS for solo entrepreneurs to institutional websites, public dashboards and environmental data pipelines. I like solving the whole problem, from database to browser, with code that is simple to maintain.',
+    'about.p3':'Today my focus is <span class="text-cyan">full stack</span> and <span class="text-cyan">data engineering</span>, with a solid foundation in <span class="text-cyan">cloud and automation</span>. I work the full cycle — and ship.',
+    'about.skills.title':'// technologies','about.edu.title':'// education','about.resume':'Download resume',
+    'about.lang.title':'// languages',
+    'about.lang.pt':'Portuguese','about.lang.pt.level':'Native',
+    'about.lang.en':'English','about.lang.en.level':'Fluent',
+    'about.lang.es':'Spanish','about.lang.es.level':'Advanced',
+    'sk.fullstack':'Full Stack','sk.data':'Data & BI','sk.cloud':'Cloud',
+    'edu.degree':'Bachelor of Software Engineering',
+    'edu.school':'Centro Universitário de Goiás — UniGOIÁS · Goiânia, Brazil',
+    'edu.status':'Graduated in 2026',
+    'edu.laureate':'Laureate',
+    'edu.laureate.desc':'Academic honours in Software Engineering — UniGOIÁS',
+    'edu.laureate.note':'Highest academic standing — class of 2026',
+    'exp.title':'Experience',
+    'exp.tab0':'Rede Nilo','exp.tab1':'Gigabyte Soluções','exp.tab2':'Quiosque Barra Chopp',
+    'exp.0.title':'IT Assistant','exp.0.company':'@ Rede Nilo Supermercados',
+    'exp.0.period':'Sep 2026 — Present · Goiás, Brazil · Current role',
+    'exp.0.b1':'Technical support and POS repair, diagnosing and resolving failures across stores.',
+    'exp.0.b2':'Created database users and assigned roles and permissions in MySQL.',
+    'exp.0.b3':'Analysis and manual correction of fiscal receipts.',
+    'exp.0.b4':'Day-to-day operation and support of the TOTVS ERP.',
+    'exp.0.b5':'Rollout and support of self checkouts.',
+    'exp.0.b6':'Built internal tools and automations to improve efficiency and productivity.',
+    'exp.1.title':'Software Development Intern','exp.1.company':'@ Gigabyte Soluções','exp.1.period':'Aug 2025 — Dec 2025 · Remote',
+    'exp.1.b1':'Built a web module (HTML/CSS/JS + Python/FastAPI) integrated with the database of a legacy desktop ERP.',
+    'exp.1.b2':'Wrote test plans, homologated applications and validated requirements before client delivery.',
+    'exp.1.b3':'Produced technical documentation: user manuals, process specifications and support reports.',
+    'exp.2.title':'Systems & Customer Service Operator','exp.2.company':'@ Quiosque Barra Chopp','exp.2.period':'Jan 2021 — Jan 2025 · Barra do Garças, Brazil',
+    'exp.2.b1':'Operated an integrated management system (NooChef): created, updated and removed products directly in the database.',
+    'exp.2.b2':'Issued electronic invoices (NF-e) and reconciled cash with system records.',
+    'exp.2.b3':'Systematic inventory control with inbound, outbound and stock adjustment management.',
+    'proj.title':'Projects in production','proj.featured':'Featured',
+    'filter.all':'All','filter.fs':'Full Stack','filter.data':'Data',
+    'proj.barrachopp.title':'BarraChopp — Institutional Site',
+    'proj.barrachopp.desc':'Institutional website for Barra Chopp, presenting the venue, menu, draft beer kit and direct WhatsApp contact. A complete end-to-end project: design, front-end and deployment.',
     'proj.meiflow.title':'MEIFlow — Financial Management SaaS for Solo Entrepreneurs',
-    'proj.meiflow.desc':'Multi-tenant SaaS for Brazil\'s 15 million solo entrepreneurs. Financial dashboard with AI-powered categorization (Claude API), Receita Federal CNPJ integration, R$ 81k annual limit monitoring, and DAS alerts via BullMQ async queue + Redis.',
+    'proj.meiflow.desc':'Multi-tenant SaaS for Brazil\'s 15 million solo entrepreneurs. Financial dashboard with automatic categorization, Receita Federal CNPJ validation, annual limit monitoring and DAS notifications through an async queue.',
     'proj.cerradowatch.title':'CerradoWatch — Environmental Data ETL Pipeline',
-    'proj.cerradowatch.desc':'ETL pipeline that ingests wildfire, deforestation and weather data from public APIs (INPE, NASA FIRMS, INMET), transforms with dbt and serves a live interactive dashboard via Streamlit. Weekly orchestration via GitHub Actions.',
+    'proj.cerradowatch.desc':'ETL pipeline ingesting wildfire, deforestation and weather data from public APIs (INPE, NASA FIRMS, INMET), transforming with dbt and serving an interactive dashboard via Streamlit. Weekly orchestration with GitHub Actions.',
+    'proj.brasilibid.title':'BrasilBid — Public Procurement Monitor',
+    'proj.brasilibid.desc':'ETL pipeline ingesting public procurement data from PNCP\'s official API, loading into PostgreSQL, transforming with dbt and serving an interactive Streamlit app. Over R$ 8 billion in monitored contracts across 27 states and 1,400+ public agencies.',
     'proj.saudebr.title':'SaúdeBR — Public Health Intelligence Dashboard',
-    'proj.saudebr.desc':'Python pipeline that consumes DATASUS/OpenDataSUS APIs with cleaning and loading into Star Schema in PostgreSQL. Power BI report with heat maps and rates per 100k inhabitants.',
-    'proj.ai.title':'AI SaaS Tool — Summarizer with Semantic Indexing',
-    'proj.ai.desc':'Full SaaS with FastAPI + LangChain + LLMs (Groq) on the back-end, Next.js + TypeScript on the front-end, vector indexing with ChromaDB, and automated deployment via Docker + CI/CD.',
-    'pc.olympic.title':'Olympic Data ETL — Data Warehouse',
-    'pc.olympic.desc':'Apache Beam pipeline processing 10+ years of Olympic data into BigQuery with Star Schema; 20× faster queries with partitioning by country and year.',
-    'pc.streaming.title':'GitHub Streaming Analytics',
-    'pc.streaming.desc':'Streaming pipeline that ingests GitHub Events via Kafka, processes with Spark Structured Streaming and persists metrics in Parquet for analytics dashboards.',
-    'pc.automotive.title':'Automotive Parts E-Commerce',
-    'pc.automotive.desc':'E-commerce platform for automotive parts with catalog, shopping cart, authentication and payment gateway integration.',
-    'pc.taskmanager.title':'Task Manager',
-    'pc.taskmanager.desc':'Task manager with authentication, kanban boards and project organization. REST API with automated tests.',
-    'pc.zanga.title':'Zanga',
-    'pc.zanga.desc':'Web project with Node.js back-end and modern front-end, exploring component architecture and API integrations.',
-    'pc.game.title':'Game Scroller',
-    'pc.game.desc':'Side-scroller platform game in vanilla JavaScript, with platform physics, collision system and progression mechanics.',
+    'proj.saudebr.desc':'Python pipeline consuming DATASUS/OpenDataSUS APIs — hospitalizations by ICD-10, mortality by state and beds by municipality — with cleaning and loading into a PostgreSQL Star Schema. Power BI report with heat maps and rates per 100k inhabitants.',
     'certs.title':'Certifications',
+    'certcat.edu':'// academic background',
     'certcat.courses':'// Courses & Certifications',
+    'cert.eng.title':'Software Engineering — Bachelor\'s degree',
+    'cert.eng.issuer':'UniGOIÁS · Goiânia, Brazil',
     'cert.google.title':'Crash Course on Python','cert.google.level':'Completed · 2025',
     'cert.mate.title':'JavaScript Essentials','cert.mate.level':'Completed · 2026',
-    'cert.anthropic.title':'AI Collaboration & Claude Development','cert.anthropic.level':'Completed · 2026',
     'contact.title':'Contact','contact.heading':"Let's talk.",
-    'contact.p1':'I am open to new opportunities — internships, trainee roles, or freelance projects in full stack and data.',
-    'contact.p2':'If you want to discuss a project or just say hi — my inbox is always open.',
-    'contact.btn':'Send Message →',
-    'form.name':'Name','form.email':'Email','form.subject':'Subject','form.message':'Message','form.send':'Send Message','form.pendingNote':'For now, submission opens your email client. You can also write to joao@joaolacerda.dev.',
+    'contact.p1':'I work in software engineering, focused on full stack, data and cloud. I enjoy talking about architecture, digital products and freelance projects.',
+    'contact.p2':'If you want to discuss a project or just say hi, my inbox is always open.',
+    'contact.btn':'Send message →',
+    'form.name':'Name','form.email':'Email','form.subject':'Subject','form.message':'Message','form.send':'Send message','form.pendingNote':'For now, submission opens your email client. You can also write to joaopedroantuneslacerda@gmail.com.',
     'footer.built':'Designed & built by',
+    'footer.tagline':'Software engineer — full stack, data and cloud. Building digital products from the database to the browser.',
+    'footer.nav':'Navigation','footer.social':'Social','footer.contact':'Contact',
+    'footer.location':'Goiânia, Goiás — Brazil',
+    'footer.rights':'© 2026 João Pedro. All rights reserved.',
+    'footer.top':'Back to top',
   }
 };
 
 // ── Language Engine ────────────────────────────────────
-let currentLang = localStorage.getItem('jl_lang') || 'pt';
+const BR_TIMEZONES = new Set([
+  'America/Sao_Paulo', 'America/Bahia', 'America/Fortaleza', 'America/Recife',
+  'America/Belem', 'America/Manaus', 'America/Cuiaba', 'America/Campo_Grande',
+  'America/Porto_Velho', 'America/Rio_Branco', 'America/Noronha',
+  'America/Araguaina', 'America/Maceio', 'America/Santarem', 'America/Boa_Vista',
+  'America/Eirunepe'
+]);
 
-function applyLang(lang) {
+function getStoredLang() {
+  try { return localStorage.getItem('jl_lang'); } catch (e) { return null; }
+}
+
+function storeLang(lang) {
+  try { localStorage.setItem('jl_lang', lang); } catch (e) { /* private mode */ }
+}
+
+function detectLang() {
+  let timezone = '';
+  try {
+    timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  } catch (e) { timezone = ''; }
+
+  if (timezone && timezone !== 'UTC' && !timezone.startsWith('Etc/')) {
+    return BR_TIMEZONES.has(timezone) ? 'pt' : 'en';
+  }
+
+  const language = (navigator.language || '').toLowerCase();
+  return language === 'pt-br' ? 'pt' : 'en';
+}
+
+const storedLang = getStoredLang();
+let currentLang = storedLang === 'pt' || storedLang === 'en' ? storedLang : detectLang();
+
+const pageTitles = {
+  home: { pt: 'João Pedro — Engenheiro de Software Full Stack & Dados', en: 'João Pedro — Full Stack & Data Engineer' },
+  about: { pt: 'Sobre — João Pedro', en: 'About — João Pedro' },
+  exp: { pt: 'Experiência — João Pedro', en: 'Experience — João Pedro' },
+  proj: { pt: 'Projetos — João Pedro', en: 'Projects — João Pedro' },
+  certs: { pt: 'Certificações — João Pedro', en: 'Certifications — João Pedro' },
+  contact: { pt: 'Contato — João Pedro', en: 'Contact — João Pedro' }
+};
+
+function applyLang(lang, persist = false) {
   currentLang = lang;
-  localStorage.setItem('jl_lang', lang);
+  if (persist) storeLang(lang);
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+  const titles = pageTitles[document.body.dataset.page];
+  if (titles && titles[lang]) document.title = titles[lang];
+
+  // Resume link follows the site language (PT -> resume.pdf, EN -> resume-en.pdf)
+  document.querySelectorAll('a[href="resume.pdf"], a[href="resume-en.pdf"]').forEach(a => {
+    a.setAttribute('href', lang === 'en' ? 'resume-en.pdf' : 'resume.pdf');
+  });
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     const val = i18n[lang][key];
     if (val !== undefined) el.textContent = val;
   });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    const val = i18n[lang][key];
+    if (val !== undefined) el.innerHTML = val;
+  });
+
   document.querySelectorAll('.lang-opt').forEach(opt => {
     opt.classList.toggle('active', opt.dataset.lang === lang);
   });
-  // Refresh typed phrases
-  if (typeof restartTyping === 'function') restartTyping();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('langToggle');
   if (toggle) {
-    toggle.addEventListener('click', () => applyLang(currentLang === 'pt' ? 'en' : 'pt'));
+    toggle.addEventListener('click', () => applyLang(currentLang === 'pt' ? 'en' : 'pt', true));
   }
   if (currentLang !== 'pt') applyLang(currentLang);
   else {
@@ -184,122 +270,167 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ── Typed phrases per lang ─────────────────────────────
-const typedPhrases = {
-  pt: ['Desenvolvimento Full Stack.','Engenharia de Dados.','IA & LLMs.','APIs & Back-End.','Data Pipelines.'],
-  en: ['Full Stack Development.','Data Engineering.','AI & LLMs.','APIs & Back-End.','Data Pipelines.']
-};
+// ── Scroll engine: reversible, scroll-linked motion ────
+(function initScrollEngine() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-let typedIdx = 0, charIdx = 0, deleting = false, paused = false, typedTimer = null;
-function restartTyping() {
-  clearTimeout(typedTimer);
-  typedIdx = 0; charIdx = 0; deleting = false; paused = false;
-  const el = document.getElementById('typed-text');
-  if (el) { el.textContent = ''; tick(); }
-}
-function tick() {
-  const el = document.getElementById('typed-text');
-  if (!el) return;
-  const phrases = typedPhrases[currentLang];
-  const phrase = phrases[typedIdx];
-  if (paused) { paused = false; typedTimer = setTimeout(tick, 1400); return; }
-  if (!deleting) {
-    el.textContent = phrase.slice(0, charIdx + 1);
-    charIdx++;
-    if (charIdx === phrase.length) { deleting = true; paused = true; typedTimer = setTimeout(tick, 20); return; }
-  } else {
-    el.textContent = phrase.slice(0, charIdx - 1);
-    charIdx--;
-    if (charIdx === 0) { deleting = false; typedIdx = (typedIdx + 1) % phrases.length; }
-  }
-  typedTimer = setTimeout(tick, deleting ? 38 : 78);
-}
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('typed-text')) setTimeout(tick, 600);
-});
+  const root = document.documentElement;
+  const panels = [...document.querySelectorAll('[data-scroll-panel]')];
+  let raf = 0;
 
-// ── Particle System ────────────────────────────────────
+  const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
+
+  const update = () => {
+    raf = 0;
+    const vh = innerHeight || 1;
+    const max = root.scrollHeight - vh;
+
+    root.style.setProperty('--scroll', max > 0 ? clamp(scrollY / max, 0, 1).toFixed(4) : '0');
+
+    panels.forEach(panel => {
+      const r = panel.getBoundingClientRect();
+      // p: 0 → panel entering from below, 1 → panel fully past the top.
+      const p = clamp((vh - r.top) / (r.height + vh), 0, 1);
+      // e: 1 when the panel is centred in the viewport, 0 at the edges.
+      const dist = Math.abs(r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+      const e = Math.max(0, 1 - dist * dist);
+      // c: −1 … 1 offset of the panel centre from the viewport centre.
+      const c = clamp((r.top + r.height / 2 - vh / 2) / vh, -1, 1);
+
+      panel.style.setProperty('--p', p.toFixed(4));
+      panel.style.setProperty('--e', e.toFixed(4));
+      panel.style.setProperty('--c', c.toFixed(4));
+    });
+  };
+
+  const request = () => { if (!raf) raf = requestAnimationFrame(update); };
+  addEventListener('scroll', request, { passive: true });
+  addEventListener('resize', request, { passive: true });
+  update();
+})();
+
+// ── Ambient constellation ──────────────────────────────
 (function initParticles() {
   const canvas = document.getElementById('particles');
   if (!canvas) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse = matchMedia('(pointer: coarse)').matches;
+  if (reduce || coarse || innerWidth < 768) { canvas.style.display = 'none'; return; }
+
   const ctx = canvas.getContext('2d');
-  let W = innerWidth, H = innerHeight;
-  canvas.width = W; canvas.height = H;
-  const CYAN = '0,212,255', PURPLE = '124,58,237';
-  const COUNT = Math.min(Math.floor((W * H) / 16000), 90);
+  const INK = '10,10,12';
+  const ACCENT = '27,59,255';
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  let W = 0, H = 0;
+  let particles = [];
   const mouse = { x: -9999, y: -9999, active: false };
-  class P {
-    constructor() { this.reset(true); }
-    reset(init) {
-      this.x = Math.random() * W;
-      this.y = init ? Math.random() * H : H + 10;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = -(Math.random() * 0.4 + 0.1);
-      this.size = Math.random() * 1.5 + 0.5;
-      this.alpha = Math.random() * 0.4 + 0.1;
-      this.color = Math.random() > 0.7 ? PURPLE : CYAN;
-      this.pulse = Math.random() * Math.PI * 2;
-    }
-    update() { this.x += this.vx; this.y += this.vy; this.pulse += 0.02; if (this.y < -10) this.reset(); }
-    draw() {
-      const a = this.alpha * (0.7 + 0.3 * Math.sin(this.pulse));
-      ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color},${a})`; ctx.fill();
-    }
+
+  function makeParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.16,
+      vy: (Math.random() - 0.5) * 0.16,
+      r: Math.random() * 0.9 + 0.6,
+      a: Math.random() * 0.22 + 0.12,
+      pulse: Math.random() * Math.PI * 2
+    };
   }
-  const particles = Array.from({length: COUNT}, () => new P());
-  function drawLines() {
+
+  function resize() {
+    W = innerWidth; H = innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.min(Math.max(Math.floor((W * H) / 36000), 16), 42);
+    particles = Array.from({ length: count }, makeParticle);
+  }
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
     for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy; p.pulse += 0.012;
+      if (p.x < -20) p.x = W + 20; else if (p.x > W + 20) p.x = -20;
+      if (p.y < -20) p.y = H + 20; else if (p.y > H + 20) p.y = -20;
+
       for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-        const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 120) {
+        const q = particles[j];
+        const d = Math.hypot(p.x - q.x, p.y - q.y);
+        if (d < 130) {
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(${CYAN},${(1 - d / 120) * 0.07})`;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = `rgba(${INK},${(1 - d / 130) * 0.05})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       }
-      if (!mouse.active) continue;
-      const mdx = particles[i].x - mouse.x, mdy = particles[i].y - mouse.y;
-      const md = Math.sqrt(mdx * mdx + mdy * mdy);
-      if (md < 150) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(mouse.x, mouse.y);
-        ctx.strokeStyle = `rgba(${CYAN},${(1 - md / 150) * 0.12})`;
-        ctx.lineWidth = 0.6;
-        ctx.stroke();
+
+      if (mouse.active) {
+        const md = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+        if (md < 170) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(${ACCENT},${(1 - md / 170) * 0.16})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
       }
+
+      const alpha = p.a * (0.7 + 0.3 * Math.sin(p.pulse));
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${INK},${alpha})`;
+      ctx.fill();
     }
+    requestAnimationFrame(frame);
   }
-  function animate() { ctx.clearRect(0,0,W,H); drawLines(); particles.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(animate); }
-  animate();
-  addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; }, {passive:true});
-  addEventListener('mouseleave', () => { mouse.active = false; }, {passive:true});
-  addEventListener('resize', () => { W=innerWidth; H=innerHeight; canvas.width=W; canvas.height=H; }, {passive:true});
+
+  resize();
+  frame();
+  addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; }, { passive: true });
+  addEventListener('mouseout', () => { mouse.active = false; }, { passive: true });
+  let rt;
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(resize, 180); }, { passive: true });
 })();
 
-// ── Nav: scroll + mobile toggle + active page ─────────
+// ── Nav: scroll state, mobile drawer, active page ──────
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  const reelSection = document.querySelector('.showreel');
+  let lastY = scrollY;
 
-  addEventListener('scroll', () => {
-    if (nav) nav.classList.toggle('scrolled', scrollY > 50);
-  }, {passive:true});
+  const onScroll = () => {
+    const y = scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 24);
+    const menuOpen = links && links.classList.contains('open');
+    const reelRect = reelSection ? reelSection.getBoundingClientRect() : null;
+    const reelVisible = !!reelRect && reelRect.top < innerHeight && reelRect.bottom > 0;
+    if (nav && !menuOpen && !reelVisible && y > 380 && y > lastY + 2) nav.classList.add('is-hidden');
+    else if (nav) nav.classList.remove('is-hidden');
+    lastY = y;
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const setMenu = (open) => {
+    if (!links || !toggle) return;
+    links.classList.toggle('open', open);
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  };
 
   if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-      toggle.classList.toggle('open');
-    });
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      links.classList.remove('open'); toggle.classList.remove('open');
-    }));
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    addEventListener('resize', () => { if (innerWidth > 768) setMenu(false); }, { passive: true });
   }
 
   // Active nav link
@@ -308,58 +439,84 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeFile = pageMap[page];
   if (activeFile) {
     document.querySelectorAll('.nav-link').forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === activeFile);
+      const isActive = a.getAttribute('href') === activeFile;
+      a.classList.toggle('active', isActive);
+      if (isActive) a.setAttribute('aria-current', 'page');
     });
   }
 });
 
-// ── Fade-in on scroll ──────────────────────────────────
+// ── Scroll reveal (plays forward and in reverse) ───────
 document.addEventListener('DOMContentLoaded', () => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Give inner groups their own staggered entrance.
+  document.querySelectorAll('.skill-cat, .edu-item, .cert-card, .cert-card-link, .contact-info-item, .form-group, .lang-row')
+    .forEach(el => { if (!el.classList.contains('fade-in')) el.classList.add('fade-in'); });
+
+  const els = [...document.querySelectorAll('.fade-in')];
+  if (!els.length) return;
+
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  els.forEach(el => {
+    const siblings = [...(el.parentElement?.querySelectorAll('.fade-in') || [])];
+    const idx = Math.max(0, siblings.indexOf(el));
+    el.style.setProperty('--reveal-delay', Math.min(idx * 60, 360) + 'ms');
+    el.classList.add('is-pending');
+  });
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const siblings = [...(entry.target.parentElement?.querySelectorAll('.fade-in') || [])];
-        const idx = siblings.indexOf(entry.target);
-        setTimeout(() => entry.target.classList.add('visible'), idx * 80);
-        obs.unobserve(entry.target);
-      }
+      const el = entry.target;
+      el.classList.toggle('is-in', entry.isIntersecting);
+      el.classList.toggle('is-pending', !entry.isIntersecting);
     });
-  }, {threshold: 0.08, rootMargin: '0px 0px -50px 0px'});
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  }, { threshold: 0.08, rootMargin: '-2% 0px -6% 0px' });
+
+  els.forEach(el => obs.observe(el));
 });
 
-// ── Counters ───────────────────────────────────────────
+// ── Counters (count up on view, reset on exit) ─────────
 document.addEventListener('DOMContentLoaded', () => {
-  const nums = document.querySelectorAll('.stat-num[data-target]');
+  const nums = [...document.querySelectorAll('.stat-num[data-target]')];
   if (!nums.length) return;
-  let fired = false;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hero = document.querySelector('.hero') || document.body;
+
+  const run = (el) => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    cancelAnimationFrame(el._raf);
+    if (reduce) { el.textContent = String(target); return; }
+    const start = performance.now();
+    const dur = 1100;
+    const step = (now) => {
+      const t = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = String(Math.round(target * eased));
+      if (t < 1) el._raf = requestAnimationFrame(step);
+    };
+    el._raf = requestAnimationFrame(step);
+  };
+
+  const reset = (el) => {
+    cancelAnimationFrame(el._raf);
+    el.textContent = '0';
+  };
+
+  if (!('IntersectionObserver' in window)) { nums.forEach(run); return; }
+
+  let onScreen = null;
   new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting && !fired) {
-      fired = true;
-      setTimeout(() => nums.forEach(el => {
-        const target = parseInt(el.dataset.target);
-        let c = 0;
-        const step = target / (1200 / 16);
-        const t = setInterval(() => { c = Math.min(c + step, target); el.textContent = Math.floor(c); if (c >= target) clearInterval(t); }, 16);
-      }), 500);
-    }
-  }, {threshold: 0.3}).observe(hero);
+    const visible = entries[0].isIntersecting;
+    if (visible === onScreen) return;
+    onScreen = visible;
+    nums.forEach(visible ? run : reset);
+  }, { threshold: 0.3 }).observe(hero);
 });
 
-// ── Experience Tabs ────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.exp-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelector(`.exp-panel[data-panel="${tab.dataset.tab}"]`)?.classList.add('active');
-    });
-  });
-});
-
-// ── Project Filters ────────────────────────────────────
+// ── Project filters ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const filters = document.querySelectorAll('.proj-filter');
   if (!filters.length) return;
@@ -370,7 +527,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const f = btn.dataset.filter;
       document.querySelectorAll('.featured-project, .project-card').forEach(card => {
         const show = f === 'all' || card.dataset.category === f;
+        card.classList.remove('is-filter-in');
         card.style.display = show ? '' : 'none';
+        if (show) {
+          void card.offsetWidth;
+          card.classList.add('is-filter-in');
+          setTimeout(() => card.classList.remove('is-filter-in'), 620);
+        }
       });
     });
   });
@@ -383,15 +546,70 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ── Cursor glow (desktop only) ─────────────────────────
-(function() {
-  if (matchMedia('(pointer:coarse)').matches) return;
-  const g = document.createElement('div');
-  g.style.cssText = 'position:fixed;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.035) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);will-change:left,top;';
-  document.body.appendChild(g);
-  let mx=0,my=0,cx=0,cy=0;
-  addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; }, {passive:true});
-  (function loop() { cx+=(mx-cx)*.06; cy+=(my-cy)*.06; g.style.left=cx+'px'; g.style.top=cy+'px'; requestAnimationFrame(loop); })();
+// ── Custom cursor (fine pointers only) ─────────────────
+(function initCursor() {
+  if (matchMedia('(pointer: coarse)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const dot = document.createElement('div');
+  const ring = document.createElement('div');
+  dot.className = 'cursor-dot';
+  ring.className = 'cursor-ring';
+  dot.setAttribute('aria-hidden', 'true');
+  ring.setAttribute('aria-hidden', 'true');
+  document.body.append(dot, ring);
+  document.documentElement.classList.add('has-cursor');
+  dot.classList.add('is-hidden');
+  ring.classList.add('is-hidden');
+
+  let mx = innerWidth / 2, my = innerHeight / 2;
+  let rx = mx, ry = my;
+
+  let started = false;
+  addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
+    if (!started) {
+      started = true;
+      rx = mx; ry = my;
+      dot.classList.remove('is-hidden');
+      ring.classList.remove('is-hidden');
+    }
+  }, { passive: true });
+
+  (function loop() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  })();
+
+  const hoverables = 'a, button, .comp-panel, .comp-tech li, .project-card, .cert-card, .cert-card-link, .proj-filter';
+  const viewables = '.fp-image';
+
+  document.addEventListener('pointerover', e => {
+    const target = e.target;
+    if (!target || !target.closest) return;
+    const isField = !!target.closest('input, textarea, select');
+    const isView = !!target.closest(viewables);
+    const isHover = !!target.closest(hoverables);
+
+    document.documentElement.classList.toggle('is-text-field', isField);
+    ring.classList.toggle('is-view', isView);
+    ring.classList.toggle('is-hover', isHover && !isView);
+    dot.classList.toggle('is-hidden', isView || isField);
+    dot.classList.toggle('is-hover', isHover && !isView);
+  });
+  addEventListener('mousedown', () => ring.classList.add('is-down'));
+  addEventListener('mouseup', () => ring.classList.remove('is-down'));
+  document.documentElement.addEventListener('mouseleave', () => {
+    dot.classList.add('is-hidden');
+    ring.classList.add('is-hidden');
+  });
+  document.documentElement.addEventListener('mouseenter', () => {
+    dot.classList.remove('is-hidden');
+    ring.classList.remove('is-hidden');
+  });
 })();
 
 // ── Scroll progress bar ────────────────────────────────
@@ -405,31 +623,214 @@ document.addEventListener('DOMContentLoaded', () => {
   }, {passive: true});
 })();
 
-// ── Hero entrance animation ────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+// ── Page curtain (bands) + hero entrance ──────────────
+(function initCurtain() {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const BANDS = 6;
+
+  const curtain = document.createElement('div');
+  curtain.className = 'page-curtain';
+  curtain.setAttribute('aria-hidden', 'true');
+  curtain.style.setProperty('--n', String(BANDS));
+
+  const bandWrap = document.createElement('div');
+  bandWrap.className = 'page-curtain__bands';
+  for (let i = 0; i < BANDS; i++) {
+    const band = document.createElement('span');
+    band.className = 'page-curtain__band';
+    band.style.setProperty('--i', String(i));
+    band.style.top = ((i * 100) / BANDS) + '%';
+    bandWrap.appendChild(band);
+  }
+
+  const mark = document.createElement('span');
+  mark.className = 'page-curtain__mark';
+  mark.innerHTML = 'JP<span>.</span>';
+
+  curtain.append(bandWrap, mark);
+  document.body.prepend(curtain);
+
   const heroText = document.querySelector('.hero-text');
-  if (heroText) requestAnimationFrame(() => heroText.classList.add('anim-done'));
+  const heroName = document.querySelector('.hero-name');
+
+  // Masked per-character reveal for the name (no data-i18n on it).
+  // Words stay together so no artificial gaps appear between them.
+  if (heroName && !reduce) {
+    const textNode = [...heroName.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (textNode) {
+      const frag = document.createDocumentFragment();
+      let i = 0;
+      textNode.textContent.trim().split(/(\s+)/).forEach(chunk => {
+        if (!chunk) return;
+        if (/^\s+$/.test(chunk)) {
+          frag.appendChild(document.createTextNode(' '));
+          return;
+        }
+        const word = document.createElement('span');
+        word.className = 'word';
+        chunk.split('').forEach(ch => {
+          const mask = document.createElement('span');
+          mask.className = 'char-mask';
+          const inner = document.createElement('span');
+          inner.className = 'char';
+          inner.style.transitionDelay = (110 + i * 34) + 'ms';
+          inner.textContent = ch;
+          mask.appendChild(inner);
+          word.appendChild(mask);
+          i++;
+        });
+        frag.appendChild(word);
+      });
+      textNode.replaceWith(frag);
+    }
+  }
+
+  if (heroText && !reduce) heroText.classList.add('hero-anim');
+
+  let fired = false;
+  const reveal = () => {
+    if (fired) return;
+    fired = true;
+    document.body.classList.add('is-ready');
+    if (heroText) heroText.classList.add('is-ready');
+    if (heroName) heroName.classList.add('chars-in');
+    curtain.classList.add('is-lifting');
+  };
+
+  let booted = false;
+  const boot = () => {
+    if (booted) return;
+    booted = true;
+    setTimeout(reveal, reduce ? 0 : 140);
+  };
+
+  if (document.readyState === 'loading') {
+    addEventListener('DOMContentLoaded', () => setTimeout(boot, 500), { once: true });
+  } else {
+    setTimeout(boot, 500);
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(boot).catch(() => {});
+  }
+  setTimeout(boot, 1600); // safety net
+})();
+
+// ── Showreel: scroll-scrubbed video ────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const reel = document.querySelector('[data-showreel]');
+  const section = document.querySelector('.showreel');
+  if (!reel || !section) return;
+
+  reel.pause();
+  reel.removeAttribute('autoplay');
+
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    try { reel.currentTime = 0; } catch (e) {}
+    return;
+  }
+
+  const frame = section.querySelector('.showreel__frame');
+  let duration = 0;
+  let stickyTop = 0;
+
+  function readDuration() {
+    duration = Number.isFinite(reel.duration) ? reel.duration : 0;
+  }
+
+  function readStickyTop() {
+    stickyTop = frame ? (parseFloat(getComputedStyle(frame).top) || 0) : 0;
+  }
+
+  function update() {
+    if (!duration || !frame) return;
+
+    const rect = section.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > innerHeight) return;
+
+    const travel = section.offsetHeight - frame.offsetHeight;
+    if (travel <= 0) return;
+
+    const progress = Math.min(1, Math.max(0, (stickyTop - rect.top) / travel));
+    const time = Math.min(progress * duration, duration - 0.05);
+
+    if (Math.abs(reel.currentTime - time) > 0.02) {
+      try { reel.currentTime = time; } catch (e) {}
+    }
+  }
+
+  readDuration();
+  readStickyTop();
+  ['loadedmetadata', 'loadeddata', 'canplay'].forEach((evt) => {
+    reel.addEventListener(evt, () => { readDuration(); update(); });
+  });
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', () => { readStickyTop(); update(); }, { passive: true });
+  update();
 });
 
-// ── 3D card tilt ──────────────────────────────────────
-(function() {
-  if (matchMedia('(pointer:coarse)').matches) return;
-  function addTilt(selector) {
-    document.querySelectorAll(selector).forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
-      });
-      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-    });
+// ── Hero portrait parallax ─────────────────────────────
+(function initParallax() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const wrap = document.querySelector('.hero-photo-wrap');
+  if (!wrap) return;
+  let raf = 0;
+  const update = () => {
+    raf = 0;
+    const y = Math.min(scrollY, 900);
+    wrap.style.transform = `translateY(${y * -0.045}px)`;
+  };
+  addEventListener('scroll', () => {
+    if (!raf) raf = requestAnimationFrame(update);
+  }, { passive: true });
+})();
+
+// ── Page transitions between internal pages ────────────
+document.addEventListener('click', e => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (!href || link.target === '_blank' || link.hasAttribute('download')) return;
+  if (/^(https?:|mailto:|tel:|#)/.test(href)) return;
+  if (!/\.html(\?|#|$)/.test(href)) return;
+
+  e.preventDefault();
+  document.body.classList.add('is-leaving');
+  const curtain = document.querySelector('.page-curtain');
+  if (curtain) curtain.classList.remove('is-lifting');
+  setTimeout(() => { location.href = href; }, 760);
+});
+
+// ── Restore cleanly from the back/forward cache ────────
+addEventListener('pageshow', (e) => {
+  if (!e.persisted) return;
+  document.body.classList.remove('is-leaving', 'menu-open');
+  const curtain = document.querySelector('.page-curtain');
+  if (curtain) {
+    curtain.classList.add('is-instant');
+    curtain.classList.add('is-lifting');
+    requestAnimationFrame(() => curtain.classList.remove('is-instant'));
   }
-  document.addEventListener('DOMContentLoaded', () => {
-    addTilt('.area-card');
-    addTilt('.project-card');
-    addTilt('.cert-card');
-    addTilt('.cert-card-link');
+  document.body.classList.add('is-ready');
+});
+
+// ── Console easter egg ─────────────────────────────────
+console.log('%c┌──────────────────────────────────────┐\n│  João Pedro · joaolacerda.dev        │\n│  Full Stack · Dados · Cloud          │\n└──────────────────────────────────────┘', 'color:#1b3bff;font-family:monospace;font-size:13px');
+console.log('%cOlá! Curioso(a) sobre o código? 👋\njoaopedroantuneslacerda@gmail.com', 'color:#6b6b74;font-family:monospace;font-size:11px');
+
+// ── Magnetic buttons (desktop only) ────────────────────
+(function initMagnetic() {
+  if (matchMedia('(pointer: coarse)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('.btn, .nav-resume-btn').forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) / r.width;
+      const y = (e.clientY - r.top - r.height / 2) / r.height;
+      el.style.transform = `translate(${x * 9}px, ${y * 7}px)`;
+    });
+    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
   });
 })();
 
@@ -444,20 +845,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const subject = form.querySelector('#subject')?.value || 'Contato pelo site';
     const message = form.querySelector('#message')?.value || '';
     const body = `From: ${name} (${email})\n\n${message}`;
-    const mailtoUrl = `mailto:joao@joaolacerda.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:joaopedroantuneslacerda@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoUrl);
     const lang = typeof currentLang !== 'undefined' ? currentLang : 'pt';
     const msg = lang === 'pt'
-      ? '✓ Seu cliente de e-mail foi aberto! Você também pode escrever diretamente para'
-      : '✓ Your email client was opened! You can also write directly to';
-    const sub = 'joao@joaolacerda.dev';
-    form.innerHTML = `<div class="form-success"><div class="form-success-icon">✉️</div><div class="form-success-text"><span class="text-cyan">${msg}</span></div><div class="form-success-email">${sub}</div></div>`;
+      ? 'Seu cliente de e-mail foi aberto. Você também pode escrever diretamente para'
+      : 'Your email client was opened. You can also write directly to';
+    const sub = 'joaopedroantuneslacerda@gmail.com';
+    form.innerHTML = `<div class="form-success"><div class="form-success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><div class="form-success-text"><span class="text-cyan">${msg}</span></div><div class="form-success-email">${sub}</div></div>`;
   });
 });
 
-// ── Console easter egg ─────────────────────────────────
-console.log('%c┌──────────────────────────────────────┐\n│  João Lacerda · joaolacerda.dev      │\n│  Full Stack · Dados · IA & LLMs      │\n└──────────────────────────────────────┘', 'color:#00d4ff;font-family:monospace;font-size:13px');
-console.log('%cOlá! Curioso(a) sobre o código? 👋\njoao@joaolacerda.dev', 'color:#94a3b8;font-family:monospace;font-size:11px');
+
 
 
 
