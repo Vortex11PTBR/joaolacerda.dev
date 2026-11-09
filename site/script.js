@@ -721,6 +721,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const section = document.querySelector('.showreel');
   if (!reel || !section) return;
 
+  // Tall screens get a portrait crop; everything else keeps the landscape reel.
+  const tall = matchMedia('(max-aspect-ratio: 4/5)');
+  const srcPortrait = 'videos/entrega-vertical.mp4';
+  const srcLandscape = 'videos/entrega-720-trim.mp4';
+  const syncSource = () => {
+    const want = tall.matches ? srcPortrait : srcLandscape;
+    if (reel.getAttribute('src') !== want) {
+      reel.setAttribute('src', want);
+      reel.load();
+    }
+  };
+  syncSource();
+
   reel.pause();
   reel.removeAttribute('autoplay');
 
@@ -764,7 +777,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reel.addEventListener(evt, () => { readDuration(); update(); });
   });
   addEventListener('scroll', update, { passive: true });
-  addEventListener('resize', () => { readStickyTop(); update(); }, { passive: true });
+  addEventListener('resize', () => { syncSource(); readStickyTop(); update(); }, { passive: true });
   update();
 });
 

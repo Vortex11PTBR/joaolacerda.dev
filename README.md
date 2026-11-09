@@ -11,7 +11,9 @@ Portfólio pessoal — site estático em HTML, CSS e JavaScript puros.
 │   ├── style.css
 │   ├── script.js            # interações, i18n PT/EN e animações
 │   ├── img/                 # imagens do site
-│   ├── videos/entrega-720-trim.mp4 # vídeo da abertura (720p, 7,5s, scroll-scrub)
+│   ├── videos/
+│   │   ├── entrega-720-trim.mp4   # abertura, horizontal (720p, 7,5s, scroll-scrub)
+│   │   └── entrega-vertical.mp4   # mesma cena em 9:16 para telas em pé (1080x1920)
 │   ├── photo.jpg            # foto de perfil
 │   ├── resume.pdf           # currículo (PT, 1 página)
 │   └── resume-en.pdf        # currículo (EN, 1 página)
